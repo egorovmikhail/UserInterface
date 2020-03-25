@@ -14,7 +14,6 @@ class LoginFormController: UIViewController {
 
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,4 +53,3 @@ class LoginFormController: UIViewController {
         scrollBottomConstraint.constant = 0
     }
 }
-
