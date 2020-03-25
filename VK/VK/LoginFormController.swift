@@ -30,7 +30,7 @@ class LoginFormController: UIViewController {
             object: nil)
     }
 
-    @IBAction func loginPressed() {
+    @IBAction func loginPress() {
         
         let login = loginField.text!
         let password = passwordField.text!

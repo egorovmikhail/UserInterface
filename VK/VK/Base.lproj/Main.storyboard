@@ -51,7 +51,7 @@
                                         <rect key="frame" x="185" y="392.5" width="44" height="30"/>
                                         <state key="normal" title="Войти"/>
                                         <connections>
-                                            <action selector="loginPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="bHu-8F-nG7"/>
+                                            <action selector="loginPress" destination="BYZ-38-t0r" eventType="touchUpInside" id="bHu-8F-nG7"/>
                                         </connections>
                                     </button>
                                 </subviews>
