@@ -30,17 +30,20 @@ class LoginFormController: UIViewController {
             name: UIResponder.keyboardWillHideNotification,
             object: nil)
     }
-
-    @IBAction func loginPressed() {
-        
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+      
         let login = loginField.text!
         let password = passwordField.text!
                 
         if login == "admin" && password == "123456" {
             print("успешная авторизация")
+            return true
         } else {
             print("неуспешная авторизация")
+            return false
         }
+        
     }
     
     @objc func keyboardWasShown(notification: Notification) {
