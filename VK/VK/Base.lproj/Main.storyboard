@@ -52,7 +52,7 @@
                                         <rect key="frame" x="138" y="392.5" width="44" height="30"/>
                                         <state key="normal" title="Войти"/>
                                         <connections>
-                                            <segue destination="5Mu-id-9Sv" kind="presentation" identifier="" modalPresentationStyle="fullScreen" id="NJW-0Y-dML"/>
+                                            <segue destination="5Mu-id-9Sv" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="NJW-0Y-dML"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -234,7 +234,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Группы" id="IXL-QH-Fix">
-                        <barButtonItem key="rightBarButtonItem" image="magnifyingglass" catalog="system" id="7hY-nd-kaH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7hY-nd-kaH">
                             <connections>
                                 <segue destination="5hk-8W-6Wi" kind="show" id="4B8-UG-5xB"/>
                             </connections>
@@ -282,7 +282,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person.2" catalog="system" width="128" height="81"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
     </resources>
