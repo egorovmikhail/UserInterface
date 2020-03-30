@@ -14,6 +14,7 @@ class LoginFormController: UIViewController {
 
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,17 +30,32 @@ class LoginFormController: UIViewController {
             name: UIResponder.keyboardWillHideNotification,
             object: nil)
     }
-
-    @IBAction func loginPress() {
-        
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        switch identifier {
+            case "loginSegue":
+                let isAuth = login()
+                if !isAuth {
+                    showErrorAlert()
+                }
+                return isAuth
+            default:
+                return true
+        }
+    }
+    
+    func login() -> Bool {
         let login = loginField.text!
         let password = passwordField.text!
                 
-        if login == "admin" && password == "123456" {
-            print("успешная авторизация")
-        } else {
-            print("неуспешная авторизация")
-        }
+        return login == "admin" && password == "123456"
+    }
+    
+    func showErrorAlert() {
+        let alert = UIAlertController(title: "Ошибка", message: "Неверный логин или пароль", preferredStyle: .alert)
+        let action = UIAlertAction(title: "ОК", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true)
     }
     
     @objc func keyboardWasShown(notification: Notification) {
@@ -53,3 +69,4 @@ class LoginFormController: UIViewController {
         scrollBottomConstraint.constant = 0
     }
 }
+
