@@ -21,7 +21,7 @@ class MyGroupsController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
 
-        return 1
+        return 1 
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
