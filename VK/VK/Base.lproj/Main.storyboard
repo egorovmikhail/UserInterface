@@ -242,6 +242,7 @@
                                 <connections>
                                     <outlet property="allGroupsName" destination="hhg-8H-n0x" id="UfE-50-hOe"/>
                                     <outlet property="allGroupsPhoto" destination="Pg4-uu-UVq" id="tbc-BH-SXT"/>
+                                    <segue destination="f8G-4h-Fc3" kind="unwind" unwindAction="addGroupWithSegue:" id="5ir-Hy-RNH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -253,8 +254,9 @@
                     <navigationItem key="navigationItem" id="KQn-5D-xHh"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fby-re-VmP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="f8G-4h-Fc3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-16939" y="2569"/>
+            <point key="canvasLocation" x="-16939" y="2547"/>
         </scene>
         <!--Группы-->
         <scene sceneID="2rF-9i-8P9">

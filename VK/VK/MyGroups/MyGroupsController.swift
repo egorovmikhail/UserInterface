@@ -38,7 +38,7 @@ class MyGroupsController: UITableViewController {
         return cell
     }
     
-    @IBAction func addGroup(segue: UIStoryboard){
+    @IBAction func addGroup(segue: UIStoryboardSegue){
         
     }
 
