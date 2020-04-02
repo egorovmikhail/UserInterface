@@ -212,20 +212,24 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllGroupsCell" id="lih-9I-Oeb" customClass="AllGroupsCell" customModule="VK" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="44.333332061767578"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" semanticContentAttribute="playback" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lih-9I-Oeb" id="qSQ-I8-wa6">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44.333332061767578"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Группа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhg-8H-n0x">
-                                            <rect key="frame" x="20" y="11.666666666666666" width="56" height="20.333333333333336"/>
+                                            <rect key="frame" x="20" y="11.999999999999998" width="56" height="20.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView verifyAmbiguity="off" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pg4-uu-UVq">
-                                            <rect key="frame" x="370" y="0.0" width="44" height="43.666666666666664"/>
+                                        <imageView verifyAmbiguity="off" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Pg4-uu-UVq">
+                                            <rect key="frame" x="370" y="0.0" width="44" height="44.333333333333336"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="7uD-IA-y89"/>
+                                                <constraint firstAttribute="width" constant="44" id="DuD-65-frQ"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -267,20 +271,24 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyGroupsCell" id="0SO-3F-U2T" customClass="MyGroupsCell" customModule="VK" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0SO-3F-U2T" id="J1v-dy-AwJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRc-GB-dpt">
-                                            <rect key="frame" x="20" y="11.666666666666666" width="42" height="20.333333333333336"/>
+                                            <rect key="frame" x="20" y="12.333333333333334" width="42" height="20.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView verifyAmbiguity="off" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C0y-o5-E3T">
-                                            <rect key="frame" x="370" y="0.0" width="44" height="43.666666666666664"/>
+                                        <imageView verifyAmbiguity="off" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="C0y-o5-E3T">
+                                            <rect key="frame" x="370" y="0.0" width="44" height="45"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="44" id="AKQ-rh-2PO"/>
+                                                <constraint firstAttribute="height" constant="44.670000000000002" id="ezY-gj-Tbb"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -331,7 +339,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendPhotoCell" id="5lf-N7-y6a" customClass="FriendsPhotoCell" customModule="VK" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendsPhotoCell" id="5lf-N7-y6a" customClass="FriendsPhotoCell" customModule="VK" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="28e-EN-RgB">
@@ -340,15 +348,22 @@
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GSl-a8-46j">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="128" id="9ih-oh-UYO"/>
+                                                <constraint firstAttribute="height" constant="128" id="FCv-c5-YNy"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="GSl-a8-46j" secondAttribute="bottom" id="4cC-1n-PYd"/>
-                                        <constraint firstItem="GSl-a8-46j" firstAttribute="top" secondItem="28e-EN-RgB" secondAttribute="top" id="Wpy-eB-nJm"/>
-                                        <constraint firstItem="GSl-a8-46j" firstAttribute="leading" secondItem="28e-EN-RgB" secondAttribute="leading" id="iGw-PF-XNo"/>
-                                        <constraint firstAttribute="trailing" secondItem="GSl-a8-46j" secondAttribute="trailing" id="rAt-pW-gVd"/>
+                                        <constraint firstItem="GSl-a8-46j" firstAttribute="centerY" secondItem="28e-EN-RgB" secondAttribute="centerY" id="V1i-pg-dmS"/>
+                                        <constraint firstItem="GSl-a8-46j" firstAttribute="leading" secondItem="28e-EN-RgB" secondAttribute="leading" id="X8s-O0-iha"/>
+                                        <constraint firstItem="GSl-a8-46j" firstAttribute="top" secondItem="28e-EN-RgB" secondAttribute="top" id="alX-mc-b9a"/>
+                                        <constraint firstItem="GSl-a8-46j" firstAttribute="centerX" secondItem="28e-EN-RgB" secondAttribute="centerX" id="yMb-33-9Lh"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="riendPhoto" destination="GSl-a8-46j" id="bpd-s7-B5h"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -364,6 +379,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="defaultPhoto" width="1080" height="1080"/>
         <image name="person.2" catalog="system" width="128" height="81"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
     </resources>
