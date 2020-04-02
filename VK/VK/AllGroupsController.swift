@@ -10,7 +10,7 @@ import UIKit
 
 class AllGroupsController: UITableViewController {
     
-    var allGroups = [
+    var groups = [
         "Сабаководы",
         "Любители кошек",
         "Мозг",
@@ -39,14 +39,13 @@ class AllGroupsController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return allGroups.count
+        return groups.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AllGroupsCell", for: indexPath) as! AllGroupsCell
 
-        let group = allGroups[indexPath.row]
-        cell.allGroupsName.text = group
+        cell.allGroupsName.text = groups[indexPath.row]
 
         return cell
     }

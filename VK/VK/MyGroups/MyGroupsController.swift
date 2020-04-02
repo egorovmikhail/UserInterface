@@ -10,7 +10,7 @@ import UIKit
 
 class MyGroupsController: UITableViewController {
             
-    var myGroups = [String] ()
+    var groups = [String] ()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,20 +26,34 @@ class MyGroupsController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return myGroups.count
+        return groups.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyGroupsCell", for: indexPath) as! MyGroupsCell
 
-        let group = myGroups[indexPath.row]
-        cell.myGroupsName?.text = group
+        cell.myGroupsName.text = groups[indexPath.row]
 
         return cell
     }
     
-    @IBAction func addGroup(segue: UIStoryboardSegue){
-        
+    @IBAction func addGroup(segue: UIStoryboardSegue) {
+        if segue.identifier == "addGroup" {
+            let allGroupsController = segue.source as! AllGroupsController
+            if let indexPath = allGroupsController.tableView.indexPathForSelectedRow {
+                let group = allGroupsController.groups[indexPath.row]
+                if !groups.contains(group) {
+                    groups.append(group)
+                    tableView.reloadData()
+                }
+            }
+        }
     }
-
+   
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            groups.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }
