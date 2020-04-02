@@ -10,4 +10,5 @@ import Foundation
 
 struct Group {
     var name: String
+    var city: String?
 }

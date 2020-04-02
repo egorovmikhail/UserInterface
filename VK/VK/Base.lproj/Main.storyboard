@@ -362,7 +362,7 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
-                                    <outlet property="riendPhoto" destination="GSl-a8-46j" id="bpd-s7-B5h"/>
+                                    <outlet property="friendPhoto" destination="GSl-a8-46j" id="bpd-s7-B5h"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

@@ -9,7 +9,8 @@
 import Foundation
 
 struct User {
-    var firstName: String
-    var lastName: String
+    var firstName: String?
+    var lastName: String?
+    var city: String?
 }
 
