@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -154,7 +155,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView verifyAmbiguity="off" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="hcr-Ht-Gld">
-                                            <rect key="frame" x="370" y="0.0" width="44" height="44.333333333333336"/>
+                                            <rect key="frame" x="358" y="0.0" width="44" height="44.333333333333336"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="44" id="Gyc-rC-mOE"/>
                                                 <constraint firstAttribute="height" constant="44" id="KDc-pa-hOt"/>
@@ -163,7 +164,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="hcr-Ht-Gld" firstAttribute="centerY" secondItem="5db-vZ-1nk" secondAttribute="centerY" id="Gtk-3c-mH1"/>
-                                        <constraint firstAttribute="trailing" secondItem="hcr-Ht-Gld" secondAttribute="trailing" id="GyM-5r-Hhc"/>
+                                        <constraint firstAttribute="trailing" secondItem="hcr-Ht-Gld" secondAttribute="trailing" constant="12" id="GyM-5r-Hhc"/>
                                         <constraint firstItem="9iE-bI-48W" firstAttribute="centerY" secondItem="5db-vZ-1nk" secondAttribute="centerY" id="Tdg-eR-Npk"/>
                                         <constraint firstItem="hcr-Ht-Gld" firstAttribute="top" secondItem="5db-vZ-1nk" secondAttribute="top" id="dFl-gd-6Oe"/>
                                         <constraint firstItem="hcr-Ht-Gld" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9iE-bI-48W" secondAttribute="trailing" constant="8" symbolic="YES" id="dQ9-ng-quJ"/>
@@ -187,7 +188,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n1k-hm-bJz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-17876" y="1735"/>
+            <point key="canvasLocation" x="-17876.8115942029" y="1734.375"/>
         </scene>
         <!--Группы-->
         <scene sceneID="Egt-8Z-u6A">
@@ -229,7 +230,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView verifyAmbiguity="off" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Pg4-uu-UVq">
-                                            <rect key="frame" x="370" y="0.0" width="44" height="44.333333333333336"/>
+                                            <rect key="frame" x="358" y="0.0" width="44" height="44.333333333333336"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="44" id="7uD-IA-y89"/>
                                                 <constraint firstAttribute="width" constant="44" id="DuD-65-frQ"/>
@@ -240,7 +241,7 @@
                                         <constraint firstItem="hhg-8H-n0x" firstAttribute="leading" secondItem="qSQ-I8-wa6" secondAttribute="leading" constant="20" id="3Vv-xv-5xF"/>
                                         <constraint firstItem="hhg-8H-n0x" firstAttribute="centerY" secondItem="qSQ-I8-wa6" secondAttribute="centerY" id="4b2-Z4-hw5"/>
                                         <constraint firstItem="Pg4-uu-UVq" firstAttribute="centerY" secondItem="qSQ-I8-wa6" secondAttribute="centerY" id="Ege-S2-xDR"/>
-                                        <constraint firstAttribute="trailing" secondItem="Pg4-uu-UVq" secondAttribute="trailing" id="LiL-SA-k3P"/>
+                                        <constraint firstAttribute="trailing" secondItem="Pg4-uu-UVq" secondAttribute="trailing" constant="12" id="LiL-SA-k3P"/>
                                         <constraint firstAttribute="bottom" secondItem="Pg4-uu-UVq" secondAttribute="bottom" id="iGv-bL-eeN"/>
                                         <constraint firstItem="Pg4-uu-UVq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hhg-8H-n0x" secondAttribute="trailing" constant="8" symbolic="YES" id="iTh-7H-EMx"/>
                                         <constraint firstItem="Pg4-uu-UVq" firstAttribute="top" secondItem="qSQ-I8-wa6" secondAttribute="top" id="uOM-Em-gVu"/>
@@ -288,7 +289,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView verifyAmbiguity="off" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="C0y-o5-E3T">
-                                            <rect key="frame" x="370" y="0.0" width="44" height="45"/>
+                                            <rect key="frame" x="358" y="0.0" width="44" height="45"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="44" id="AKQ-rh-2PO"/>
                                                 <constraint firstAttribute="height" constant="44.670000000000002" id="ezY-gj-Tbb"/>
@@ -296,7 +297,7 @@
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="C0y-o5-E3T" secondAttribute="trailing" id="0BI-u7-3Gh"/>
+                                        <constraint firstAttribute="trailing" secondItem="C0y-o5-E3T" secondAttribute="trailing" constant="12" id="0BI-u7-3Gh"/>
                                         <constraint firstItem="C0y-o5-E3T" firstAttribute="centerY" secondItem="J1v-dy-AwJ" secondAttribute="centerY" id="0Zy-6S-1YN"/>
                                         <constraint firstItem="C0y-o5-E3T" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KRc-GB-dpt" secondAttribute="trailing" constant="8" symbolic="YES" id="F1m-6v-Bsc"/>
                                         <constraint firstItem="C0y-o5-E3T" firstAttribute="top" secondItem="J1v-dy-AwJ" secondAttribute="top" id="bsr-bu-CJl"/>
