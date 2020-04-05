@@ -142,34 +142,56 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyFriendsCell" id="D5f-2L-YPp" customClass="MyFriendsCell" customModule="VK" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44.333332061767578"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="68.333335876464844"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D5f-2L-YPp" id="5db-vZ-1nk">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44.333332061767578"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="68.333335876464844"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iE-bI-48W">
-                                            <rect key="frame" x="20" y="11.999999999999998" width="42" height="20.333333333333329"/>
+                                            <rect key="frame" x="20" y="24" width="42" height="20.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView verifyAmbiguity="off" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="hcr-Ht-Gld">
-                                            <rect key="frame" x="358" y="0.0" width="44" height="44.333333333333336"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mqj-Ta-2Me" customClass="AvatarShadowViev" customModule="VK" customModuleProvider="target">
+                                            <rect key="frame" x="358" y="12.000000000000004" width="44" height="44.333333333333343"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="44" id="Gyc-rC-mOE"/>
-                                                <constraint firstAttribute="height" constant="44" id="KDc-pa-hOt"/>
+                                                <constraint firstAttribute="height" constant="44" id="GY2-Lv-xZg"/>
+                                                <constraint firstAttribute="width" constant="44" id="bOr-Ye-HWm"/>
                                             </constraints>
-                                        </imageView>
+                                        </view>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rm3-TZ-mom" customClass="AvatarView" customModule="VK" customModuleProvider="target">
+                                            <rect key="frame" x="358" y="12.000000000000004" width="44" height="44.333333333333343"/>
+                                            <subviews>
+                                                <imageView verifyAmbiguity="off" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="hcr-Ht-Gld">
+                                                    <rect key="frame" x="0.0" y="-3.5527136788005009e-15" width="44" height="44.333333333333343"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="Ubu-FA-TbR"/>
+                                                        <constraint firstAttribute="width" constant="44" id="yff-u3-pi3"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="8MJ-Ap-2tL"/>
+                                                <constraint firstAttribute="width" constant="44" id="mze-XV-FfG"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="hcr-Ht-Gld" firstAttribute="centerY" secondItem="5db-vZ-1nk" secondAttribute="centerY" id="Gtk-3c-mH1"/>
-                                        <constraint firstAttribute="trailing" secondItem="hcr-Ht-Gld" secondAttribute="trailing" constant="12" id="GyM-5r-Hhc"/>
+                                        <constraint firstAttribute="trailing" secondItem="Mqj-Ta-2Me" secondAttribute="trailing" constant="12" id="0O3-fP-Ojk"/>
+                                        <constraint firstAttribute="bottom" secondItem="rm3-TZ-mom" secondAttribute="bottom" constant="12" id="6Yb-F5-yer"/>
+                                        <constraint firstAttribute="bottom" secondItem="Mqj-Ta-2Me" secondAttribute="bottom" constant="12" id="D7R-hF-0em"/>
+                                        <constraint firstItem="rm3-TZ-mom" firstAttribute="centerY" secondItem="5db-vZ-1nk" secondAttribute="centerY" id="Hk8-V5-MqY"/>
+                                        <constraint firstItem="Mqj-Ta-2Me" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9iE-bI-48W" secondAttribute="trailing" constant="8" symbolic="YES" id="OHs-bk-GJ8"/>
                                         <constraint firstItem="9iE-bI-48W" firstAttribute="centerY" secondItem="5db-vZ-1nk" secondAttribute="centerY" id="Tdg-eR-Npk"/>
-                                        <constraint firstItem="hcr-Ht-Gld" firstAttribute="top" secondItem="5db-vZ-1nk" secondAttribute="top" id="dFl-gd-6Oe"/>
-                                        <constraint firstItem="hcr-Ht-Gld" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9iE-bI-48W" secondAttribute="trailing" constant="8" symbolic="YES" id="dQ9-ng-quJ"/>
+                                        <constraint firstItem="Mqj-Ta-2Me" firstAttribute="top" secondItem="5db-vZ-1nk" secondAttribute="top" constant="12" id="Xxa-Qj-EQq"/>
+                                        <constraint firstAttribute="trailing" secondItem="rm3-TZ-mom" secondAttribute="trailing" constant="12" id="Zdm-RR-niS"/>
+                                        <constraint firstItem="rm3-TZ-mom" firstAttribute="top" secondItem="5db-vZ-1nk" secondAttribute="top" constant="12" id="agf-F7-BkI"/>
                                         <constraint firstItem="9iE-bI-48W" firstAttribute="leading" secondItem="5db-vZ-1nk" secondAttribute="leading" constant="20" id="er5-gQ-557"/>
-                                        <constraint firstAttribute="bottom" secondItem="hcr-Ht-Gld" secondAttribute="bottom" id="mWT-Di-EB6"/>
+                                        <constraint firstItem="Mqj-Ta-2Me" firstAttribute="centerY" secondItem="9iE-bI-48W" secondAttribute="centerY" id="rcx-WS-WvE"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -214,37 +236,58 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JqQ-et-f9L">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllGroupsCell" id="lih-9I-Oeb" customClass="AllGroupsCell" customModule="VK" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44.333332061767578"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="68.333335876464844"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" semanticContentAttribute="playback" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lih-9I-Oeb" id="qSQ-I8-wa6">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44.333332061767578"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="68.333335876464844"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Группа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhg-8H-n0x">
-                                            <rect key="frame" x="20" y="11.999999999999998" width="56" height="20.333333333333329"/>
+                                            <rect key="frame" x="20" y="24" width="56" height="20.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView verifyAmbiguity="off" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Pg4-uu-UVq">
-                                            <rect key="frame" x="358" y="0.0" width="44" height="44.333333333333336"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gby-6D-N5w" customClass="AvatarShadowViev" customModule="VK" customModuleProvider="target">
+                                            <rect key="frame" x="358" y="12.000000000000004" width="44" height="44.333333333333343"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="44" id="7uD-IA-y89"/>
-                                                <constraint firstAttribute="width" constant="44" id="DuD-65-frQ"/>
+                                                <constraint firstAttribute="width" constant="44" id="1y4-dE-UYT"/>
+                                                <constraint firstAttribute="height" constant="44" id="xzo-7b-vhj"/>
                                             </constraints>
-                                        </imageView>
+                                        </view>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XcR-Z7-FFN" customClass="AvatarView" customModule="VK" customModuleProvider="target">
+                                            <rect key="frame" x="358" y="12.000000000000004" width="44" height="44.333333333333343"/>
+                                            <subviews>
+                                                <imageView verifyAmbiguity="off" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Pg4-uu-UVq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="hOd-bP-qww"/>
+                                                        <constraint firstAttribute="height" constant="44" id="yrW-ol-Toq"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="ZNS-TD-LA2"/>
+                                                <constraint firstAttribute="width" constant="44" id="yE9-Qh-XDx"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="hhg-8H-n0x" firstAttribute="leading" secondItem="qSQ-I8-wa6" secondAttribute="leading" constant="20" id="3Vv-xv-5xF"/>
+                                        <constraint firstAttribute="bottom" secondItem="gby-6D-N5w" secondAttribute="bottom" constant="12" id="3ko-09-jB3"/>
                                         <constraint firstItem="hhg-8H-n0x" firstAttribute="centerY" secondItem="qSQ-I8-wa6" secondAttribute="centerY" id="4b2-Z4-hw5"/>
-                                        <constraint firstItem="Pg4-uu-UVq" firstAttribute="centerY" secondItem="qSQ-I8-wa6" secondAttribute="centerY" id="Ege-S2-xDR"/>
-                                        <constraint firstAttribute="trailing" secondItem="Pg4-uu-UVq" secondAttribute="trailing" constant="12" id="LiL-SA-k3P"/>
-                                        <constraint firstAttribute="bottom" secondItem="Pg4-uu-UVq" secondAttribute="bottom" id="iGv-bL-eeN"/>
-                                        <constraint firstItem="Pg4-uu-UVq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hhg-8H-n0x" secondAttribute="trailing" constant="8" symbolic="YES" id="iTh-7H-EMx"/>
-                                        <constraint firstItem="Pg4-uu-UVq" firstAttribute="top" secondItem="qSQ-I8-wa6" secondAttribute="top" id="uOM-Em-gVu"/>
+                                        <constraint firstAttribute="trailing" secondItem="XcR-Z7-FFN" secondAttribute="trailing" constant="12" id="8W2-mk-vj2"/>
+                                        <constraint firstItem="gby-6D-N5w" firstAttribute="centerY" secondItem="qSQ-I8-wa6" secondAttribute="centerY" id="Ko9-Ye-1QF"/>
+                                        <constraint firstAttribute="trailing" secondItem="gby-6D-N5w" secondAttribute="trailing" constant="12" id="VfJ-uY-LwA"/>
+                                        <constraint firstAttribute="bottom" secondItem="XcR-Z7-FFN" secondAttribute="bottom" constant="12" id="dIM-rT-Th5"/>
+                                        <constraint firstItem="gby-6D-N5w" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hhg-8H-n0x" secondAttribute="trailing" constant="8" symbolic="YES" id="jKX-cc-o9A"/>
+                                        <constraint firstItem="XcR-Z7-FFN" firstAttribute="top" secondItem="qSQ-I8-wa6" secondAttribute="top" constant="12" id="r0E-wP-dMr"/>
+                                        <constraint firstItem="gby-6D-N5w" firstAttribute="top" secondItem="qSQ-I8-wa6" secondAttribute="top" constant="12" id="yyN-44-ihv"/>
+                                        <constraint firstItem="XcR-Z7-FFN" firstAttribute="centerY" secondItem="qSQ-I8-wa6" secondAttribute="centerY" id="zzb-Wp-ntN"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -264,7 +307,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fby-re-VmP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="f8G-4h-Fc3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-16939" y="2547"/>
+            <point key="canvasLocation" x="-16940.579710144928" y="2546.6517857142858"/>
         </scene>
         <!--Группы-->
         <scene sceneID="2rF-9i-8P9">
@@ -276,34 +319,56 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyGroupsCell" id="0SO-3F-U2T" customClass="MyGroupsCell" customModule="VK" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="45"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="68.333335876464844"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0SO-3F-U2T" id="J1v-dy-AwJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="68.333335876464844"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRc-GB-dpt">
-                                            <rect key="frame" x="20" y="12.666666666666664" width="42" height="20"/>
+                                            <rect key="frame" x="20" y="24.333333333333329" width="42" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView verifyAmbiguity="off" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="C0y-o5-E3T">
-                                            <rect key="frame" x="358" y="0.0" width="44" height="45"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7G0-mX-tJY" customClass="AvatarShadowViev" customModule="VK" customModuleProvider="target">
+                                            <rect key="frame" x="358" y="12.000000000000004" width="44" height="44.333333333333343"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="44" id="AKQ-rh-2PO"/>
-                                                <constraint firstAttribute="height" constant="44.670000000000002" id="ezY-gj-Tbb"/>
+                                                <constraint firstAttribute="width" constant="44" id="Vj6-Xf-s50"/>
+                                                <constraint firstAttribute="height" constant="44" id="jaV-OP-n4r"/>
                                             </constraints>
-                                        </imageView>
+                                        </view>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="asE-at-MFh" customClass="AvatarView" customModule="VK" customModuleProvider="target">
+                                            <rect key="frame" x="358" y="12.000000000000004" width="44" height="44.333333333333343"/>
+                                            <subviews>
+                                                <imageView verifyAmbiguity="off" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="C0y-o5-E3T">
+                                                    <rect key="frame" x="0.0" y="0.3333333333333357" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="Er2-wJ-rcN"/>
+                                                        <constraint firstAttribute="height" constant="44" id="Oi1-Ln-g4b"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="44" id="PHk-bY-Sab"/>
+                                                <constraint firstAttribute="height" constant="44" id="uIQ-YH-obK"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="C0y-o5-E3T" secondAttribute="trailing" constant="12" id="0BI-u7-3Gh"/>
-                                        <constraint firstItem="C0y-o5-E3T" firstAttribute="centerY" secondItem="J1v-dy-AwJ" secondAttribute="centerY" id="0Zy-6S-1YN"/>
-                                        <constraint firstItem="C0y-o5-E3T" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KRc-GB-dpt" secondAttribute="trailing" constant="8" symbolic="YES" id="F1m-6v-Bsc"/>
-                                        <constraint firstItem="C0y-o5-E3T" firstAttribute="top" secondItem="J1v-dy-AwJ" secondAttribute="top" id="bsr-bu-CJl"/>
+                                        <constraint firstItem="7G0-mX-tJY" firstAttribute="top" secondItem="J1v-dy-AwJ" secondAttribute="top" constant="12" id="7vR-JJ-3UM"/>
+                                        <constraint firstAttribute="trailing" secondItem="asE-at-MFh" secondAttribute="trailing" constant="12" id="97R-9Q-Lu0"/>
+                                        <constraint firstItem="7G0-mX-tJY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KRc-GB-dpt" secondAttribute="trailing" constant="8" symbolic="YES" id="CaK-BW-FK0"/>
+                                        <constraint firstItem="asE-at-MFh" firstAttribute="top" secondItem="J1v-dy-AwJ" secondAttribute="top" constant="12" id="F4F-dM-03W"/>
+                                        <constraint firstAttribute="trailing" secondItem="7G0-mX-tJY" secondAttribute="trailing" constant="12" id="GyJ-HX-jMr"/>
+                                        <constraint firstItem="7G0-mX-tJY" firstAttribute="centerY" secondItem="J1v-dy-AwJ" secondAttribute="centerY" id="YLl-Sn-Pss"/>
+                                        <constraint firstItem="asE-at-MFh" firstAttribute="centerY" secondItem="J1v-dy-AwJ" secondAttribute="centerY" id="cov-ZE-b39"/>
+                                        <constraint firstAttribute="bottom" secondItem="asE-at-MFh" secondAttribute="bottom" constant="12" id="hQM-Ya-qNt"/>
                                         <constraint firstItem="KRc-GB-dpt" firstAttribute="leading" secondItem="J1v-dy-AwJ" secondAttribute="leading" constant="20" id="m6Z-SF-l1a"/>
-                                        <constraint firstAttribute="bottom" secondItem="C0y-o5-E3T" secondAttribute="bottom" id="rBe-xj-LQO"/>
                                         <constraint firstItem="KRc-GB-dpt" firstAttribute="centerY" secondItem="J1v-dy-AwJ" secondAttribute="centerY" id="vTM-eH-T6a"/>
+                                        <constraint firstAttribute="bottom" secondItem="7G0-mX-tJY" secondAttribute="bottom" constant="12" id="vXd-hE-rXc"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -327,7 +392,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="byE-0d-wFQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16937" y="1735"/>
+            <point key="canvasLocation" x="-16937.681159420292" y="1734.375"/>
         </scene>
         <!--Friends Photo Controller-->
         <scene sceneID="vdV-fm-iT6">
@@ -358,6 +423,10 @@
                                                 <constraint firstAttribute="height" constant="128" id="FCv-c5-YNy"/>
                                             </constraints>
                                         </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7hD-4A-GHL">
+                                            <rect key="frame" x="84" y="115" width="21" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="GSl-a8-46j" firstAttribute="centerY" secondItem="28e-EN-RgB" secondAttribute="centerY" id="V1i-pg-dmS"/>
@@ -380,7 +449,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Hq-YW-iA1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-17876.25" y="2547.8873239436621"/>
+            <point key="canvasLocation" x="-17876.8115942029" y="2547.3214285714284"/>
         </scene>
     </scenes>
     <resources>
