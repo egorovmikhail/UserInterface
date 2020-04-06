@@ -14,5 +14,6 @@ class AvatarView: UIView {
         super.layoutSubviews()
         
         layer.cornerRadius = bounds.height / 2
+        clipsToBounds = true
     }
 }

@@ -17,6 +17,6 @@ class AvatarShadowViev: UIView {
         layer.shadowColor = UIColor.gray.cgColor
         layer.shadowOpacity = 1
         layer.shadowRadius = 5
-        layer.shadowOffset = .zero
+        layer.shadowOffset = CGSize(width: 4.0, height: 4.0)
     }
 }

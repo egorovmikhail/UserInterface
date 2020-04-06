@@ -165,7 +165,7 @@
                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rm3-TZ-mom" customClass="AvatarView" customModule="VK" customModuleProvider="target">
                                             <rect key="frame" x="358" y="12.000000000000004" width="44" height="44.333333333333343"/>
                                             <subviews>
-                                                <imageView verifyAmbiguity="off" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="hcr-Ht-Gld">
+                                                <imageView verifyAmbiguity="off" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="hcr-Ht-Gld">
                                                     <rect key="frame" x="0.0" y="-3.5527136788005009e-15" width="44" height="44.333333333333343"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="Ubu-FA-TbR"/>
@@ -339,7 +339,7 @@
                                                 <constraint firstAttribute="height" constant="44" id="jaV-OP-n4r"/>
                                             </constraints>
                                         </view>
-                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="asE-at-MFh" customClass="AvatarView" customModule="VK" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="asE-at-MFh" customClass="AvatarView" customModule="VK" customModuleProvider="target">
                                             <rect key="frame" x="358" y="12.000000000000004" width="44" height="44.333333333333343"/>
                                             <subviews>
                                                 <imageView verifyAmbiguity="off" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="C0y-o5-E3T">
