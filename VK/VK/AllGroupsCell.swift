@@ -11,6 +11,6 @@ import UIKit
 class AllGroupsCell: UITableViewCell {
     
     @IBOutlet weak var allGroupsName: UILabel!
-    @IBOutlet weak var allGroupsPhoto: UIImageView!
+    @IBOutlet weak var avatarView: AvatarView!
     
 }

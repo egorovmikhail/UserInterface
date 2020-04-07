@@ -16,7 +16,6 @@
 		81431350242A542700AC7EDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8143134E242A542700AC7EDE /* LaunchScreen.storyboard */; };
 		817FF6CE2436189D0037068F /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817FF6CD2436189D0037068F /* ModelUser.swift */; };
 		817FF6D224361AEF0037068F /* Model​Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817FF6D124361AEF0037068F /* Model​Group.swift */; };
-		818AF712243A1AEA00C3B396 /* AvatarShadowViev.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AF711243A1AEA00C3B396 /* AvatarShadowViev.swift */; };
 		81DA86F02438EA57002E5BAB /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DA86EF2438EA57002E5BAB /* AvatarView.swift */; };
 		81E6FDB42434A4C900E2A6B6 /* MyFriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E6FDB32434A4C900E2A6B6 /* MyFriendsController.swift */; };
 		81E6FDB62434A5FF00E2A6B6 /* MyFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E6FDB52434A5FF00E2A6B6 /* MyFriendsCell.swift */; };
@@ -38,7 +37,6 @@
 		81431351242A542700AC7EDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		817FF6CD2436189D0037068F /* ModelUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
 		817FF6D124361AEF0037068F /* Model​Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Model​Group.swift"; sourceTree = "<group>"; };
-		818AF711243A1AEA00C3B396 /* AvatarShadowViev.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarShadowViev.swift; sourceTree = "<group>"; };
 		81DA86EF2438EA57002E5BAB /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		81E6FDB32434A4C900E2A6B6 /* MyFriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsController.swift; sourceTree = "<group>"; };
 		81E6FDB52434A5FF00E2A6B6 /* MyFriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsCell.swift; sourceTree = "<group>"; };
@@ -78,14 +76,14 @@
 		81431342242A542600AC7EDE /* VK */ = {
 			isa = PBXGroup;
 			children = (
+				81A9C2F3243C24E6002CED77 /* LoginForm */,
+				817FF6CC2436182C0037068F /* Model */,
 				818AF713243A1AFC00C3B396 /* Avatar */,
 				819D23A62434CD70005EBCC6 /* AllGroups */,
-				817FF6CC2436182C0037068F /* Model */,
+				819D23A52434CD32005EBCC6 /* MyGroups */,
 				819D23A42434CC9B005EBCC6 /* MyFriends */,
 				819D23A72434CD94005EBCC6 /* MyFriendsPhoto */,
-				819D23A52434CD32005EBCC6 /* MyGroups */,
 				81431343242A542600AC7EDE /* AppDelegate.swift */,
-				81431347242A542600AC7EDE /* LoginFormController.swift */,
 				81431349242A542600AC7EDE /* Main.storyboard */,
 				8143134C242A542700AC7EDE /* Assets.xcassets */,
 				8143134E242A542700AC7EDE /* LaunchScreen.storyboard */,
@@ -106,7 +104,6 @@
 		818AF713243A1AFC00C3B396 /* Avatar */ = {
 			isa = PBXGroup;
 			children = (
-				818AF711243A1AEA00C3B396 /* AvatarShadowViev.swift */,
 				81DA86EF2438EA57002E5BAB /* AvatarView.swift */,
 			);
 			path = Avatar;
@@ -146,6 +143,14 @@
 				8102647D2434C093005A662C /* FriendsPhotoCell.swift */,
 			);
 			path = MyFriendsPhoto;
+			sourceTree = "<group>";
+		};
+		81A9C2F3243C24E6002CED77 /* LoginForm */ = {
+			isa = PBXGroup;
+			children = (
+				81431347242A542600AC7EDE /* LoginFormController.swift */,
+			);
+			path = LoginForm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,7 +230,6 @@
 				81E6FDBE2434B55400E2A6B6 /* AllGroupsController.swift in Sources */,
 				81DA86F02438EA57002E5BAB /* AvatarView.swift in Sources */,
 				81E6FDB42434A4C900E2A6B6 /* MyFriendsController.swift in Sources */,
-				818AF712243A1AEA00C3B396 /* AvatarShadowViev.swift in Sources */,
 				81431344242A542600AC7EDE /* AppDelegate.swift in Sources */,
 				81E6FDBA2434A7AB00E2A6B6 /* MyGroupsCell.swift in Sources */,
 				81E6FDBC2434B41C00E2A6B6 /* AllGroupsCell.swift in Sources */,
@@ -379,7 +383,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SPAUA3R9XX;
 				INFOPLIST_FILE = VK/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -398,7 +402,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SPAUA3R9XX;
 				INFOPLIST_FILE = VK/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

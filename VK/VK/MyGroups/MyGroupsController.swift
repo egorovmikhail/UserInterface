@@ -8,28 +8,48 @@
 
 import UIKit
 
-class MyGroupsController: UITableViewController {
-            
+class MyGroupsController: UIViewController {
+    
+    @IBOutlet weak var myGroupsView: UITableView!
+    
     var groups = [String] ()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        myGroupsView.dataSource = self
 
     }
+    
+    @IBAction func addGroup(segue: UIStoryboardSegue) {
+        if segue.identifier == "addGroup" {
+            let allGroupsController = segue.source as! AllGroupsController
+            if let indexPath = allGroupsController.allGroupsView.indexPathForSelectedRow {
+                let group = allGroupsController.groups[indexPath.row]
+                if !groups.contains(group) {
+                    groups.append(group)
+                    myGroupsView.reloadData()
+                }
+            }
+        }
+    }
+}
 
+extension MyGroupsController: UITableViewDataSource {
+    
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
 
-        return 1 
+        return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return groups.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyGroupsCell", for: indexPath) as! MyGroupsCell
 
         cell.myGroupsName.text = groups[indexPath.row]
@@ -37,23 +57,13 @@ class MyGroupsController: UITableViewController {
         return cell
     }
     
-    @IBAction func addGroup(segue: UIStoryboardSegue) {
-        if segue.identifier == "addGroup" {
-            let allGroupsController = segue.source as! AllGroupsController
-            if let indexPath = allGroupsController.tableView.indexPathForSelectedRow {
-                let group = allGroupsController.groups[indexPath.row]
-                if !groups.contains(group) {
-                    groups.append(group)
-                    tableView.reloadData()
-                }
-            }
-        }
-    }
-   
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             groups.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    
 }
