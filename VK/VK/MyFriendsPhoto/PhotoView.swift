@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable class PhotoView: UIView {
  
-    let imageView = UIImageView()
+    let frendPhotoView = UIImageView()
     
 @IBInspectable var image: UIImage? {
         didSet {
@@ -30,17 +30,16 @@ import UIKit
     
     func setup () {
 //        Создаём фрейм для картинки
-        imageView.frame = CGRect(x: 0, y: 0, width: 128, height: 128)
-        imageView.contentMode = .scaleAspectFit
-        addSubview(imageView)
+        frendPhotoView.frame = CGRect(x: 0, y: 0, width: 128, height: 128)
+        frendPhotoView.contentMode = .scaleToFill
+        addSubview(frendPhotoView)
 //        Создаём контур и обрезаем катинку
-        imageView.layer.borderColor = UIColor.black.cgColor
-        imageView.layer.borderWidth = 0.0
-//        imageView.layer.cornerRadius = imageView.bounds.height / 2
-        imageView.layer.masksToBounds = true
+        frendPhotoView.layer.borderColor = UIColor.black.cgColor
+        frendPhotoView.layer.borderWidth = 0.0
+//        imageView.layer.cornerRadius = frendPhotoView.bounds.height / 2
+        frendPhotoView.layer.masksToBounds = true
 //        Добавляем тень вокруг картинки
         layer.shadowColor = UIColor.black.cgColor
-//        layer.cornerRadius = imageView.bounds.height / 2
         layer.shadowRadius = 4.0
         layer.shadowOpacity = 5.0
         layer.shadowOffset = .zero
@@ -48,6 +47,6 @@ import UIKit
     
     
     func addImage() {
-        imageView.image = image
+        frendPhotoView.image = image
     }
 }

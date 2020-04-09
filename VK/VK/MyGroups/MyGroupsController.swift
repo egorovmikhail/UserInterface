@@ -36,8 +36,6 @@ class MyGroupsController: UIViewController {
 }
 
 extension MyGroupsController: UITableViewDataSource {
-    
-    // MARK: - Table view data source
 
     func numberOfSections(in tableView: UITableView) -> Int {
 

@@ -38,8 +38,6 @@ class MyFriendsController: UIViewController {
 }
 
 extension MyFriendsController: UITableViewDataSource {
-    
-    // MARK: - Table view data source
 
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
