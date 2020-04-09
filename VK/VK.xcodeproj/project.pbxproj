@@ -17,6 +17,7 @@
 		817FF6CE2436189D0037068F /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817FF6CD2436189D0037068F /* ModelUser.swift */; };
 		817FF6D224361AEF0037068F /* Model​Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817FF6D124361AEF0037068F /* Model​Group.swift */; };
 		81DA86F02438EA57002E5BAB /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DA86EF2438EA57002E5BAB /* AvatarView.swift */; };
+		81DFBFB4243F45420094EAB2 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DFBFB3243F45420094EAB2 /* PhotoView.swift */; };
 		81E6FDB42434A4C900E2A6B6 /* MyFriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E6FDB32434A4C900E2A6B6 /* MyFriendsController.swift */; };
 		81E6FDB62434A5FF00E2A6B6 /* MyFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E6FDB52434A5FF00E2A6B6 /* MyFriendsCell.swift */; };
 		81E6FDB82434A71F00E2A6B6 /* MyGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E6FDB72434A71F00E2A6B6 /* MyGroupsController.swift */; };
@@ -38,6 +39,7 @@
 		817FF6CD2436189D0037068F /* ModelUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
 		817FF6D124361AEF0037068F /* Model​Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Model​Group.swift"; sourceTree = "<group>"; };
 		81DA86EF2438EA57002E5BAB /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		81DFBFB3243F45420094EAB2 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		81E6FDB32434A4C900E2A6B6 /* MyFriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsController.swift; sourceTree = "<group>"; };
 		81E6FDB52434A5FF00E2A6B6 /* MyFriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsCell.swift; sourceTree = "<group>"; };
 		81E6FDB72434A71F00E2A6B6 /* MyGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				8102647B2434C042005A662C /* FriendsPhotoController.swift */,
 				8102647D2434C093005A662C /* FriendsPhotoCell.swift */,
+				81DFBFB3243F45420094EAB2 /* PhotoView.swift */,
 			);
 			path = MyFriendsPhoto;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				81431344242A542600AC7EDE /* AppDelegate.swift in Sources */,
 				81E6FDBA2434A7AB00E2A6B6 /* MyGroupsCell.swift in Sources */,
 				81E6FDBC2434B41C00E2A6B6 /* AllGroupsCell.swift in Sources */,
+				81DFBFB4243F45420094EAB2 /* PhotoView.swift in Sources */,
 				8102647C2434C042005A662C /* FriendsPhotoController.swift in Sources */,
 				81E6FDB82434A71F00E2A6B6 /* MyGroupsController.swift in Sources */,
 				8102647E2434C093005A662C /* FriendsPhotoCell.swift in Sources */,
