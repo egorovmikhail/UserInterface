@@ -11,7 +11,7 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class FriendsPhotoController: UICollectionViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,6 +36,13 @@ class FriendsPhotoController: UICollectionViewController {
     
         return cell
     }
+    
+    @IBAction func likeButton(_ sender: UIButton) {
+        
+        
+    }
+    
+    
 
     // MARK: UICollectionViewDelegate
 
