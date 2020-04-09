@@ -198,6 +198,7 @@
                                         <connections>
                                             <outlet property="avatarView" destination="k0G-IH-wXU" id="xLI-6f-agB"/>
                                             <outlet property="myFriendsName" destination="Q0p-1D-qoX" id="g0O-LJ-aZS"/>
+                                            <segue destination="zuG-qp-Ios" kind="show" id="Twl-7u-yva"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -421,7 +422,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bbq-qM-kx8">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="J34-jY-VxS">
                                     <size key="itemSize" width="128" height="128"/>
@@ -430,12 +431,25 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="afm-35-eN8" customClass="FriendsPhotoCell" customModule="VK" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="FriendsPhotoCell" translatesAutoresizingMaskIntoConstraints="NO" id="afm-35-eN8" customClass="FriendsPhotoCell" customModule="VK" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hi0-Y4-60A">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qM9-YN-i0r">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bCp-ns-4yu" customClass="PhotoView" customModule="VK" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="meal3"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="image" value="meal1"/>
+                                            </userDefinedRuntimeAttributes>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
@@ -450,14 +464,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ssn-c0-IEi"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Zza-fz-YXm"/>
+                    <connections>
+                        <outlet property="collectionView" destination="bbq-qM-kx8" id="VO8-hh-ga6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ju1-rU-PyT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-17875" y="2547"/>
+            <point key="canvasLocation" x="-17875.36231884058" y="2546.6517857142858"/>
         </scene>
     </scenes>
     <resources>
         <image name="defaultPhoto" width="1080" height="1080"/>
+        <image name="meal1" width="1080" height="1080"/>
+        <image name="meal3" width="1041" height="1080"/>
         <image name="person.2" catalog="system" width="128" height="81"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
     </resources>
