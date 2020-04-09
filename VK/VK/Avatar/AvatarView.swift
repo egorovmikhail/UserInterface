@@ -29,16 +29,16 @@ import UIKit
     }
     
     func setup () {
-
+//        Создаём фрейм для картинки
         imageView.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         imageView.contentMode = .scaleAspectFit
         addSubview(imageView)
-
+//        Создаём контур и обрезаем катинку
         imageView.layer.borderColor = UIColor.black.cgColor
         imageView.layer.borderWidth = 0.0
         imageView.layer.cornerRadius = imageView.bounds.height / 2
         imageView.layer.masksToBounds = true
-        
+//        Добавляем тень вокруг картинки
         layer.shadowColor = UIColor.black.cgColor
         layer.cornerRadius = imageView.bounds.height / 2
         layer.shadowRadius = 4.0
