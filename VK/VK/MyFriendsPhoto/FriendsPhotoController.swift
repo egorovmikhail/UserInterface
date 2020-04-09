@@ -12,12 +12,12 @@ private let reuseIdentifier = "Cell"
 
 class FriendsPhotoController: UIViewController {
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionPhotoView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.dataSource = self
+        collectionPhotoView.dataSource = self
 
     }
     
