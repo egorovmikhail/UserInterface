@@ -198,7 +198,6 @@
                                         <connections>
                                             <outlet property="avatarView" destination="k0G-IH-wXU" id="xLI-6f-agB"/>
                                             <outlet property="myFriendsName" destination="Q0p-1D-qoX" id="g0O-LJ-aZS"/>
-                                            <segue destination="Hq9-WK-fJL" kind="show" id="TET-gw-ew1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -304,82 +303,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8NP-jG-WMJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-16940.579710144928" y="1733.7053571428571"/>
-        </scene>
-        <!--Friends Photo Controller-->
-        <scene sceneID="vdV-fm-iT6">
-            <objects>
-                <collectionViewController id="Hq9-WK-fJL" customClass="FriendsPhotoController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="JCt-yf-ji1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PV5-x0-YHq">
-                            <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendsPhotoCell" id="5lf-N7-y6a" customClass="FriendsPhotoCell" customModule="VK" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="28e-EN-RgB">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="GSl-a8-46j">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="128" id="9ih-oh-UYO"/>
-                                                <constraint firstAttribute="height" constant="128" id="FCv-c5-YNy"/>
-                                            </constraints>
-                                        </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFc-d0-YzN">
-                                            <rect key="frame" x="100" y="108" width="20" height="20"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="20" id="bFO-XS-kvP"/>
-                                                <constraint firstAttribute="height" constant="20" id="dsj-kc-xZC"/>
-                                            </constraints>
-                                            <state key="normal" image="heart" catalog="system"/>
-                                            <connections>
-                                                <action selector="likeButton:" destination="Hq9-WK-fJL" eventType="touchUpInside" id="4kP-A2-IKZ"/>
-                                            </connections>
-                                        </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pge-70-q8e">
-                                            <rect key="frame" x="89.666666666666671" y="107.66666666666667" width="10.333333333333329" height="21.000000000000014"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="UFc-d0-YzN" firstAttribute="leading" secondItem="Pge-70-q8e" secondAttribute="trailing" id="7tK-eR-oaM"/>
-                                        <constraint firstItem="Pge-70-q8e" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="28e-EN-RgB" secondAttribute="leading" constant="20" symbolic="YES" id="OKH-jo-cYU"/>
-                                        <constraint firstItem="GSl-a8-46j" firstAttribute="centerY" secondItem="28e-EN-RgB" secondAttribute="centerY" id="V1i-pg-dmS"/>
-                                        <constraint firstItem="GSl-a8-46j" firstAttribute="leading" secondItem="28e-EN-RgB" secondAttribute="leading" id="X8s-O0-iha"/>
-                                        <constraint firstItem="GSl-a8-46j" firstAttribute="top" secondItem="28e-EN-RgB" secondAttribute="top" id="alX-mc-b9a"/>
-                                        <constraint firstAttribute="bottom" secondItem="UFc-d0-YzN" secondAttribute="bottom" id="f12-2P-7ZG"/>
-                                        <constraint firstAttribute="trailing" secondItem="UFc-d0-YzN" secondAttribute="trailing" constant="8" id="k7C-7O-vK6"/>
-                                        <constraint firstItem="Pge-70-q8e" firstAttribute="centerY" secondItem="UFc-d0-YzN" secondAttribute="centerY" id="mRM-sl-raI"/>
-                                        <constraint firstItem="GSl-a8-46j" firstAttribute="centerX" secondItem="28e-EN-RgB" secondAttribute="centerX" id="yMb-33-9Lh"/>
-                                    </constraints>
-                                </collectionViewCellContentView>
-                                <connections>
-                                    <outlet property="friendPhoto" destination="GSl-a8-46j" id="bpd-s7-B5h"/>
-                                    <outlet property="likeLabel" destination="Pge-70-q8e" id="wdJ-Nf-KW3"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="Hq9-WK-fJL" id="tO2-hU-DUn"/>
-                            <outlet property="delegate" destination="Hq9-WK-fJL" id="YEp-Vh-utI"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="VFL-qS-HUV"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Hq-YW-iA1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-17878.26086956522" y="2546.6517857142858"/>
         </scene>
         <!--All Groups Controller-->
         <scene sceneID="dt0-Da-4yA">
@@ -489,10 +412,52 @@
             </objects>
             <point key="canvasLocation" x="-16942.028985507248" y="2546.6517857142858"/>
         </scene>
+        <!--Friends Photo Controller-->
+        <scene sceneID="6FK-PC-GLM">
+            <objects>
+                <viewController id="zuG-qp-Ios" customClass="FriendsPhotoController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6ww-Nm-tTo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bbq-qM-kx8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="J34-jY-VxS">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="afm-35-eN8" customClass="FriendsPhotoCell" customModule="VK" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hi0-Y4-60A">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bbq-qM-kx8" firstAttribute="top" secondItem="Ssn-c0-IEi" secondAttribute="top" id="3mu-1b-681"/>
+                            <constraint firstItem="Ssn-c0-IEi" firstAttribute="trailing" secondItem="bbq-qM-kx8" secondAttribute="trailing" id="5Uc-Pn-KFL"/>
+                            <constraint firstItem="Ssn-c0-IEi" firstAttribute="bottom" secondItem="bbq-qM-kx8" secondAttribute="bottom" id="GsI-dd-s5D"/>
+                            <constraint firstItem="bbq-qM-kx8" firstAttribute="leading" secondItem="Ssn-c0-IEi" secondAttribute="leading" id="WXc-Xc-fL8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ssn-c0-IEi"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ju1-rU-PyT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-17875" y="2547"/>
+        </scene>
     </scenes>
     <resources>
         <image name="defaultPhoto" width="1080" height="1080"/>
-        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="person.2" catalog="system" width="128" height="81"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
     </resources>
