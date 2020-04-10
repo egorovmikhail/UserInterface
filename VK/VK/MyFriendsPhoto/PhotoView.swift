@@ -33,19 +33,11 @@ import UIKit
         frendPhotoView.frame = CGRect(x: 0, y: 0, width: 128, height: 128)
         frendPhotoView.contentMode = .scaleToFill
         addSubview(frendPhotoView)
-//        Создаём контур и обрезаем катинку
+//        Создаём контур
         frendPhotoView.layer.borderColor = UIColor.black.cgColor
-        frendPhotoView.layer.borderWidth = 0.0
-//        imageView.layer.cornerRadius = frendPhotoView.bounds.height / 2
-        frendPhotoView.layer.masksToBounds = true
-//        Добавляем тень вокруг картинки
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowRadius = 4.0
-        layer.shadowOpacity = 5.0
-        layer.shadowOffset = .zero
+        frendPhotoView.layer.borderWidth = 0.5
     }
-    
-    
+        
     func addImage() {
         frendPhotoView.image = image
     }
