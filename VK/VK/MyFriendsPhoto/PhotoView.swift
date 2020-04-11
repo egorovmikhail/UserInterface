@@ -30,7 +30,7 @@ import UIKit
     
     func setup () {
 //        Создаём фрейм для картинки
-        frendPhotoView.frame = CGRect(x: 0, y: 0, width: 128, height: 128)
+        frendPhotoView.frame = CGRect(x: 0, y: 0, width: 182, height: 182)
         frendPhotoView.contentMode = .scaleToFill
         addSubview(frendPhotoView)
 //        Создаём контур
