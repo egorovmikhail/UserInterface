@@ -156,9 +156,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CFH-AP-Qsu">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CFH-AP-Qsu">
                                 <rect key="frame" x="0.0" y="83" width="414" height="730"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyFriendsCell" id="xYP-og-UpH" customClass="MyFriendsCell" customModule="VK" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="68.333335876464844"/>
@@ -360,36 +359,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2GS-ws-Ss8">
-                                <rect key="frame" x="389" y="360" width="25" height="176"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="176" id="MkS-Fy-EDG"/>
-                                    <constraint firstAttribute="width" constant="25" id="uTi-xC-NiK"/>
-                                </constraints>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="NFt-hx-fy5">
-                                        <rect key="frame" x="0.0" y="28" width="25" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NFt-hx-fy5" id="9Rr-ji-N12">
-                                            <rect key="frame" x="0.0" y="0.0" width="25" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="А" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIK-jT-46q">
-                                                    <rect key="frame" x="7.0000000000000009" y="11.999999999999998" width="11.333333333333336" height="20.333333333333329"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="XIK-jT-46q" firstAttribute="centerY" secondItem="9Rr-ji-N12" secondAttribute="centerY" id="B6p-PP-NJB"/>
-                                                <constraint firstItem="XIK-jT-46q" firstAttribute="centerX" secondItem="9Rr-ji-N12" secondAttribute="centerX" id="k5p-15-oW6"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -397,8 +366,6 @@
                             <constraint firstItem="7S7-OO-eGZ" firstAttribute="trailing" secondItem="4E3-eg-0xv" secondAttribute="trailing" id="FIm-jD-WNb"/>
                             <constraint firstItem="4E3-eg-0xv" firstAttribute="centerX" secondItem="PT0-at-epR" secondAttribute="centerX" id="Q3g-Eh-vUz"/>
                             <constraint firstItem="7S7-OO-eGZ" firstAttribute="bottom" secondItem="4E3-eg-0xv" secondAttribute="bottom" id="bHa-yn-Ofn"/>
-                            <constraint firstItem="2GS-ws-Ss8" firstAttribute="trailing" secondItem="7S7-OO-eGZ" secondAttribute="trailing" id="cSF-c7-wrQ"/>
-                            <constraint firstItem="2GS-ws-Ss8" firstAttribute="centerY" secondItem="PT0-at-epR" secondAttribute="centerY" id="v89-O1-vHE"/>
                             <constraint firstItem="4E3-eg-0xv" firstAttribute="leading" secondItem="7S7-OO-eGZ" secondAttribute="leading" id="vyj-20-4fr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7S7-OO-eGZ"/>
@@ -431,7 +398,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="128" placeholderIntrinsicHeight="128" reuseIdentifier="FriendsPhotoCell" translatesAutoresizingMaskIntoConstraints="NO" id="afm-35-eN8" customClass="FriendsPhotoCell" customModule="VK" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="128" placeholderIntrinsicHeight="128" reuseIdentifier="FriendsPhotoCell" translatesAutoresizingMaskIntoConstraints="NO" id="afm-35-eN8" customClass="FriendsPhotoCell" customModule="VK" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="182" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hnK-fV-kPK" customClass="PhotoView" customModule="VK" customModuleProvider="target">
