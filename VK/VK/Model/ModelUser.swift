@@ -6,11 +6,11 @@
 //  Copyright © 2020 Михаил Егоров. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-struct User {
+struct Frend {
     var firstName: String?
     var lastName: String?
-    var city: String?
+    var avatarPhoto: UIImage?
 }
 

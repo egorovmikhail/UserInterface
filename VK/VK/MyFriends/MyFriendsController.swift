@@ -25,12 +25,14 @@ class MyFriendsController: UIViewController {
             "Оля",
             "Олег",
             "Саша",
-            "Cлава",
+            "Слава",
             "Сергей",
             "Даша",
             "Маша",
             "Коля",
-            "Толя"
+            "Толя",
+            "Аля",
+            "Андрей"
         ]
         
         for i in friends {
@@ -67,7 +69,6 @@ extension MyFriendsController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return friendSection[section]
     }
-
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyFriendsCell", for: indexPath) as! MyFriendsCell

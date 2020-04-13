@@ -6,9 +6,9 @@
 //  Copyright © 2020 Михаил Егоров. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Group {
-    var name: String
-    var city: String?
+    var groupName: String?
+    var avatarPhoto: UIImage?
 }
