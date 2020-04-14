@@ -22,8 +22,7 @@ class FriendsPhotoController: UIViewController {
     }
     
     @IBAction func likeButton(_ sender: UIButton) {
-        
-        
+                
     }
 }
 

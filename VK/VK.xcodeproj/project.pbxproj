@@ -78,6 +78,7 @@
 		81431342242A542600AC7EDE /* VK */ = {
 			isa = PBXGroup;
 			children = (
+				81431343242A542600AC7EDE /* AppDelegate.swift */,
 				81A9C2F3243C24E6002CED77 /* LoginForm */,
 				817FF6CC2436182C0037068F /* Model */,
 				818AF713243A1AFC00C3B396 /* Avatar */,
@@ -85,7 +86,6 @@
 				819D23A52434CD32005EBCC6 /* MyGroups */,
 				819D23A42434CC9B005EBCC6 /* MyFriends */,
 				819D23A72434CD94005EBCC6 /* MyFriendsPhoto */,
-				81431343242A542600AC7EDE /* AppDelegate.swift */,
 				81431349242A542600AC7EDE /* Main.storyboard */,
 				8143134C242A542700AC7EDE /* Assets.xcassets */,
 				8143134E242A542700AC7EDE /* LaunchScreen.storyboard */,

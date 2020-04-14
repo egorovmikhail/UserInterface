@@ -29,13 +29,16 @@ import UIKit
     }
     
     func setup () {
-//        Создаём фрейм для картинки
-        frendPhotoView.frame = CGRect(x: 0, y: 0, width: 128, height: 128)
+
         frendPhotoView.contentMode = .scaleToFill
         addSubview(frendPhotoView)
-//        Создаём контур
         frendPhotoView.layer.borderColor = UIColor.black.cgColor
         frendPhotoView.layer.borderWidth = 0.5
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        frendPhotoView.frame = bounds
     }
         
     func addImage() {

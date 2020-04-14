@@ -12,50 +12,77 @@ class MyFriendsController: UIViewController {
     
     @IBOutlet weak var myFriendsView: UITableView!
     
-    var friends = [
-        "Оля",
-        "Саша",
-        "Даша",
-        "Маша",
-        "Коля",
-        "Толя"
-    ]
+    var friendDictionary = [String: [String]]()
+    var friendSection = [String]()
+    var friends = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         myFriendsView.dataSource = self
+        
+        friends = [
+            "Оля",
+            "Олег",
+            "Саша",
+            "Слава",
+            "Сергей",
+            "Даша",
+            "Маша",
+            "Коля",
+            "Толя",
+            "Аля",
+            "Андрей"
+        ]
+        
+        for i in friends {
+            let friendKey = String(i.prefix(1))
+            if var friendValues = friendDictionary[friendKey] {
+                friendValues.append(i)
+                friendDictionary[friendKey] = friendValues
+            } else {
+                friendDictionary[friendKey] = [i]
+            }
+        }
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        friendSection = [String](friendDictionary.keys)
+        friendSection = friendSection.sorted(by: { $0 < $1 })
+        
     }
-
-
-
 }
 
 extension MyFriendsController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        
+        return friendSection.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return friends.count
+        let friendKey = friendSection[section]
+        if let friendValues = friendDictionary[friendKey] {
+            return friendValues.count
+        }
+        return 0
     }
-
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return friendSection[section]
+    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyFriendsCell", for: indexPath) as! MyFriendsCell
 
-        cell.myFriendsName.text = friends[indexPath.row]
+        let friendKey = friendSection[indexPath.section]
+        if let friendValues = friendDictionary[friendKey] {
+            cell.myFriendsName?.text = friendValues[indexPath.row]
+        }
 
         return cell
+    }
+    
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return friendSection
     }
     
 }
