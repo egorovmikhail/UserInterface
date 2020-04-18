@@ -12,5 +12,8 @@ class MyFriendsCell: UITableViewCell {
 
     @IBOutlet weak var myFriendsName: UILabel!
     @IBOutlet weak var avatarView: AvatarView!
-
+    
+    @IBAction func avatarAnimate(_ sender: Any?) {
+        avatarView.animateAuthButton​()
+    }
 }
