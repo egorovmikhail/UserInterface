@@ -11,6 +11,6 @@ import UIKit
 struct Frend {
     var firstName: String?
     var lastName: String?
-    var avatarPhoto: UIImage?
+    var avatar: UIImage?
 }
 
