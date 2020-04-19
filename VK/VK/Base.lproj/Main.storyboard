@@ -180,7 +180,7 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NnQ-GA-1oI">
                                                             <rect key="frame" x="0.0" y="0.0" width="44" height="44.333333333333336"/>
                                                             <connections>
-                                                                <action selector="avatarAnimate:" destination="xYP-og-UpH" eventType="touchUpInside" id="dfl-qi-TAX"/>
+                                                                <action selector="avatarAnimate:" destination="xYP-og-UpH" eventType="touchDown" id="EOs-kl-ID3"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -274,7 +274,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="44" height="44.333333333333336"/>
                                                             <state key="normal" title="Button"/>
                                                             <connections>
-                                                                <action selector="avatarAnimate:" destination="gb7-Qm-muL" eventType="touchUpInside" id="Dfb-2j-xVP"/>
+                                                                <action selector="avatarAnimate:" destination="gb7-Qm-muL" eventType="touchDown" id="mi5-ha-3HI"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -367,7 +367,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="44" height="44.333333333333336"/>
                                                             <state key="normal" title="Button"/>
                                                             <connections>
-                                                                <action selector="avatarAnimate:" destination="6CD-M3-D23" eventType="touchUpInside" id="1bR-jg-pO1"/>
+                                                                <action selector="avatarAnimate:" destination="6CD-M3-D23" eventType="touchDown" id="d16-ak-knk"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -473,7 +473,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="128" placeholderIntrinsicHeight="128" reuseIdentifier="FriendsPhotoCell" translatesAutoresizingMaskIntoConstraints="NO" id="afm-35-eN8" customClass="FriendsPhotoCell" customModule="VK" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="128" placeholderIntrinsicHeight="128" reuseIdentifier="FriendsPhotoCell" translatesAutoresizingMaskIntoConstraints="NO" id="afm-35-eN8" customClass="FriendsPhotoCell" customModule="VK" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="182" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hnK-fV-kPK" customClass="PhotoView" customModule="VK" customModuleProvider="target">

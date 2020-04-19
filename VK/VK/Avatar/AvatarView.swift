@@ -59,12 +59,12 @@ import UIKit
     
     func animateAuthButton​() {
         let animation = CASpringAnimation(keyPath: "transform.scale")
-        animation.fromValue = 0.5
+        animation.fromValue = 0.85
         animation.toValue = 1
         animation.stiffness = 200
         animation.mass = 2
-        animation.duration = 1
-        animation.beginTime = CACurrentMediaTime()
+        animation.duration = 2
+        animation.beginTime = CACurrentMediaTime() + 0.2
         animation.fillMode = CAMediaTimingFillMode.backwards
         
         layer.add(animation, forKey: nil)
