@@ -20,10 +20,6 @@ class FriendsPhotoController: UIViewController {
         collectionPhotoView.dataSource = self
 
     }
-    
-    @IBAction func likeButton(_ sender: UIButton) {
-                
-    }
 }
 
 extension FriendsPhotoController: UICollectionViewDataSource {

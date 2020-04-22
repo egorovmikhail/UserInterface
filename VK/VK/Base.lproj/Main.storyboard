@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -131,7 +131,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MMB-zS-RON" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16516" y="23"/>
+            <point key="canvasLocation" x="-16941" y="23"/>
         </scene>
         <!--Группы-->
         <scene sceneID="Egt-8Z-u6A">
@@ -174,12 +174,28 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0G-IH-wXU" customClass="AvatarView" customModule="VK" customModuleProvider="target">
+                                                <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0G-IH-wXU" customClass="AvatarView" customModule="VK" customModuleProvider="target">
                                                     <rect key="frame" x="358" y="12.000000000000004" width="44" height="44.333333333333343"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NnQ-GA-1oI">
+                                                            <rect key="frame" x="0.0" y="0.0" width="44" height="44.333333333333336"/>
+                                                            <connections>
+                                                                <action selector="avatarAnimate:" destination="xYP-og-UpH" eventType="touchDown" id="EOs-kl-ID3"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" button="YES"/>
+                                                        <bool key="isElement" value="NO"/>
+                                                    </accessibility>
                                                     <constraints>
+                                                        <constraint firstItem="NnQ-GA-1oI" firstAttribute="top" secondItem="k0G-IH-wXU" secondAttribute="top" id="4QW-Ih-stm"/>
+                                                        <constraint firstAttribute="trailing" secondItem="NnQ-GA-1oI" secondAttribute="trailing" id="THb-62-pxB"/>
                                                         <constraint firstAttribute="width" constant="44" id="WtD-K7-nod"/>
                                                         <constraint firstAttribute="height" constant="44" id="YxI-71-FEL"/>
+                                                        <constraint firstAttribute="bottom" secondItem="NnQ-GA-1oI" secondAttribute="bottom" id="gRZ-ZU-QQ7"/>
+                                                        <constraint firstItem="NnQ-GA-1oI" firstAttribute="leading" secondItem="k0G-IH-wXU" secondAttribute="leading" id="q7M-du-iyG"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="image" value="defaultPhoto"/>
@@ -224,7 +240,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pep-i2-al9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="1bm-os-DKk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-17878.26086956522" y="1733.7053571428571"/>
+            <point key="canvasLocation" x="-17752.17391304348" y="1733.7053571428571"/>
         </scene>
         <!--My Groups Controller-->
         <scene sceneID="J82-uu-SO6">
@@ -253,10 +269,23 @@
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjs-eE-hvz" customClass="AvatarView" customModule="VK" customModuleProvider="target">
                                                     <rect key="frame" x="358" y="12.000000000000004" width="44" height="44.333333333333343"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FnW-HP-bjg">
+                                                            <rect key="frame" x="0.0" y="0.0" width="44" height="44.333333333333336"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <connections>
+                                                                <action selector="avatarAnimate:" destination="gb7-Qm-muL" eventType="touchDown" id="mi5-ha-3HI"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="3Ci-D9-Wif"/>
                                                         <constraint firstAttribute="height" constant="44" id="76K-Ck-wxK"/>
+                                                        <constraint firstItem="FnW-HP-bjg" firstAttribute="leading" secondItem="bjs-eE-hvz" secondAttribute="leading" id="ClJ-MO-c5M"/>
+                                                        <constraint firstAttribute="bottom" secondItem="FnW-HP-bjg" secondAttribute="bottom" id="FvC-fY-Gwk"/>
+                                                        <constraint firstAttribute="trailing" secondItem="FnW-HP-bjg" secondAttribute="trailing" id="j4b-fi-aHB"/>
+                                                        <constraint firstItem="FnW-HP-bjg" firstAttribute="top" secondItem="bjs-eE-hvz" secondAttribute="top" id="jIF-P3-FEM"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="image" value="defaultPhoto"/>
@@ -333,10 +362,23 @@
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DlP-u8-dqD" customClass="AvatarView" customModule="VK" customModuleProvider="target">
                                                     <rect key="frame" x="358" y="12.000000000000004" width="44" height="44.333333333333343"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6Q-Cb-s3c">
+                                                            <rect key="frame" x="0.0" y="0.0" width="44" height="44.333333333333336"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <connections>
+                                                                <action selector="avatarAnimate:" destination="6CD-M3-D23" eventType="touchDown" id="d16-ak-knk"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
+                                                        <constraint firstItem="f6Q-Cb-s3c" firstAttribute="top" secondItem="DlP-u8-dqD" secondAttribute="top" id="H0B-Tc-V4H"/>
+                                                        <constraint firstItem="f6Q-Cb-s3c" firstAttribute="leading" secondItem="DlP-u8-dqD" secondAttribute="leading" id="OZz-nJ-qWs"/>
                                                         <constraint firstAttribute="height" constant="44" id="cOy-AI-rlN"/>
+                                                        <constraint firstAttribute="bottom" secondItem="f6Q-Cb-s3c" secondAttribute="bottom" id="svf-d4-rZV"/>
                                                         <constraint firstAttribute="width" constant="44" id="vEd-03-T9o"/>
+                                                        <constraint firstAttribute="trailing" secondItem="f6Q-Cb-s3c" secondAttribute="trailing" id="yrN-UV-XjH"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="image" value="defaultPhoto"/>
@@ -395,7 +437,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ed-6Y-w0L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16036" y="2547"/>
+            <point key="canvasLocation" x="-16110" y="2547"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Gu4-cf-Pxr">
@@ -411,7 +453,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3eK-lt-bWT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15181" y="2547"/>
+            <point key="canvasLocation" x="-15297" y="2547"/>
         </scene>
         <!--Friends Photo Controller-->
         <scene sceneID="6FK-PC-GLM">
@@ -465,7 +507,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ju1-rU-PyT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-17875.36231884058" y="2546.6517857142858"/>
+            <point key="canvasLocation" x="-17752.17391304348" y="2546.6517857142858"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="7vE-rx-pOG">
@@ -481,7 +523,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGB-su-92L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16062" y="1734"/>
+            <point key="canvasLocation" x="-16110" y="1734"/>
         </scene>
         <!--Новости-->
         <scene sceneID="bnV-Hs-OC1">
@@ -498,7 +540,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="69e-Zs-kj9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16061" y="909"/>
+            <point key="canvasLocation" x="-16110" y="909"/>
         </scene>
         <!--Сообщения-->
         <scene sceneID="DE7-EF-H8q">
@@ -515,7 +557,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QIK-2O-sTz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15180" y="909"/>
+            <point key="canvasLocation" x="-15297" y="909"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5z6-tK-8Ij">
@@ -556,7 +598,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SgT-yx-drF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15181" y="1734"/>
+            <point key="canvasLocation" x="-15297" y="1734"/>
         </scene>
     </scenes>
     <resources>

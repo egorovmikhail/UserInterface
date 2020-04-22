@@ -13,4 +13,8 @@ class MyGroupsCell: UITableViewCell {
     @IBOutlet weak var myGroupsName: UILabel!
     @IBOutlet weak var avatarView: AvatarView!
     
+    @IBAction func avatarAnimate(_ sender: Any?) {
+        avatarView.animateAuthButton​()
+    }
+    
 }
