@@ -12,7 +12,7 @@ class MyGroupsController: UIViewController {
     
     @IBOutlet weak var myGroupsView: UITableView!
     
-    var groups = [String] ()
+    var groups: [Group] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,8 @@ extension MyGroupsController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyGroupsCell", for: indexPath) as! MyGroupsCell
 
-        cell.myGroupsName.text = groups[indexPath.row]
+        cell.myGroupsName.text = groups[indexPath.row].name
+        cell.avatarView.image = groups[indexPath.row].avatar
 
         return cell
     }

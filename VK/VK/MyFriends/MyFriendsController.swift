@@ -12,31 +12,17 @@ class MyFriendsController: UIViewController {
     
     @IBOutlet weak var myFriendsView: UITableView!
     
-    var friendDictionary = [String: [String]]()
+    var friendDictionary = [String: [Friend]]()
     var friendSection = [String]()
-    var friends = [String]()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         myFriendsView.dataSource = self
         
-        friends = [
-            "Оля",
-            "Олег",
-            "Саша",
-            "Слава",
-            "Сергей",
-            "Даша",
-            "Маша",
-            "Коля",
-            "Толя",
-            "Аля",
-            "Андрей"
-        ]
-        
         for i in friends {
-            let friendKey = String(i.prefix(1))
+            let friendKey = String(i.name!.prefix(1))
             if var friendValues = friendDictionary[friendKey] {
                 friendValues.append(i)
                 friendDictionary[friendKey] = friendValues
@@ -75,7 +61,8 @@ extension MyFriendsController: UITableViewDataSource {
 
         let friendKey = friendSection[indexPath.section]
         if let friendValues = friendDictionary[friendKey] {
-            cell.myFriendsName?.text = friendValues[indexPath.row]
+            cell.myFriendsName?.text = friendValues[indexPath.row].name
+            cell.avatarView.image = friendValues[indexPath.row].avatar
         }
 
         return cell

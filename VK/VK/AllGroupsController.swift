@@ -13,13 +13,13 @@ class AllGroupsController: UIViewController {
     @IBOutlet weak var allGroupsView: UITableView!
     
     var groups = [
-        "Сабаководы",
-        "Любители кошек",
-        "Мозг",
-        "GeekBrains",
-        "Мой город",
-        "Здоровый образ",
-        "Саморазвитие"
+        brain,
+        catBreeders,
+        dogBreeders,
+        healthyLifestyle,
+        myСity,
+        selfDevelopment,
+        geekBrains
     ]
 
     override func viewDidLoad() {
@@ -46,8 +46,9 @@ extension AllGroupsController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AllGroupsCell", for: indexPath) as! AllGroupsCell
 
-        cell.allGroupsName.text = groups[indexPath.row]
-
+        cell.allGroupsName.text = groups[indexPath.row].name
+        cell.avatarView.image = groups[indexPath.row].avatar
+        
         return cell
     }
     
