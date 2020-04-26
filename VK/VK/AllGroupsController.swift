@@ -13,13 +13,13 @@ class AllGroupsController: UIViewController {
     @IBOutlet weak var allGroupsView: UITableView!
     
     var groups = [
-        brain,
-        catBreeders,
-        dogBreeders,
-        healthyLifestyle,
-        myСity,
-        selfDevelopment,
-        geekBrains
+        Group(name: "Мозг", avatar: UIImage(named: "brain")),
+        Group(name: "Любители кошек", avatar: UIImage(named: "catBreeders")),
+        Group(name: "Сабаководы", avatar: UIImage(named: "dogBreeders")),
+        Group(name: "Здоровый образ жизни", avatar: UIImage(named: "healthyLifestyle")),
+        Group(name: "Мой город", avatar: UIImage(named: "myСity")),
+        Group(name: "Саморазвитие", avatar: UIImage(named: "selfDevelopment")),
+        Group(name: "Geek Brains", avatar: UIImage(named: "geekBrains"))        
     ]
 
     override func viewDidLoad() {

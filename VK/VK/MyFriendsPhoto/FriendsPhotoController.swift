@@ -14,6 +14,8 @@ class FriendsPhotoController: UIViewController {
     
     @IBOutlet weak var collectionPhotoView: UICollectionView!
     
+    var friend: User!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,12 +34,12 @@ extension FriendsPhotoController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 1
+        return friend.photo.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendsPhotoCell", for: indexPath) as! FriendsPhotoCell
-        cell.photoView.image = friends[indexPath.row].photo[indexPath.row]
+        cell.photoView.image = friend.photo[indexPath.row]
     
         return cell
     }

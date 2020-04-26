@@ -12,28 +12,32 @@ class MyFriendsController: UIViewController {
     
     @IBOutlet weak var myFriendsView: UITableView!
     
-    var friendDictionary = [String: [Friend]]()
+    var friendDictionary = [String: [User]]()
     var friendSection = [String]()
-    
+    var friends = [
+        User(name: "Аля", avatar: UIImage(named: "alya") , photo: [UIImage(named: "alya"), UIImage(named: "defaultPhoto")]),
+        User(name: "Андрей", avatar: UIImage(named: "andrey"), photo: [UIImage(named: "andrey")]),
+        User(name: "Дарья", avatar: UIImage(named: "dariya"), photo: [UIImage(named: "dariya")]),
+        User(name: "Маша", avatar: UIImage(named: "masha"), photo: [UIImage(named: "masha")]),
+        User(name: "Олег", avatar: UIImage(named: "oleg"), photo: [UIImage(named: "oleg")]),
+        User(name: "Ольга", avatar: UIImage(named: "olga"), photo: [UIImage(named: "olga")]),
+        User(name: "Рома", avatar: UIImage(named: "roma"), photo: [UIImage(named: "roma")]),
+        User(name: "Саша", avatar: UIImage(named: "sasha"), photo: [UIImage(named: "sasha")]),
+        User(name: "Сергей", avatar: UIImage(named: "sergey"), photo: [UIImage(named: "sergey")]),
+        User(name: "Слава", avatar: UIImage(named: "slava"), photo: [UIImage(named: "slava")]),
+        User(name: "Софья", avatar: UIImage(named: "sofya"), photo: [UIImage(named: "sofya")]),
+        User(name: "Толя", avatar: UIImage(named: "tolya"), photo: [UIImage(named: "tolya")])
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         myFriendsView.dataSource = self
         
-        for i in friends {
-            let friendKey = String(i.name!.prefix(1))
-            if var friendValues = friendDictionary[friendKey] {
-                friendValues.append(i)
-                friendDictionary[friendKey] = friendValues
-            } else {
-                friendDictionary[friendKey] = [i]
-            }
-        }
+        friendDictionary = Dictionary(grouping: friends, by: {String(($0.name?.first!)!)})
 
         friendSection = [String](friendDictionary.keys)
-        friendSection = friendSection.sorted(by: { $0 < $1 })
-        
+        friendSection = friendSection.sorted { $0 < $1 }        
     }
 }
 
@@ -72,4 +76,11 @@ extension MyFriendsController: UITableViewDataSource {
         return friendSection
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueFriendPhoto" {
+            if let vc = segue.destination as? MyFriendsController {
+//                vc.friend = friends[tableView.indexPathForSelectedRow!.row]
+            }
+        }
+    }
 }
