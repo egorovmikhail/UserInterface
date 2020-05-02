@@ -12,30 +12,33 @@ class MyFriendsController: UIViewController {
     
     @IBOutlet weak var myFriendsView: UITableView!
     
-    var sortedFriend = [User]()
+    var sortedFriend = user
+    var friendSection = [Section]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        sortedFriend = user.sorted {
-            var isSorted = false
-            if let first = $0.name,
-                let second = $1.name {
-                isSorted = first < second
-            }
-            return isSorted
-        }        
+        sortedFriends(friends: sortedFriend)
     }
 }
 
 extension MyFriendsController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return friendSection.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        friendSection[section].title
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sortedFriend.count
+        return friendSection[section].items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyFriendsCell", for: indexPath) as! MyFriendsCell
-        cell.myFriendsName.text = sortedFriend[indexPath.row].name
-        cell.avatarView.image = sortedFriend[indexPath.row].avatar
+        cell.myFriendsName.text = friendSection[indexPath.section].items[indexPath.row].name
+        cell.avatarView.image = friendSection[indexPath.section].items[indexPath.row].avatar
         return cell
     }
     
@@ -47,5 +50,12 @@ extension MyFriendsController: UITableViewDataSource {
             }
         }
     }
+    
+    func sortedFriends(friends: [User]) {
+        let userDictionary = Dictionary(grouping: friends, by: {$0.name!.prefix(1)})
+        friendSection = userDictionary.map{Section(title: String($0.key), items: $0.value)}
+        friendSection.sort{$0.title < $1.title}
+    }
+    
 }
 

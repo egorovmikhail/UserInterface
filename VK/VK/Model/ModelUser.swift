@@ -15,6 +15,11 @@ struct User {
     let photo: [UIImage?]
 }
 
+struct Section {
+    let title: String
+    let items: [User]
+}
+
 
 var user = [
     User(name: "Аля"   , avatar: UIImage(named: "alya"  ), photo: [UIImage(named: "alya"  ), UIImage(named: "defaultPhoto")]),
