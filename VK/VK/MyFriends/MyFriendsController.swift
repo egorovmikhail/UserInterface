@@ -45,8 +45,8 @@ extension MyFriendsController: UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueFriendsPhoto" {
             if let vc = segue.destination as? FriendsPhotoController {
-                let friendIndex = myFriendsView.indexPathForSelectedRow?.row
-                vc.friend = sortedFriend[friendIndex!]
+                let friendIndex = myFriendsView.indexPathForSelectedRow!
+                vc.friend = friendSection[friendIndex.section].items[friendIndex.row]
             }
         }
     }
