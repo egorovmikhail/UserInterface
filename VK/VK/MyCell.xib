@@ -39,7 +39,7 @@
                     <constraint firstAttribute="bottom" secondItem="qXm-t1-2Oz" secondAttribute="bottom" constant="12" id="bVt-c0-Sia"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="-65.217391304347828" y="-86.71875"/>
+            <point key="canvasLocation" x="129" y="-132"/>
         </tableViewCell>
     </objects>
 </document>
