@@ -21,25 +21,22 @@ class FriendsPhotoController: UIViewController {
         super.viewDidLoad()
         
         collectionPhotoView.dataSource = self
-
+        
     }
 }
 
 extension FriendsPhotoController: UICollectionViewDataSource {
-
-    
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-
+        
         return 1
     }
-
-
+        
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    
+        
         return friend!.photo.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendsPhotoCell", for: indexPath) as! FriendsPhotoCell
         cell.photoView.image = friend?.photo[indexPath.row]
@@ -47,4 +44,12 @@ extension FriendsPhotoController: UICollectionViewDataSource {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "seguePhoto" {
+            if let vcPhoto = segue.destination as? PhotoViewController {
+                vcPhoto.photo = friend?.photo as! [UIImage]
+                
+            }
+        }
+    }    
 }
