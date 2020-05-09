@@ -47,7 +47,7 @@ import UIKit
 //        Добавляем тень вокруг картинки
         layer.shadowColor = UIColor.black.cgColor
         layer.cornerRadius = avatar.bounds.height / 2
-        layer.shadowRadius = 4.0
+        layer.shadowRadius = 8.0
         layer.shadowOpacity = 5.0
         layer.shadowOffset = .zero
 
