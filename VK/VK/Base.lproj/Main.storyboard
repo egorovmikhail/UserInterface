@@ -533,7 +533,7 @@
         <scene sceneID="8fB-0L-5L7">
             <objects>
                 <viewController id="s4N-AP-3ge" customClass="PhotoViewController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="INv-gb-Yf4">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="INv-gb-Yf4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -629,7 +629,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKQ-OF-hfo">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKQ-OF-hfo">
                                                     <rect key="frame" x="12" y="68.000000000000014" width="351" height="142.33333333333337"/>
                                                     <string key="text">Когда я бросил курить, я через месяц почувствовал себя намного лучше. Я стал глубже спать, у меня стало больше энергии и улучшилось настроение.
 Однажды я выпил бутылку пива. На следующий день я почувствовал, что мне сложнее бегать (бегаю я каждый день). </string>
@@ -637,7 +637,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="healthyLifestyle" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mYQ-xS-ZCd">
+                                                <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="healthyLifestyle" translatesAutoresizingMaskIntoConstraints="NO" id="mYQ-xS-ZCd">
                                                     <rect key="frame" x="12" y="210.33333333333334" width="351" height="347.66666666666663"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="mYQ-xS-ZCd" secondAttribute="height" multiplier="1:1" id="tdO-RT-zB9"/>
@@ -648,17 +648,15 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uu0-Mj-WhS">
-                                                    <rect key="frame" x="12" y="558" width="25" height="25"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <view autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uu0-Mj-WhS" customClass="LikeButton" customModule="VK" customModuleProvider="target">
+                                                    <rect key="frame" x="12" y="558" width="35" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="9l8-Ix-rlp"/>
-                                                        <constraint firstAttribute="width" constant="25" id="JnD-e4-AJt"/>
+                                                        <constraint firstAttribute="width" constant="35" id="JnD-e4-AJt"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GfT-VB-HEA">
-                                                    <rect key="frame" x="106" y="558" width="25" height="25"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <rect key="frame" x="116" y="558" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="3s9-GQ-ZYD"/>
                                                         <constraint firstAttribute="width" constant="25" id="nyD-KF-X7c"/>
@@ -666,15 +664,13 @@
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MdG-qN-bhS">
                                                     <rect key="frame" x="338" y="558" width="25" height="25"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="25" id="5Kk-KL-yp5"/>
                                                         <constraint firstAttribute="height" constant="25" id="qOa-4E-p2I"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gzT-Ys-JKn">
-                                                    <rect key="frame" x="201" y="558" width="25" height="25"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <rect key="frame" x="211" y="558" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="Pul-ee-6Fc"/>
                                                         <constraint firstAttribute="width" constant="25" id="Vwq-bE-XIL"/>

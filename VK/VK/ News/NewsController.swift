@@ -31,6 +31,4 @@ extension NewsController: UITableViewDataSource {
         cell.newsPhoto.image = UIImage(named: "healthyLifestyle")
         return cell
     }
-    
-    
 }
