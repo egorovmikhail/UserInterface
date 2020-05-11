@@ -9,11 +9,11 @@
 import Foundation
 
 class Session {
-//
-//    static let session = Session()
-//
-//    private init() {}
-//
-//    var token = ""
-//    var userId = 0
+
+    static let session = Session()
+
+    private init() {}
+
+    var token = ""
+    var userId = 0
 }
