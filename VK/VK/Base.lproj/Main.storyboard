@@ -16,79 +16,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2A-yy-G1x">
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7x5-CP-ep1">
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ВКонтакте" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zdb-HW-ASE">
-                                        <rect key="frame" x="134.66666666666666" y="100" width="106" height="26.666666666666671"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Логин" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTO-sB-daZ">
-                                        <rect key="frame" x="163" y="186.66666666666666" width="49" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M30-Oc-pnG">
-                                        <rect key="frame" x="158" y="289.66666666666669" width="59" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="admin" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5pj-qy-g3G">
-                                        <rect key="frame" x="20" y="215.66666666666669" width="335" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8i7-AR-kQv">
-                                        <rect key="frame" x="20" y="318.66666666666669" width="335" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efM-dn-k8k">
-                                        <rect key="frame" x="165.66666666666666" y="392.66666666666669" width="44" height="30"/>
-                                        <state key="normal" title="Войти"/>
-                                        <connections>
-                                            <segue destination="5Mu-id-9Sv" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="NJW-0Y-dML"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="uTO-sB-daZ" firstAttribute="top" secondItem="Zdb-HW-ASE" secondAttribute="bottom" constant="60" id="1KE-wq-y2K"/>
-                                    <constraint firstItem="5pj-qy-g3G" firstAttribute="leading" secondItem="p2A-yy-G1x" secondAttribute="leading" constant="20" id="AKy-Hr-uAd"/>
-                                    <constraint firstItem="5pj-qy-g3G" firstAttribute="centerX" secondItem="p2A-yy-G1x" secondAttribute="centerX" id="See-JM-uIp"/>
-                                    <constraint firstItem="5pj-qy-g3G" firstAttribute="top" secondItem="uTO-sB-daZ" secondAttribute="bottom" constant="8" id="Sz0-Br-BWZ"/>
-                                    <constraint firstItem="M30-Oc-pnG" firstAttribute="top" secondItem="5pj-qy-g3G" secondAttribute="bottom" constant="40" id="T6J-fl-jHL"/>
-                                    <constraint firstItem="Zdb-HW-ASE" firstAttribute="top" secondItem="p2A-yy-G1x" secondAttribute="top" constant="100" id="Usa-Ke-Q1g"/>
-                                    <constraint firstItem="8i7-AR-kQv" firstAttribute="leading" secondItem="p2A-yy-G1x" secondAttribute="leading" constant="20" id="Xkb-xa-R79"/>
-                                    <constraint firstItem="M30-Oc-pnG" firstAttribute="centerX" secondItem="p2A-yy-G1x" secondAttribute="centerX" id="a7o-Dg-GVQ"/>
-                                    <constraint firstItem="8i7-AR-kQv" firstAttribute="centerX" secondItem="p2A-yy-G1x" secondAttribute="centerX" id="dr7-aO-7Ce"/>
-                                    <constraint firstItem="efM-dn-k8k" firstAttribute="centerX" secondItem="p2A-yy-G1x" secondAttribute="centerX" id="kYM-UG-3XE"/>
-                                    <constraint firstItem="efM-dn-k8k" firstAttribute="top" secondItem="8i7-AR-kQv" secondAttribute="bottom" constant="40" id="mGj-Zl-JLk"/>
-                                    <constraint firstItem="uTO-sB-daZ" firstAttribute="centerX" secondItem="p2A-yy-G1x" secondAttribute="centerX" id="shq-wA-cGr"/>
-                                    <constraint firstAttribute="trailing" secondItem="8i7-AR-kQv" secondAttribute="trailing" constant="20" id="tIT-ou-KVO"/>
-                                    <constraint firstAttribute="trailing" secondItem="5pj-qy-g3G" secondAttribute="trailing" constant="20" id="uAX-rx-LD1"/>
-                                    <constraint firstAttribute="bottom" secondItem="efM-dn-k8k" secondAttribute="bottom" constant="20" id="wUe-a7-YRb"/>
-                                    <constraint firstItem="8i7-AR-kQv" firstAttribute="top" secondItem="M30-Oc-pnG" secondAttribute="bottom" constant="8" id="xeC-M3-ckV"/>
-                                    <constraint firstItem="Zdb-HW-ASE" firstAttribute="centerX" secondItem="p2A-yy-G1x" secondAttribute="centerX" id="yLf-wC-X1C"/>
-                                </constraints>
-                            </scrollView>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="p2A-yy-G1x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Tci-zx-EYm"/>
-                            <constraint firstItem="p2A-yy-G1x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TnT-ST-o9s"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p2A-yy-G1x" secondAttribute="trailing" id="ZQK-El-rvE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="p2A-yy-G1x" secondAttribute="bottom" id="bRW-kY-5wz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7x5-CP-ep1" secondAttribute="trailing" id="IU0-xm-tEJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7x5-CP-ep1" secondAttribute="bottom" id="YAx-hK-gvA"/>
+                            <constraint firstItem="7x5-CP-ep1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zzo-eS-0Ck"/>
+                            <constraint firstItem="7x5-CP-ep1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zYF-8I-q8s"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="loginField" destination="5pj-qy-g3G" id="R4q-Zs-WKm"/>
-                        <outlet property="passwordField" destination="8i7-AR-kQv" id="tJv-km-os7"/>
-                        <outlet property="scrollBottomConstraint" destination="bRW-kY-5wz" id="5zo-A7-ke0"/>
+                        <outlet property="webview" destination="7x5-CP-ep1" id="rKZ-9N-fga"/>
+                        <segue destination="5Mu-id-9Sv" kind="presentation" modalPresentationStyle="fullScreen" id="MN0-9Y-XRm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -488,7 +436,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="128" placeholderIntrinsicHeight="128" reuseIdentifier="FriendsPhotoCell" translatesAutoresizingMaskIntoConstraints="NO" id="afm-35-eN8" customClass="FriendsPhotoCell" customModule="VK" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="128" placeholderIntrinsicHeight="128" reuseIdentifier="FriendsPhotoCell" translatesAutoresizingMaskIntoConstraints="NO" id="afm-35-eN8" customClass="FriendsPhotoCell" customModule="VK" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="182" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hnK-fV-kPK" customClass="PhotoView" customModule="VK" customModuleProvider="target">
