@@ -19,10 +19,11 @@ class LoginFormController: UIViewController {
         }
     }
     
+    let session = Session.session
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "oauth.vk.com"
@@ -38,11 +39,8 @@ class LoginFormController: UIViewController {
         
         let request = URLRequest(url: urlComponents.url!)
         
-        
         webview.load(request)
     }
-    
-    
 }
 
 extension LoginFormController: WKNavigationDelegate {
@@ -64,12 +62,14 @@ extension LoginFormController: WKNavigationDelegate {
                 return dict
         }
         
-        let token = params["access_token"]
-        
-        print(token as Any)
-        
+        session.token = params["access_token"]!
+        print(session.token)
         
         decisionHandler(.cancel)
+        
+        if session.token == self.session.token {
+            performSegue(withIdentifier: "segueLoginForm", sender: nil)
+        }
     }
 }
 
