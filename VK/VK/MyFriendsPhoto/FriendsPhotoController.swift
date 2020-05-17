@@ -20,6 +20,8 @@ class FriendsPhotoController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        APIReguests().photoGet()
+        
         collectionPhotoView.dataSource = self
         
     }

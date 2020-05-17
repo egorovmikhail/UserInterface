@@ -17,6 +17,8 @@ class MyGroupsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        APIReguests().gruopGet()
+        
         myGroupsView.dataSource = self
 
     }
