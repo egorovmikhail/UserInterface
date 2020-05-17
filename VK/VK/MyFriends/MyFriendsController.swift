@@ -18,6 +18,9 @@ class MyFriendsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        APIReguests().friendGet()
+        
         friedSearchBar.delegate = self
         sortedFriends(friends: sortedFriend)
     }

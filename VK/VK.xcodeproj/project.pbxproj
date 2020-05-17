@@ -18,6 +18,7 @@
 		81431350242A542700AC7EDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8143134E242A542700AC7EDE /* LaunchScreen.storyboard */; };
 		817FF6CE2436189D0037068F /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817FF6CD2436189D0037068F /* ModelUser.swift */; };
 		817FF6D224361AEF0037068F /* Model​Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817FF6D124361AEF0037068F /* Model​Group.swift */; };
+		81805EEC247108E4009E95E7 /* APIRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81805EEB247108E4009E95E7 /* APIRequests.swift */; };
 		818AEBD7246D96EF00B989B0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 818AEBD6246D96EF00B989B0 /* WebKit.framework */; };
 		8190149E2469874100EEA322 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8190149D2469874100EEA322 /* Session.swift */; };
 		81CDA892246811F60097625C /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CDA891246811F60097625C /* NewsController.swift */; };
@@ -47,6 +48,7 @@
 		81431351242A542700AC7EDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		817FF6CD2436189D0037068F /* ModelUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
 		817FF6D124361AEF0037068F /* Model​Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Model​Group.swift"; sourceTree = "<group>"; };
+		81805EEB247108E4009E95E7 /* APIRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequests.swift; sourceTree = "<group>"; };
 		818AEBD6246D96EF00B989B0 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		8190149D2469874100EEA322 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		81CDA891246811F60097625C /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
@@ -96,7 +98,7 @@
 			children = (
 				81431343242A542600AC7EDE /* AppDelegate.swift */,
 				811F0971244AF31D005419D0 /* LikeButton.swift */,
-				8190149F2469897100EEA322 /* Singleton */,
+				8190149F2469897100EEA322 /* Session */,
 				817FF6CC2436182C0037068F /* Model */,
 				81A9C2F3243C24E6002CED77 /* LoginForm */,
 				818AF713243A1AFC00C3B396 /* Avatar */,
@@ -139,12 +141,13 @@
 			path = Avatar;
 			sourceTree = "<group>";
 		};
-		8190149F2469897100EEA322 /* Singleton */ = {
+		8190149F2469897100EEA322 /* Session */ = {
 			isa = PBXGroup;
 			children = (
 				8190149D2469874100EEA322 /* Session.swift */,
+				81805EEB247108E4009E95E7 /* APIRequests.swift */,
 			);
-			path = Singleton;
+			path = Session;
 			sourceTree = "<group>";
 		};
 		819D23A42434CC9B005EBCC6 /* MyFriends */ = {
@@ -280,6 +283,7 @@
 				81E6FDBE2434B55400E2A6B6 /* AllGroupsController.swift in Sources */,
 				81DA86F02438EA57002E5BAB /* AvatarView.swift in Sources */,
 				81E6FDB42434A4C900E2A6B6 /* MyFriendsController.swift in Sources */,
+				81805EEC247108E4009E95E7 /* APIRequests.swift in Sources */,
 				81431344242A542600AC7EDE /* AppDelegate.swift in Sources */,
 				81E6FDBA2434A7AB00E2A6B6 /* MyGroupsCell.swift in Sources */,
 				81E6FDBC2434B41C00E2A6B6 /* AllGroupsCell.swift in Sources */,

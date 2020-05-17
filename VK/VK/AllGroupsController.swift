@@ -21,9 +21,12 @@ class AllGroupsController: UIViewController {
         selfDevelopment,
         geekBrains
     ]
-
+    var groupsSearch = "1"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        APIReguests().groupsSearchGet(q: groupsSearch)
         
         allGroupsView.dataSource = self
 

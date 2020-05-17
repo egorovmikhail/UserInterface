@@ -19,8 +19,6 @@ class LoginFormController: UIViewController {
         }
     }
     
-    let session = Session.session
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,16 +60,15 @@ extension LoginFormController: WKNavigationDelegate {
                 return dict
         }
         
-        session.token = params["access_token"]!
-        session.userId = Int(params["user_id"]!)!
+        Session.session.token = params["access_token"]!
+        Session.session.userId = Int(params["user_id"]!)!
         
-        print(session.token, session.userId)
+        print(Session.session.token, Session.session.userId)
+        print(Session.session.userId)
         
         decisionHandler(.cancel)
         
-        if session.token == self.session.token {
-            performSegue(withIdentifier: "segueLoginForm", sender: nil)
-        }
+        performSegue(withIdentifier: "segueLoginForm", sender: nil)
     }
 }
 
