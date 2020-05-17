@@ -89,7 +89,7 @@ class APIReguests {
         urlConstructor.queryItems = [
             URLQueryItem(name: "access_token", value: "\(Session.session.token)"),
             URLQueryItem(name: "q", value: "\(q)"),
-            URLQueryItem(name: "lang", value: "RU"),
+//            URLQueryItem(name: "lang", value: "RU"),
             URLQueryItem(name: "v", value: "5.103")
         ]
         print(urlConstructor)
