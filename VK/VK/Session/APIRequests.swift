@@ -71,7 +71,7 @@ class APIReguests {
             //            URLQueryItem(name: "lang", value: "RU"),
             URLQueryItem(name: "v", value: "5.103")
         ]
-        print(urlConstructor)
+//        print(urlConstructor)
         var request = URLRequest(url: urlConstructor.url!)
         request.httpMethod = "GET"
         let task = session.dataTask(with: request) { (data, response, error) in
@@ -92,7 +92,7 @@ class APIReguests {
 //            URLQueryItem(name: "lang", value: "RU"),
             URLQueryItem(name: "v", value: "5.103")
         ]
-        print(urlConstructor)
+//        print(urlConstructor)
         var request = URLRequest(url: urlConstructor.url!)
         request.httpMethod = "GET"
         let task = session.dataTask(with: request) { (data, response, error) in
