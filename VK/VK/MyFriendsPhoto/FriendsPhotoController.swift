@@ -14,13 +14,19 @@ class FriendsPhotoController: UIViewController {
     
     @IBOutlet weak var collectionPhotoView: UICollectionView!
     
-    var friend: User?
+    var friend: UserStatic?
+    
+    var photo = [PhotoItem]()
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        APIReguests().photoGet()
+        APIReguests().photoGet(){[weak self] photo in
+            self?.photo = photo
+            self?.collectionPhotoView.reloadData()
+        }
         
         collectionPhotoView.dataSource = self
         

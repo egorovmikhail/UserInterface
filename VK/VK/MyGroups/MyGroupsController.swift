@@ -12,12 +12,17 @@ class MyGroupsController: UIViewController {
     
     @IBOutlet weak var myGroupsView: UITableView!
     
-    var groups: [Group] = []
+    var groups: [GroupStatic] = []
+    var group = [GroupItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        APIReguests().gruopGet()
+        APIReguests().gruopGet() {[weak self] group in
+            self!.group = group
+            self?.myGroupsView.reloadData()
+        }
+        group.sort{$0.name < $1.name}
         
         myGroupsView.dataSource = self
 
@@ -46,13 +51,13 @@ extension MyGroupsController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return groups.count
+        return group.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyGroupsCell", for: indexPath) as! MyGroupsCell
 
-        cell.myGroupsName.text = groups[indexPath.row].name
+        cell.myGroupsName.text = group[indexPath.row].name
         cell.avatarView.image = groups[indexPath.row].avatar
 
         return cell
@@ -62,7 +67,7 @@ extension MyGroupsController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            groups.remove(at: indexPath.row)
+            group.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
