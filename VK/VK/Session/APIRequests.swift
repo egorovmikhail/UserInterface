@@ -35,8 +35,7 @@ class APIReguests {
                 print(users)
             } catch {
                 print(error)
-            }
-            
+            }            
         })
             task.resume()
     }
@@ -57,10 +56,15 @@ class APIReguests {
         ]
         var request = URLRequest(url: urlConstructor.url!)
         request.httpMethod = "GET"
-        let task = session.dataTask(with: request) { (data, response, error) in
-            let json = try? JSONDecoder().decode(Photo.self, from: data!).response.items
-            print(json as Any)
-        }
+        let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
+            
+            do {
+                let photo = try JSONDecoder().decode(Photo.self, from: data!).response.items
+                print(photo)
+            } catch {
+                print(error)
+            }
+        })
         task.resume()
     }
     
@@ -80,10 +84,15 @@ class APIReguests {
         ]
         var request = URLRequest(url: urlConstructor.url!)
         request.httpMethod = "GET"
-        let task = session.dataTask(with: request) { (data, response, error) in
-            let json = try? JSONDecoder().decode(Group.self, from: data!).response.items
-            print(json as Any)
-        }
+        let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
+            
+            do {
+                let group = try JSONDecoder().decode(Group.self, from: data!).response.items
+                print(group)
+            } catch {
+                print(error)
+            }
+        })
         task.resume()
     }
     
@@ -101,10 +110,15 @@ class APIReguests {
         ]
         var request = URLRequest(url: urlConstructor.url!)
         request.httpMethod = "GET"
-        let task = session.dataTask(with: request) { (data, response, error) in
-            let json = try? JSONDecoder().decode(Group.self, from: data!).response.items
-            print(json as Any)
-        }
+        let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
+            
+            do {
+                let group = try JSONDecoder().decode(Group.self, from: data!).response.items
+                print(group)
+            } catch {
+                print(error)
+            }
+        })
         task.resume()
     }
 }
