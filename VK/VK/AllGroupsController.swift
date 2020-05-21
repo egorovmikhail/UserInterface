@@ -21,13 +21,18 @@ class AllGroupsController: UIViewController {
         selfDevelopment,
         geekBrains
     ]
+    
+    var group = [GroupItem]()
+        
     var groupsSearch = "1"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        APIReguests().groupsSearchGet(q: groupsSearch)
-        
+        APIReguests().groupsSearchGet(q: groupsSearch) {[weak self] group in
+        self?.group = group
+            self?.allGroupsView.reloadData()
+        }
         allGroupsView.dataSource = self
 
     }

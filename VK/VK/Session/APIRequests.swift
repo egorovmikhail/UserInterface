@@ -8,12 +8,10 @@
 
 import Foundation
 
-class APIReguests {
-    
-    let configuration = URLSessionConfiguration.default
-    var urlConstructor = URLComponents()
-    
-    func friendGet() {
+class APIReguests { 
+    func friendGet(completion: @escaping ([UserItem]) -> Void) {
+        let configuration = URLSessionConfiguration.default
+        var urlConstructor = URLComponents()
         let session =  URLSession(configuration: configuration)
         urlConstructor.scheme = "https"
         urlConstructor.host = "api.vk.com"
@@ -25,19 +23,27 @@ class APIReguests {
             URLQueryItem(name: "count", value: "5000"),
             URLQueryItem(name: "fields", value: "bdate,city,domain,photo_50"),
             URLQueryItem(name: "name_case", value: "nom"),
-            URLQueryItem(name: "lang", value: "RU"),
             URLQueryItem(name: "v", value: "5.103")
         ]
         var request = URLRequest(url: urlConstructor.url!)
         request.httpMethod = "GET"
-        let task = session.dataTask(with: request) { (data, response, error) in
-            let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
-            print(json as Any)
-        }
-        task.resume()
+        
+        let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
+            
+            do {
+                let users = try JSONDecoder().decode(User.self, from: data!).response.items
+                print(users)
+            } catch {
+                print(error)
+            }
+            
+        })
+            task.resume()
     }
     
-    func photoGet() {
+    func photoGet(completion: @escaping ([PhotoItem]) -> Void) {
+        let configuration = URLSessionConfiguration.default
+        var urlConstructor = URLComponents()
         let session =  URLSession(configuration: configuration)
         urlConstructor.scheme = "https"
         urlConstructor.host = "api.vk.com"
@@ -52,13 +58,15 @@ class APIReguests {
         var request = URLRequest(url: urlConstructor.url!)
         request.httpMethod = "GET"
         let task = session.dataTask(with: request) { (data, response, error) in
-            let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
+            let json = try? JSONDecoder().decode(Photo.self, from: data!).response.items
             print(json as Any)
         }
         task.resume()
     }
     
-    func gruopGet() {
+    func gruopGet(completion: @escaping ([GroupItem]) -> Void) {
+        let configuration = URLSessionConfiguration.default
+        var urlConstructor = URLComponents()
         let session =  URLSession(configuration: configuration)
         urlConstructor.scheme = "https"
         urlConstructor.host = "api.vk.com"
@@ -68,20 +76,20 @@ class APIReguests {
             URLQueryItem(name: "access_token", value: "\(Session.session.token)"),
             URLQueryItem(name: "extended", value: "1"),
             URLQueryItem(name: "fields", value: "photo_50"),
-            //            URLQueryItem(name: "lang", value: "RU"),
             URLQueryItem(name: "v", value: "5.103")
         ]
-//        print(urlConstructor)
         var request = URLRequest(url: urlConstructor.url!)
         request.httpMethod = "GET"
         let task = session.dataTask(with: request) { (data, response, error) in
-            let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
+            let json = try? JSONDecoder().decode(Group.self, from: data!).response.items
             print(json as Any)
         }
         task.resume()
     }
     
-    func groupsSearchGet(q: String) {
+    func groupsSearchGet(q: String, completion: @escaping ([GroupItem]) -> Void) {
+        let configuration = URLSessionConfiguration.default
+        var urlConstructor = URLComponents()
         let session =  URLSession(configuration: configuration)
         urlConstructor.scheme = "https"
         urlConstructor.host = "api.vk.com"
@@ -89,14 +97,12 @@ class APIReguests {
         urlConstructor.queryItems = [
             URLQueryItem(name: "access_token", value: "\(Session.session.token)"),
             URLQueryItem(name: "q", value: "\(q)"),
-//            URLQueryItem(name: "lang", value: "RU"),
             URLQueryItem(name: "v", value: "5.103")
         ]
-//        print(urlConstructor)
         var request = URLRequest(url: urlConstructor.url!)
         request.httpMethod = "GET"
         let task = session.dataTask(with: request) { (data, response, error) in
-            let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
+            let json = try? JSONDecoder().decode(Group.self, from: data!).response.items
             print(json as Any)
         }
         task.resume()

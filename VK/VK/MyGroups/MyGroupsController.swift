@@ -12,12 +12,16 @@ class MyGroupsController: UIViewController {
     
     @IBOutlet weak var myGroupsView: UITableView!
     
-    var groups: [Group] = []
+    var groups: [GroupStatic] = []
+    var group = [GroupItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        APIReguests().gruopGet()
+        APIReguests().gruopGet() {[weak self] group in
+            self?.group = group
+            self?.myGroupsView.reloadData()
+        }
         
         myGroupsView.dataSource = self
 

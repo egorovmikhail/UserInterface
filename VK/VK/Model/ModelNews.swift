@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct News {
+struct NewsStatic {
     let name: String
     let avatar: String?
     let text: String?

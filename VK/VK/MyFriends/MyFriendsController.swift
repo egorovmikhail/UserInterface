@@ -13,14 +13,17 @@ class MyFriendsController: UIViewController {
     @IBOutlet weak var myFriendsView: UITableView!
     @IBOutlet weak var friedSearchBar: UISearchBar!
     
-    var sortedFriend = user
+    var sortedFriend = userStatic
     var friendSection = [Section]()
+    var user = [UserItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        APIReguests().friendGet()
-        
+        APIReguests().friendGet() {[weak self] user in
+            self?.user = user
+            self?.myFriendsView.reloadData()
+        }
         friedSearchBar.delegate = self
         sortedFriends(friends: sortedFriend)
     }
@@ -56,7 +59,7 @@ extension MyFriendsController: UITableViewDataSource, UISearchBarDelegate {
         }
     }
     
-    func sortedFriends(friends: [User]) {
+    func sortedFriends(friends: [UserStatic]) {
         let userDictionary = Dictionary(grouping: friends, by: {$0.name!.prefix(1)})
         friendSection = userDictionary.map{Section(title: String($0.key), items: $0.value)}
         friendSection.sort{$0.title < $1.title}
@@ -66,7 +69,7 @@ extension MyFriendsController: UITableViewDataSource, UISearchBarDelegate {
         if searchText.isEmpty{
             sortedFriends(friends: sortedFriend)
         } else {
-            let filteredFriend = sortedFriend.filter { (friend: User) -> Bool in
+            let filteredFriend = sortedFriend.filter { (friend: UserStatic) -> Bool in
                 return (friend.name?.lowercased().contains(searchText.lowercased()))!
             }
             sortedFriends(friends: filteredFriend)
@@ -80,6 +83,4 @@ extension MyFriendsController: UITableViewDataSource, UISearchBarDelegate {
         view.endEditing(true)
         myFriendsView.reloadData()
     }
-    
 }
-
