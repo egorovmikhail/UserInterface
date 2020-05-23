@@ -11,10 +11,21 @@ import UIKit
 class AllGroupsController: UIViewController {
     
     @IBOutlet weak var allGroupsView: UITableView!
+
+    
+    var groups = [
+        brain,
+        catBreeders,
+        dogBreeders,
+        healthyLifestyle,
+        myСity,
+        selfDevelopment,
+        geekBrains
+    ]
+    
+    let groupsSearch = "1"
     
     var group = [GroupItem]()
-        
-    var groupsSearch = "1"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +65,29 @@ extension AllGroupsController: UITableViewDataSource {
 //        cell.avatarView.image = groups[indexPath.row].avatar
         
         return cell
+    }
+    
+    func searchGroup() {
+        
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty{
+            searchGroup()
+        } else {
+//            let filteredFriend = user.filter { (friend: UserItem) -> Bool in
+//                return (friend.firstName.lowercased().contains(searchText.lowercased()))
+//            }
+            searchGroup()
+        }
+        allGroupsView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchGroup()
+//        friedSearchBar.text = nil
+        view.endEditing(true)
+        allGroupsView.reloadData()
     }
     
 }

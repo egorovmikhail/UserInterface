@@ -46,7 +46,11 @@ extension MyFriendsController: UITableViewDataSource, UISearchBarDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyFriendsCell", for: indexPath) as! MyFriendsCell
-        cell.myFriendsName.text = friendSection[indexPath.section].items[indexPath.row].firstName
+//        имя
+        var name = "\(friendSection[indexPath.section].items[indexPath.row].firstName) " 
+        name += friendSection[indexPath.section].items[indexPath.row].lastName
+        cell.myFriendsName.text = name
+//        аватар
         if let url = URL(string: String(friendSection[indexPath.section].items[indexPath.row].avatar)) {
             DispatchQueue.global().async {
                 let data = try? Data(contentsOf: url)
