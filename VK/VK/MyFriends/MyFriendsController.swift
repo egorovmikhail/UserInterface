@@ -13,7 +13,7 @@ class MyFriendsController: UIViewController {
     @IBOutlet weak var myFriendsView: UITableView!
     @IBOutlet weak var friedSearchBar: UISearchBar!
     
-    var sortedFriend = userStatic
+//    var user = userStatic
     var friendSection = [Section]()
     var user = [UserItem]()
     
@@ -22,10 +22,11 @@ class MyFriendsController: UIViewController {
         
         APIReguests().friendGet() {[weak self] user in
             self?.user = user
+            self!.sortedFriends(friends: user)
             self?.myFriendsView.reloadData()
         }
         friedSearchBar.delegate = self
-        sortedFriends(friends: sortedFriend)
+        sortedFriends(friends: user)
     }
 }
 
@@ -45,8 +46,15 @@ extension MyFriendsController: UITableViewDataSource, UISearchBarDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyFriendsCell", for: indexPath) as! MyFriendsCell
-        cell.myFriendsName.text = friendSection[indexPath.section].items[indexPath.row].name
-        cell.avatarView.image = friendSection[indexPath.section].items[indexPath.row].avatar
+        cell.myFriendsName.text = friendSection[indexPath.section].items[indexPath.row].firstName
+        if let url = URL(string: String(friendSection[indexPath.section].items[indexPath.row].avatar)) {
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    cell.avatarView.image = UIImage(data: data!)
+                }
+            }            
+        }
         return cell
     }
     
@@ -59,18 +67,18 @@ extension MyFriendsController: UITableViewDataSource, UISearchBarDelegate {
         }
     }
     
-    func sortedFriends(friends: [UserStatic]) {
-        let userDictionary = Dictionary(grouping: friends, by: {$0.name!.prefix(1)})
+    func sortedFriends(friends: [UserItem]) {
+        let userDictionary = Dictionary(grouping: friends, by: {$0.firstName.prefix(1)})
         friendSection = userDictionary.map{Section(title: String($0.key), items: $0.value)}
         friendSection.sort{$0.title < $1.title}
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty{
-            sortedFriends(friends: sortedFriend)
+            sortedFriends(friends: user)
         } else {
-            let filteredFriend = sortedFriend.filter { (friend: UserStatic) -> Bool in
-                return (friend.name?.lowercased().contains(searchText.lowercased()))!
+            let filteredFriend = user.filter { (friend: UserItem) -> Bool in
+                return (friend.firstName.lowercased().contains(searchText.lowercased()))
             }
             sortedFriends(friends: filteredFriend)
         }
@@ -78,7 +86,7 @@ extension MyFriendsController: UITableViewDataSource, UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        sortedFriends(friends: sortedFriend)
+        sortedFriends(friends: user)
         friedSearchBar.text = nil
         view.endEditing(true)
         myFriendsView.reloadData()

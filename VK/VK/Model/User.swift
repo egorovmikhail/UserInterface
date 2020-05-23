@@ -8,6 +8,11 @@
 
 import Foundation
 
+struct Section {
+    let title: String
+    let items: [UserItem]
+}
+
 struct User: Decodable {
     var response: UserResponse
 

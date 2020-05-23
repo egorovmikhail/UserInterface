@@ -8,7 +8,7 @@
 
 import Foundation
 
-class APIReguests { 
+class APIReguests {
     func friendGet(completion: @escaping ([UserItem]) -> Void) {
         let configuration = URLSessionConfiguration.default
         var urlConstructor = URLComponents()
@@ -29,15 +29,20 @@ class APIReguests {
         request.httpMethod = "GET"
         
         let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
-            
-            do {
-                let users = try JSONDecoder().decode(User.self, from: data!).response.items
-                print(users)
-            } catch {
-                print(error)
-            }            
+            DispatchQueue.main.async {
+                guard let data = data else {return}
+                
+                do {
+                    let user = try JSONDecoder().decode(User.self, from: data).response.items
+                    let users = user.map{($0)}
+                    completion(users)
+                    print(users)
+                } catch {
+                    print(error)
+                }
+            }
         })
-            task.resume()
+        task.resume()
     }
     
     func photoGet(completion: @escaping ([PhotoItem]) -> Void) {
@@ -57,12 +62,17 @@ class APIReguests {
         var request = URLRequest(url: urlConstructor.url!)
         request.httpMethod = "GET"
         let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
-            
-            do {
-                let photo = try JSONDecoder().decode(Photo.self, from: data!).response.items
-                print(photo)
-            } catch {
-                print(error)
+            DispatchQueue.main.async {
+                guard let data = data else {return}
+                
+                do {
+                    let photo = try JSONDecoder().decode(Photo.self, from: data).response.items
+                    let photos = photo.map{($0)}
+                    completion(photos)
+                    print(photos)
+                } catch {
+                    print(error)
+                }
             }
         })
         task.resume()
@@ -85,12 +95,17 @@ class APIReguests {
         var request = URLRequest(url: urlConstructor.url!)
         request.httpMethod = "GET"
         let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
-            
-            do {
-                let group = try JSONDecoder().decode(Group.self, from: data!).response.items
-                print(group)
-            } catch {
-                print(error)
+            DispatchQueue.main.async {
+                guard let data = data else {return}
+                
+                do {
+                    let group = try JSONDecoder().decode(Group.self, from: data).response.items
+                    let groups = group.map{($0)}
+                    completion(groups)
+                    print(groups)
+                } catch {
+                    print(error)
+                }
             }
         })
         task.resume()
@@ -111,12 +126,17 @@ class APIReguests {
         var request = URLRequest(url: urlConstructor.url!)
         request.httpMethod = "GET"
         let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
-            
-            do {
-                let group = try JSONDecoder().decode(Group.self, from: data!).response.items
-                print(group)
-            } catch {
-                print(error)
+            DispatchQueue.main.async {
+                guard let data = data else {return}
+                
+                do {
+                    let group = try JSONDecoder().decode(Group.self, from: data).response.items
+                    let groups = group.map{($0)}
+                    completion(groups)
+                    print(groups)
+                } catch {
+                    print(error)
+                }
             }
         })
         task.resume()
