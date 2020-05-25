@@ -12,20 +12,15 @@ class MyGroupsController: UIViewController {
     
     @IBOutlet weak var myGroupsView: UITableView!
     
-    var groups: [GroupStatic] = []
+    var groups = [GroupStatic]()
     var group = [GroupItem]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        APIReguests().gruopGet() {[weak self] group in
-            self!.group = group
+        APIReguests().gruopGet(completion: {[weak self] group in
+            self?.group = group
             self?.myGroupsView.reloadData()
-        }
-        group.sort{$0.name < $1.name}
-        
+        })
         myGroupsView.dataSource = self
-
     }
     
     @IBAction func addGroup(segue: UIStoryboardSegue) {
@@ -58,7 +53,15 @@ extension MyGroupsController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyGroupsCell", for: indexPath) as! MyGroupsCell
 
         cell.myGroupsName.text = group[indexPath.row].name
-        cell.avatarView.image = groups[indexPath.row].avatar
+        if let url = URL(string: String(group[indexPath.row].avatar)) {
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    cell.avatarView.image = UIImage(data: data!)
+                }
+            }
+        }
+//        cell.avatarView.image = groups[indexPath.row].avatar
 
         return cell
     }

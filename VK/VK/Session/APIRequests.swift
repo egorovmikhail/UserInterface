@@ -8,7 +8,7 @@
 
 import Foundation
 
-class APIReguests { 
+class APIReguests {
     func friendGet(completion: @escaping ([UserItem]) -> Void) {
         let configuration = URLSessionConfiguration.default
         var urlConstructor = URLComponents()
@@ -29,18 +29,22 @@ class APIReguests {
         request.httpMethod = "GET"
         
         let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
-            
-            do {
-                let users = try JSONDecoder().decode(User.self, from: data!).response.items
-                print(users)
-            } catch {
-                print(error)
-            }            
+            DispatchQueue.main.async {
+                guard let data = data else {return}
+                
+                do {
+                    let user = try JSONDecoder().decode(User.self, from: data).response.items
+                    completion(user)
+                    print(user)
+                } catch {
+                    print(error)
+                }
+            }
         })
-            task.resume()
+        task.resume()
     }
     
-    func photoGet(completion: @escaping ([PhotoItem]) -> Void) {
+    func photoGet(idUser: Int, completion: @escaping ([PhotoItem]) -> Void) {
         let configuration = URLSessionConfiguration.default
         var urlConstructor = URLComponents()
         let session =  URLSession(configuration: configuration)
@@ -50,19 +54,23 @@ class APIReguests {
         urlConstructor.queryItems = [
             URLQueryItem(name: "user_ids", value: "\(Session.session.userId)"),
             URLQueryItem(name: "access_token", value: "\(Session.session.token)"),
-            URLQueryItem(name: "owner_id", value: "33776620"),
+            URLQueryItem(name: "owner_id", value: "\(idUser)"),
             URLQueryItem(name: "extended", value: "1"),
             URLQueryItem(name: "v", value: "5.103")
         ]
         var request = URLRequest(url: urlConstructor.url!)
         request.httpMethod = "GET"
         let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
-            
-            do {
-                let photo = try JSONDecoder().decode(Photo.self, from: data!).response.items
-                print(photo)
-            } catch {
-                print(error)
+            DispatchQueue.main.async {
+                guard let data = data else {return}
+                
+                do {
+                    let photo = try JSONDecoder().decode(Photo.self, from: data).response.items
+                    completion(photo)
+                    print(photo)
+                } catch {
+                    print(error)
+                }
             }
         })
         task.resume()
@@ -85,12 +93,16 @@ class APIReguests {
         var request = URLRequest(url: urlConstructor.url!)
         request.httpMethod = "GET"
         let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
-            
-            do {
-                let group = try JSONDecoder().decode(Group.self, from: data!).response.items
-                print(group)
-            } catch {
-                print(error)
+            DispatchQueue.main.async {
+                guard let data = data else {return}
+                
+                do {
+                    let group = try JSONDecoder().decode(Group.self, from: data).response.items
+                    completion(group)
+                    print(group)
+                } catch {
+                    print(error)
+                }
             }
         })
         task.resume()
@@ -111,12 +123,16 @@ class APIReguests {
         var request = URLRequest(url: urlConstructor.url!)
         request.httpMethod = "GET"
         let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
-            
-            do {
-                let group = try JSONDecoder().decode(Group.self, from: data!).response.items
-                print(group)
-            } catch {
-                print(error)
+            DispatchQueue.main.async {
+                guard let data = data else {return}
+                
+                do {
+                    let group = try JSONDecoder().decode(Group.self, from: data).response.items
+                    completion(group)
+                    print(group)
+                } catch {
+                    print(error)
+                }
             }
         })
         task.resume()
