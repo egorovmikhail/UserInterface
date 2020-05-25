@@ -34,9 +34,8 @@ class APIReguests {
                 
                 do {
                     let user = try JSONDecoder().decode(User.self, from: data).response.items
-                    let users = user.map{($0)}
-                    completion(users)
-                    print(users)
+                    completion(user)
+                    print(user)
                 } catch {
                     print(error)
                 }
@@ -45,7 +44,7 @@ class APIReguests {
         task.resume()
     }
     
-    func photoGet(completion: @escaping ([PhotoItem]) -> Void) {
+    func photoGet(idUser: Int, completion: @escaping ([PhotoItem]) -> Void) {
         let configuration = URLSessionConfiguration.default
         var urlConstructor = URLComponents()
         let session =  URLSession(configuration: configuration)
@@ -55,7 +54,7 @@ class APIReguests {
         urlConstructor.queryItems = [
             URLQueryItem(name: "user_ids", value: "\(Session.session.userId)"),
             URLQueryItem(name: "access_token", value: "\(Session.session.token)"),
-            URLQueryItem(name: "owner_id", value: "33776620"),
+            URLQueryItem(name: "owner_id", value: "\(idUser)"),
             URLQueryItem(name: "extended", value: "1"),
             URLQueryItem(name: "v", value: "5.103")
         ]
@@ -67,9 +66,8 @@ class APIReguests {
                 
                 do {
                     let photo = try JSONDecoder().decode(Photo.self, from: data).response.items
-                    let photos = photo.map{($0)}
-                    completion(photos)
-                    print(photos)
+                    completion(photo)
+                    print(photo)
                 } catch {
                     print(error)
                 }
@@ -100,9 +98,8 @@ class APIReguests {
                 
                 do {
                     let group = try JSONDecoder().decode(Group.self, from: data).response.items
-                    let groups = group.map{($0)}
-                    completion(groups)
-                    print(groups)
+                    completion(group)
+                    print(group)
                 } catch {
                     print(error)
                 }
@@ -131,9 +128,8 @@ class APIReguests {
                 
                 do {
                     let group = try JSONDecoder().decode(Group.self, from: data).response.items
-                    let groups = group.map{($0)}
-                    completion(groups)
-                    print(groups)
+                    completion(group)
+                    print(group)
                 } catch {
                     print(error)
                 }

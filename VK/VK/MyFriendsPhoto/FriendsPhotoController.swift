@@ -23,9 +23,10 @@ class FriendsPhotoController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        APIReguests().photoGet(){[weak self] photo in
+        APIReguests().photoGet(idUser: friend!.id){[weak self] photo in
             self?.photo = photo
             self?.collectionPhotoView.reloadData()
+            print(photo)
         }
         
         collectionPhotoView.dataSource = self
@@ -42,7 +43,7 @@ extension FriendsPhotoController: UICollectionViewDataSource {
         
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 1//friend!.photo.count
+        return photo.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
