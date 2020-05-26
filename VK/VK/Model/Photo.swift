@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct Photo: Codable {
     let response: PhotoResponse
@@ -46,9 +47,9 @@ struct PhotoItem: Codable {
     }
 }
 
-struct PhotoLikes: Codable {
-    let userLikes: Int
-    let count: Int
+class PhotoLikes: Object, Codable {
+    @objc dynamic let userLikes: Int
+    @objc dynamic let count: Int
 
     enum CodingKeys: String, CodingKey {
         case userLikes = "user_likes"
@@ -59,22 +60,22 @@ struct PhotoLikes: Codable {
 struct PhotoReposts: Codable {
     let count: Int
 
-    enum CodingKeys: String, CodingKey {
-        case count
-    }
+//    enum CodingKeys: String, CodingKey {
+//        case count
+//    }
 }
 
-struct PhotoSize: Codable {
-    let type: String
-    let url: String
-    let width: Int
-    let height: Int
+class PhotoSize: Object, Codable {
+    @objc dynamic let type: String
+    @objc dynamic let url: String
+    @objc dynamic let width: Int
+    @objc dynamic let height: Int
 
-    enum CodingKeys: String, CodingKey {
-        case type
-        case url
-        case width
-        case height
-    }
+//    enum CodingKeys: String, CodingKey {
+//        case type
+//        case url
+//        case width
+//        case height
+//    }
 }
 
