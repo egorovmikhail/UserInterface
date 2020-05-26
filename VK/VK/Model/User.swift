@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct Section {
     let title: String
@@ -22,10 +23,11 @@ struct UserResponse: Decodable {
     var items: [UserItem]
     }
 
-struct UserItem: Decodable {
-    var id = 0
-    var firstName = "", lastName = ""
-    var avatar = ""
+class UserItem: Decodable {
+    @objc dynamic var id = 0
+    @objc dynamic var firstName = ""
+    @objc dynamic var lastName = ""
+    @objc dynamic var avatar = ""
 
     enum CodingKeys: String, CodingKey {
         case id
