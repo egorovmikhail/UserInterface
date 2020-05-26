@@ -7,8 +7,7 @@
 //
 
 import Foundation
-
-import Foundation
+import RealmSwift
 
 struct Group: Codable {
     let response: GroupResponse
@@ -18,13 +17,14 @@ struct GroupResponse: Codable {
     let items: [GroupItem]
 }
 
-struct GroupItem: Codable {
-    let id: Int
-    let name: String
-    let avatar: String
+class GroupItem: Object,Codable {
+    @objc dynamic let id: Int
+    @objc dynamic let name: String
+    @objc dynamic let avatar: String
 
     enum CodingKeys: String, CodingKey {
-        case id, name
+        case id
+        case name
         case avatar = "photo_50"
     }
 }

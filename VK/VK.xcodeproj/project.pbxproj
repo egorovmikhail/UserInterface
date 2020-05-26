@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -134,8 +134,8 @@
 				817FF6D124361AEF0037068F /* Model​Group.swift */,
 				81CDA89524683AD70097625C /* ModelNews.swift */,
 				81525F242474B976002122A5 /* User.swift */,
-				81525F262474E640002122A5 /* Photo.swift */,
 				81525F282474E66C002122A5 /* Group.swift */,
+				81525F262474E640002122A5 /* Photo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -227,7 +227,6 @@
 				0655DE91FB76B7CD6FE78BC2 /* Pods-VK.debug.xcconfig */,
 				314D77913B0EDD0CD5A235BE /* Pods-VK.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

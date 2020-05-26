@@ -23,7 +23,7 @@ struct UserResponse: Decodable {
     var items: [UserItem]
     }
 
-class UserItem: Decodable {
+class UserItem: Object, Decodable {
     @objc dynamic var id = 0
     @objc dynamic var firstName = ""
     @objc dynamic var lastName = ""
