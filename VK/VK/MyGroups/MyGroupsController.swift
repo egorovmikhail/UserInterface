@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MyGroupsController: UIViewController {
     
@@ -14,13 +15,28 @@ class MyGroupsController: UIViewController {
     
     var groups = [GroupStatic]()
     var group = [GroupItem]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        APIReguests().gruopGet(completion: {[weak self] group in
-            self?.group = group
-            self?.myGroupsView.reloadData()
-        })
+        loadData()
+        APIReguests().gruopGet(){ [weak self] in
+            self?.loadData()
+//            self?.myGroupsView.reloadData()
+        }
         myGroupsView.dataSource = self
+    }
+    
+    func loadData() {
+        do {
+            let realm = try Realm()
+            
+            let groups = realm.objects(GroupItem.self)
+            
+            self.group = Array(groups)
+            print(group)
+        } catch {
+            print(error)
+        }
     }
     
     @IBAction func addGroup(segue: UIStoryboardSegue) {

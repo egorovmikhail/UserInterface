@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MyFriendsController: UIViewController {
     
@@ -19,14 +20,27 @@ class MyFriendsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        APIReguests().friendGet() {[weak self] user in
-            self?.user = user
-            self!.sortedFriends(friends: user)
-            self?.myFriendsView.reloadData()
+        loadData()
+        APIReguests().friendGet() { [weak self] in
+            self?.loadData()
+//            self?.sortedFriends(friends: self!.user)
+//            self?.myFriendsView.reloadData()
         }
         friedSearchBar.delegate = self
         sortedFriends(friends: user)
+    }
+    
+    func loadData() {
+        do {
+            let realm = try Realm()
+            
+            let users = realm.objects(UserItem.self)
+            
+            self.user = Array(users)
+            print(user)
+        } catch {
+            print(error)
+        }
     }
 }
 
@@ -52,12 +66,12 @@ extension MyFriendsController: UITableViewDataSource, UISearchBarDelegate {
         cell.myFriendsName.text = name
 //        аватар
         if let url = URL(string: String(friendSection[indexPath.section].items[indexPath.row].avatar)) {
-            DispatchQueue.global().async {
+//            DispatchQueue.global().async {
                 let data = try? Data(contentsOf: url)
                 DispatchQueue.main.async {
                     cell.avatarView.image = UIImage(data: data!)
                 }
-            }            
+//            }            
         }
         return cell
     }

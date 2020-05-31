@@ -47,9 +47,9 @@ struct PhotoItem: Codable {
     }
 }
 
-class PhotoLikes: Object, Codable {
-    @objc dynamic let userLikes: Int
-    @objc dynamic let count: Int
+class PhotoLikes: Codable {
+    var userLikes: Int
+    var count: Int
 
     enum CodingKeys: String, CodingKey {
         case userLikes = "user_likes"
@@ -66,10 +66,10 @@ struct PhotoReposts: Codable {
 }
 
 class PhotoSize: Object, Codable {
-    @objc dynamic let type: String
-    @objc dynamic let url: String
-    @objc dynamic let width: Int
-    @objc dynamic let height: Int
+    var type: String
+    var url: String
+    var width: Int
+    var height: Int
 
 //    enum CodingKeys: String, CodingKey {
 //        case type

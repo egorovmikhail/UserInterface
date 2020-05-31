@@ -15,12 +15,12 @@ struct Section {
 }
 
 struct User: Decodable {
-    var response: UserResponse
+    let response: UserResponse
 
 }
 
 struct UserResponse: Decodable {
-    var items: [UserItem]
+    let items: [UserItem]
     }
 
 class UserItem: Object, Decodable {
@@ -36,12 +36,3 @@ class UserItem: Object, Decodable {
         case avatar = "photo_50"
     }
 }
-
-
-
-
-
-
-
-
-
