@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import RealmSwift
 
 class APIReguests {
-    func friendGet(completion: @escaping ([UserItem]) -> Void) {
+    func friendGet(completion: @escaping () -> Void) {
         let configuration = URLSessionConfiguration.default
         var urlConstructor = URLComponents()
         let session =  URLSession(configuration: configuration)
@@ -34,8 +35,8 @@ class APIReguests {
                 
                 do {
                     let user = try JSONDecoder().decode(User.self, from: data).response.items
-                    completion(user)
-                    print(user)
+                    completion()
+                    self.saveUserData(user)
                 } catch {
                     print(error)
                 }
@@ -43,6 +44,24 @@ class APIReguests {
         })
         task.resume()
     }
+    
+    func saveUserData(_ users: [UserItem]) {
+        do {
+            let realm = try Realm()
+            print(realm.configuration.fileURL as Any)
+            
+            let oldUser = realm.objects(UserItem.self)
+            realm.beginWrite()
+            realm.delete(oldUser)
+            realm.add(users)
+            try realm.commitWrite()
+        } catch {
+            print(error)
+        }
+    }
+    
+    
+    
     
     func photoGet(idUser: Int, completion: @escaping ([PhotoItem]) -> Void) {
         let configuration = URLSessionConfiguration.default
@@ -76,7 +95,7 @@ class APIReguests {
         task.resume()
     }
     
-    func gruopGet(completion: @escaping ([GroupItem]) -> Void) {
+    func gruopGet(completion: @escaping () -> Void) {
         let configuration = URLSessionConfiguration.default
         var urlConstructor = URLComponents()
         let session =  URLSession(configuration: configuration)
@@ -98,14 +117,27 @@ class APIReguests {
                 
                 do {
                     let group = try JSONDecoder().decode(Group.self, from: data).response.items
-                    completion(group)
-                    print(group)
+                    completion()
+                    self.saveGroupData(group)
                 } catch {
                     print(error)
                 }
             }
         })
         task.resume()
+    }
+    
+    func saveGroupData(_ groups: [GroupItem]) {
+        do {
+            let realm = try Realm()
+            let oldGroup = realm.objects(GroupItem.self)
+            realm.beginWrite()
+            realm.delete(oldGroup)
+            realm.add(groups)
+            try realm.commitWrite()
+        } catch {
+            print(error)
+        }
     }
     
     func groupsSearchGet(q: String, completion: @escaping ([GroupItem]) -> Void) {
@@ -138,3 +170,8 @@ class APIReguests {
         task.resume()
     }
 }
+
+
+
+
+

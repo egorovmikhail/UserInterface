@@ -18,9 +18,9 @@ struct GroupResponse: Codable {
 }
 
 class GroupItem: Object,Codable {
-    @objc dynamic let id: Int
-    @objc dynamic let name: String
-    @objc dynamic let avatar: String
+    @objc dynamic var id: Int
+    @objc dynamic var name: String
+    @objc dynamic var avatar: String
 
     enum CodingKeys: String, CodingKey {
         case id
