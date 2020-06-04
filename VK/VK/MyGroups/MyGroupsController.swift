@@ -21,7 +21,7 @@ class MyGroupsController: UIViewController {
         loadData()
         APIReguests().gruopGet(){ [weak self] in
             self?.loadData()
-//            self?.myGroupsView.reloadData()
+            self?.myGroupsView.reloadData()
         }
         myGroupsView.dataSource = self
     }

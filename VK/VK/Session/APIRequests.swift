@@ -35,8 +35,8 @@ class APIReguests {
                 
                 do {
                     let user = try JSONDecoder().decode(User.self, from: data).response.items
-                    completion()
                     self.saveUserData(user)
+                    completion()
                 } catch {
                     print(error)
                 }
@@ -117,8 +117,8 @@ class APIReguests {
                 
                 do {
                     let group = try JSONDecoder().decode(Group.self, from: data).response.items
-                    completion()
                     self.saveGroupData(group)
+                    completion()
                 } catch {
                     print(error)
                 }

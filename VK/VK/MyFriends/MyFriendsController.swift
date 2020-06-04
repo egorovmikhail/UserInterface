@@ -21,13 +21,14 @@ class MyFriendsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        sortedFriends(friends: user)
+        
         APIReguests().friendGet() { [weak self] in
             self?.loadData()
-//            self?.sortedFriends(friends: self!.user)
-//            self?.myFriendsView.reloadData()
+            self?.sortedFriends(friends: self!.user)
+            self?.myFriendsView.reloadData()
         }
         friedSearchBar.delegate = self
-        sortedFriends(friends: user)
     }
     
     func loadData() {
