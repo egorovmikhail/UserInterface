@@ -95,7 +95,7 @@ class APIReguests {
         task.resume()
     }
     
-    func gruopGet(completion: @escaping () -> Void) {
+    func gruopGet() {
         let configuration = URLSessionConfiguration.default
         var urlConstructor = URLComponents()
         let session =  URLSession(configuration: configuration)
@@ -118,7 +118,6 @@ class APIReguests {
                 do {
                     let group = try JSONDecoder().decode(Group.self, from: data).response.items
                     self.saveGroupData(group)
-                    completion()
                 } catch {
                     print(error)
                 }

@@ -11,33 +11,44 @@ import RealmSwift
 
 class MyGroupsController: UIViewController {
     
-    @IBOutlet weak var myGroupsView: UITableView!
+    @IBOutlet var myGroupsView: UITableView!
+    
+    var token: NotificationToken?
     
     var groups = [GroupStatic]()
-    var group = [GroupItem]()
+    var group: Results<GroupItem>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
-        APIReguests().gruopGet(){ [weak self] in
-            self?.loadData()
-            self?.myGroupsView.reloadData()
-        }
+        
+        pairTableAndRealm()
         myGroupsView.dataSource = self
     }
     
-    func loadData() {
-        do {
-            let realm = try Realm()
-            
-            let groups = realm.objects(GroupItem.self)
-            
-            self.group = Array(groups)
-            print(group)
-        } catch {
-            print(error)
+    func pairTableAndRealm() {
+        guard let realm = try? Realm() else { return }
+        group = realm.objects(GroupItem.self)
+        token = group?.observe { [weak self] (changes: RealmCollectionChange) in
+            guard let tableView = self?.myGroupsView else { return }
+            switch changes {
+            case .initial:
+                tableView.reloadData()
+            case .update(_, let deletions, let insertions, let modifications):
+                tableView.beginUpdates()
+                tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }),
+                                     with: .automatic)
+                tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}),
+                                     with: .automatic)
+                tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }),
+                                     with: .automatic)
+                tableView.endUpdates()
+            case .error(let error):
+                fatalError("\(error)")
+            }
         }
     }
+
+    
     
     @IBAction func addGroup(segue: UIStoryboardSegue) {
         if segue.identifier == "addGroup" {
@@ -61,15 +72,15 @@ extension MyGroupsController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return group.count
+        return group?.count ?? 0
     }
+
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyGroupsCell", for: indexPath) as! MyGroupsCell
 
-        cell.myGroupsName.text = group[indexPath.row].name
-        if let url = URL(string: String(group[indexPath.row].avatar)) {
+        cell.myGroupsName.text = group![indexPath.row].name
+        if let url = URL(string: String(group![indexPath.row].avatar)) {
             DispatchQueue.global().async {
                 let data = try? Data(contentsOf: url)
                 DispatchQueue.main.async {
@@ -85,10 +96,10 @@ extension MyGroupsController: UITableViewDataSource {
 
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            group.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
+//        if editingStyle == .delete {
+//            group.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//        }
     }
     
 }
