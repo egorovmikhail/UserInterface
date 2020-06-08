@@ -88,12 +88,10 @@ extension MyGroupsController: UITableViewDataSource {
                 }
             }
         }
-//        cell.avatarView.image = groups[indexPath.row].avatar
-
+        
         return cell
     }
     
-
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 //        if editingStyle == .delete {
