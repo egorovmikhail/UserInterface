@@ -16,4 +16,23 @@ class MyFriendsCell: UITableViewCell {
     @IBAction func avatarAnimate(_ sender: Any?) {
         avatarView.animateAuthButton​()
     }
+  var friendSection = [Section]()
+  
+  func configure() {
+    let indexPath = IndexPath(row: 0, section: 0)
+    
+    var name = friendSection[indexPath.section].items[indexPath.row].firstName
+    name += friendSection[indexPath.section].items [indexPath.row].lastName
+    myFriendsName.text = name
+
+    if let url = URL(string: String(friendSection[indexPath.section].items[indexPath.row].avatar)) {
+      DispatchQueue.global().async {
+        let data = try? Data(contentsOf: url)
+        DispatchQueue.main.async {
+          self.avatarView.image = UIImage(data: data!)
+        }
+      }
+    }
+  }
 }
+

@@ -65,7 +65,7 @@ struct PhotoReposts: Codable {
 //    }
 }
 
-class PhotoSize: Object, Codable {
+class PhotoSize: Codable {
     var type: String
     var url: String
     var width: Int

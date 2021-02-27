@@ -60,9 +60,9 @@ extension MyFriendsController: UITableViewDataSource, UISearchBarDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyFriendsCell", for: indexPath) as! MyFriendsCell
+        let cell = myFriendsView.dequeueReusableCell(withIdentifier: "MyFriendsCell", for: indexPath) as! MyFriendsCell
 //        имя
-        var name = "\(friendSection[indexPath.section].items[indexPath.row].firstName) " 
+        var name = "\(friendSection[indexPath.section].items[indexPath.row].firstName) "
         name += friendSection[indexPath.section].items[indexPath.row].lastName
         cell.myFriendsName.text = name
 //        аватар
@@ -74,7 +74,10 @@ extension MyFriendsController: UITableViewDataSource, UISearchBarDelegate {
                 }
             }
         }
-        return cell
+      
+//      cell.configure()
+      
+      return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

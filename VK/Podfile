@@ -6,9 +6,7 @@ target 'VK' do
   use_frameworks!
 
   pod 'RealmSwift'
-  pod 'Firebase/Core'
-  pod 'Firebase/Database'
-
+ 
   # Pods for VK
 
 end
