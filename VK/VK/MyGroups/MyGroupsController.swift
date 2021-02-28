@@ -15,7 +15,7 @@ class MyGroupsController: UIViewController {
     
     var token: NotificationToken?
     
-    var groups = [GroupStatic]()
+    var groups = [GroupItem]()
     var group: Results<GroupItem>?
     
     override func viewDidLoad() {
@@ -50,18 +50,18 @@ class MyGroupsController: UIViewController {
 
     
     
-    @IBAction func addGroup(segue: UIStoryboardSegue) {
-        if segue.identifier == "addGroup" {
-            let allGroupsController = segue.source as! AllGroupsController
-            if let indexPath = allGroupsController.allGroupsView.indexPathForSelectedRow {
-                let group = allGroupsController.groups[indexPath.row]
-                if !groups.contains(group) {
-                    groups.append(group)
-                    myGroupsView.reloadData()
-                }
-            }
-        }
-    }
+//    @IBAction func addGroup(segue: UIStoryboardSegue) {
+//        if segue.identifier == "addGroup" {
+//            let allGroupsController = segue.source as! AllGroupsController
+//            if let indexPath = allGroupsController.allGroupsView.indexPathForSelectedRow {
+//                let group = allGroupsController.groups[indexPath.row]
+//                if !groups.contains(group) {
+//                    groups.append(group)
+//                    myGroupsView.reloadData()
+//                }
+//            }
+//        }
+//    }
 }
 
 extension MyGroupsController: UITableViewDataSource {

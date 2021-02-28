@@ -13,15 +13,7 @@ class AllGroupsController: UIViewController {
     @IBOutlet weak var allGroupsView: UITableView!
 
     
-    var groups = [
-        brain,
-        catBreeders,
-        dogBreeders,
-        healthyLifestyle,
-        myСity,
-        selfDevelopment,
-        geekBrains
-    ]
+//    var groups = [GroupItem]()
     
     let groupsSearch = "1"
     
@@ -62,8 +54,6 @@ extension AllGroupsController: UITableViewDataSource {
                 }
             }
         }
-//        cell.avatarView.image = groups[indexPath.row].avatar
-        
         return cell
     }
     
