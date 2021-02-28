@@ -101,11 +101,10 @@
 			isa = PBXGroup;
 			children = (
 				81431343242A542600AC7EDE /* AppDelegate.swift */,
-				811F0971244AF31D005419D0 /* LikeButton.swift */,
 				8190149F2469897100EEA322 /* Session */,
 				817FF6CC2436182C0037068F /* Model */,
 				81A9C2F3243C24E6002CED77 /* LoginForm */,
-				818AF713243A1AFC00C3B396 /* Avatar */,
+				818AF713243A1AFC00C3B396 /* CustomComponents */,
 				819D23A62434CD70005EBCC6 /* AllGroups */,
 				819D23A52434CD32005EBCC6 /* MyGroups */,
 				819D23A42434CC9B005EBCC6 /* MyFriends */,
@@ -138,12 +137,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		818AF713243A1AFC00C3B396 /* Avatar */ = {
+		818AF713243A1AFC00C3B396 /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
+				811F0971244AF31D005419D0 /* LikeButton.swift */,
 				81DA86EF2438EA57002E5BAB /* AvatarView.swift */,
 			);
-			path = Avatar;
+			path = CustomComponents;
 			sourceTree = "<group>";
 		};
 		8190149F2469897100EEA322 /* Session */ = {
