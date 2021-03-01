@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner">
+            <connections>
+                <outlet property="commentsView" destination="bLT-3u-kcR" id="ZG4-c5-6jk"/>
+                <outlet property="likeView" destination="pgc-xV-GD9" id="FSr-bU-55Y"/>
+                <outlet property="repostView" destination="Kgx-oC-kNe" id="cg4-kk-M36"/>
+                <outlet property="scanView" destination="Gs5-Bg-ARK" id="XmD-RR-zr9"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NewsFooter" customModule="VK" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgc-xV-GD9" customClass="LikeButton" customModule="VK" customModuleProvider="target">
+                    <rect key="frame" x="16" y="13" width="40" height="40"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="KsX-GS-ooa"/>
+                        <constraint firstAttribute="height" constant="40" id="dsr-fd-rMn"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bLT-3u-kcR">
+                    <rect key="frame" x="100" y="13" width="40" height="40"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="T8z-vh-NZy"/>
+                        <constraint firstAttribute="width" constant="40" id="pFR-UB-vQG"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kgx-oC-kNe">
+                    <rect key="frame" x="184" y="13" width="40" height="40"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="1ex-cU-huO"/>
+                        <constraint firstAttribute="height" constant="40" id="xng-Bk-lXg"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gs5-Bg-ARK">
+                    <rect key="frame" x="324" y="13" width="40" height="40"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="76e-uu-3bK"/>
+                        <constraint firstAttribute="height" constant="40" id="TSg-2u-5i7"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Kgx-oC-kNe" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="CaS-bz-ohL"/>
+                <constraint firstItem="pgc-xV-GD9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="K0i-RF-4ci"/>
+                <constraint firstItem="pgc-xV-GD9" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="QM5-yI-2yp"/>
+                <constraint firstItem="bLT-3u-kcR" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="UgR-Jk-VXu"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Gs5-Bg-ARK" secondAttribute="trailing" constant="50" id="VuV-0w-AMF"/>
+                <constraint firstItem="Gs5-Bg-ARK" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="XvJ-Of-lGA"/>
+                <constraint firstItem="Kgx-oC-kNe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="184" id="jS1-2V-GiI"/>
+                <constraint firstItem="bLT-3u-kcR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="100" id="pdb-ZN-Oos"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-282.60869565217394" y="-348.21428571428572"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
