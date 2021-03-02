@@ -10,8 +10,8 @@ import UIKit
 
 @IBDesignable class PhotoView: UIView {
  
-    let frendPhotoView = UIImageView()
-    let likeButton = LikeButton()
+    let photoView = UIImageView()
+//    let likeButton = LikeButton()
     
 @IBInspectable var image: UIImage? {
         didSet {
@@ -31,21 +31,21 @@ import UIKit
     
     func setup () {
 
-        frendPhotoView.contentMode = .scaleToFill
-        addSubview(frendPhotoView)
-        frendPhotoView.layer.borderColor = UIColor.black.cgColor
-        frendPhotoView.layer.borderWidth = 0.5
-        likeButton.frame = CGRect(x: 10, y: 10, width: 40, height: 40)
-        addSubview(likeButton)
+        photoView.contentMode = .scaleToFill
+        addSubview(photoView)
+        photoView.layer.borderColor = UIColor.black.cgColor
+        photoView.layer.borderWidth = 0.5
+//        likeButton.frame = CGRect(x: 10, y: 10, width: 40, height: 40)
+//        addSubview(likeButton)
         
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        frendPhotoView.frame = bounds
+        photoView.frame = bounds
     }
         
     func addImage() {
-        frendPhotoView.image = image
+        photoView.image = image
     }
 }
