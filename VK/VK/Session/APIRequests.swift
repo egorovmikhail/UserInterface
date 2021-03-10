@@ -10,6 +10,8 @@ import Foundation
 import RealmSwift
 
 class APIReguests {
+  
+  //  MARK: - friendGet
     func friendGet(completion: @escaping () -> Void) {
         let configuration = URLSessionConfiguration.default
         var urlConstructor = URLComponents()
@@ -62,7 +64,7 @@ class APIReguests {
     
     
     
-    
+  //  MARK: - photoGet
     func photoGet(idUser: Int, completion: @escaping ([PhotoItem]) -> Void) {
         let configuration = URLSessionConfiguration.default
         var urlConstructor = URLComponents()
@@ -95,6 +97,7 @@ class APIReguests {
         task.resume()
     }
     
+  //  MARK: - gruopGet
     func gruopGet() {
         let configuration = URLSessionConfiguration.default
         var urlConstructor = URLComponents()
@@ -139,6 +142,7 @@ class APIReguests {
         }
     }
     
+  //  MARK: - groupsSearchGet
     func groupsSearchGet(q: String, completion: @escaping ([GroupItem]) -> Void) {
         let configuration = URLSessionConfiguration.default
         var urlConstructor = URLComponents()
@@ -168,6 +172,40 @@ class APIReguests {
         })
         task.resume()
     }
+  
+  //  MARK: - newsGet
+    func newsGet(/*completion: @escaping ([ResponseNews]) -> Void*/) {
+        let configuration = URLSessionConfiguration.default
+        var urlConstructor = URLComponents()
+        let session =  URLSession(configuration: configuration)
+        urlConstructor.scheme = "https"
+        urlConstructor.host = "api.vk.com"
+        urlConstructor.path = "/method/newsfeed.get"
+        urlConstructor.queryItems = [
+            URLQueryItem(name: "access_token", value: "\(Session.session.token)"),
+            URLQueryItem(name: "filters", value: "post,photo"),
+            URLQueryItem(name: "count", value: "5"),
+            URLQueryItem(name: "v", value: "5.130")
+        ]
+      
+        var request = URLRequest(url: urlConstructor.url!)
+        request.httpMethod = "GET"
+        let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
+            DispatchQueue.main.async {
+                guard let data = data else {return}
+                
+                do {
+                  let news = try JSONDecoder().decode(ResponseNews.self, from: data)
+//                    completion(group)
+                    print(news)
+                } catch {
+                    print(error)
+                }
+            }
+        })
+        task.resume()
+    }
+
 }
 
 
