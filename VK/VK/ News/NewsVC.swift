@@ -9,23 +9,21 @@
 import UIKit
 
 class NewsVC: UIViewController {
-
+  
   @IBOutlet weak var newsTableView: UITableView!
   
   override func viewDidLoad() {
-        super.viewDidLoad()
+    super.viewDidLoad()
     newsTableView.dataSource = self
-
-        // Do any additional setup after loading the view.
-    }
-
+  }
+  
 }
 
 extension NewsVC: UITableViewDataSource{
   
   
   func numberOfSections(in tableView: UITableView) -> Int {
-      return 1
+    return 1
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,31 +39,18 @@ extension NewsVC: UITableViewDataSource{
     
     let newsFooterCell = newsTableView.dequeueReusableCell(withIdentifier: "NewsFooterCell", for: indexPath) as! NewsFooterCell
     
-    
-    var cell = UITableViewCell()
-    
-    if indexPath.row == 0 {
-      cell = authorNewsCell
+    switch indexPath.row {
+      case 0:
+        return authorNewsCell
+      case 1:
+        return newsTextCell
+      case 2:
+        return newsImageCell
+      case 3:
+        return newsFooterCell
+      default:
+        return UITableViewCell()
     }
-    else if indexPath.row == 1 {
-        cell = newsTextCell
-    }
-    else if indexPath.row == 2 {
-        cell = newsImageCell
-    }
-    else if indexPath.row == 3 {
-        cell = newsFooterCell
-    }
-    
-    
-    return cell
   }
   
-//  private func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//    
-//  }
-  
-  
 }
-
-    
