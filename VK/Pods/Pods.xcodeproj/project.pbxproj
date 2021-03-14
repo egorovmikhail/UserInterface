@@ -91,7 +91,6 @@
 		69BD0C2B1F1E5101F596A5B8E480F56F /* RLMArray_Private.h in Copy . Private Headers */ = {isa = PBXBuildFile; fileRef = 871C125D2947A7837E44372F5FE99A71 /* RLMArray_Private.h */; };
 		6A1F281C889177D5BAADA1AE3EB6530C /* RLMEmbeddedObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6F3057AE1B9E3E916493F399C868AD7 /* RLMEmbeddedObject.mm */; settings = {COMPILER_FLAGS = "-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@\"10.7.0\"' -D__ASSERTMACROS__ -DREALM_ENABLE_SYNC"; }; };
 		6B0E13F9B2462892734B1C78D30C18ED /* RLMUpdateChecker.mm in Sources */ = {isa = PBXBuildFile; fileRef = D076C42B843FFDBF623CD05BFFF5BBAA /* RLMUpdateChecker.mm */; settings = {COMPILER_FLAGS = "-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@\"10.7.0\"' -D__ASSERTMACROS__ -DREALM_ENABLE_SYNC"; }; };
-		6F8C811E676D2A4FD08F11D612F6B393 /* Pods-VK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E0B4A1E675B7178D0648AE43F599858B /* Pods-VK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6FBDBA9BD39EC9FD4DFE3005DE5249C3 /* ObjectSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E774B6EA53E355CB6DB64A95CB7A0B /* ObjectSchema.swift */; };
 		6FCB43F1D6DE6594238B0D6AF5B91747 /* RLMListBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = 627C3A3F28658E87181863B0C198AA29 /* RLMListBase.mm */; settings = {COMPILER_FLAGS = "-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@\"10.7.0\"' -D__ASSERTMACROS__ -DREALM_ENABLE_SYNC"; }; };
 		6FE522BD246CE556B676C7E2351BEAAC /* RLMMigration.h in Headers */ = {isa = PBXBuildFile; fileRef = 9245148577F596018DE30914BA45C3DA /* RLMMigration.h */; };
@@ -118,6 +117,9 @@
 		808267A184B0B096D21EE559CD8AC9A0 /* RLMRealm_Private.h in Copy . Private Headers */ = {isa = PBXBuildFile; fileRef = B706F6A489ADA4CF991B2D39DFEDA994 /* RLMRealm_Private.h */; };
 		80FBC04F16FBDD346B2F61D566CAE650 /* RLMOptionalBase.h in Copy . Private Headers */ = {isa = PBXBuildFile; fileRef = BF4603173EB09CA3872BEC2A87C1A693 /* RLMOptionalBase.h */; };
 		811F1EB6A7A9C1AD5649165B53F97D5A /* RLMMongoDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 0664FE65D153AE94398B9E672910B480 /* RLMMongoDatabase.h */; };
+		81443F8825F9114C00665631 /* Realm.h in Headers */ = {isa = PBXBuildFile; fileRef = 521000D3D6226AF09B68789F50984E0C /* Realm.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		81C3B6BB25F9103800B9896B /* realm.h in Headers */ = {isa = PBXBuildFile; fileRef = B9C72321089B05B0D33317DA3C747701 /* realm.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		81C3B6C925F910C900B9896B /* Pods-VK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E0B4A1E675B7178D0648AE43F599858B /* Pods-VK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8261D5472837FF1A81B6E71D612A03E2 /* RLMUser.h in Copy . Public Headers */ = {isa = PBXBuildFile; fileRef = 9261FE66DA3342BAEBF1C1D74BDDA0F6 /* RLMUser.h */; };
 		839834BC5A808799B3161796474C6AC3 /* RLMFindOneAndModifyOptions.h in Copy . Public Headers */ = {isa = PBXBuildFile; fileRef = 280A1D84F88E72C472937826E91BDB7B /* RLMFindOneAndModifyOptions.h */; };
 		8454B3684BB59FB913A5924F6E5874B5 /* RLMAPIKeyAuth.h in Headers */ = {isa = PBXBuildFile; fileRef = F29ED7DE5333BBCCA440E6CB6A4306BC /* RLMAPIKeyAuth.h */; };
@@ -917,7 +919,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F8C811E676D2A4FD08F11D612F6B393 /* Pods-VK-umbrella.h in Headers */,
+				81C3B6C925F910C900B9896B /* Pods-VK-umbrella.h in Headers */,
+				81443F8825F9114C00665631 /* Realm.h in Headers */,
+				81C3B6BB25F9103800B9896B /* realm.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1228,12 +1232,16 @@
 			baseConfigurationReference = 5EE7FC02922BFEF1F4564D03BCB5D32B /* Pods-VK.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1252,8 +1260,10 @@
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1497,12 +1507,16 @@
 			baseConfigurationReference = A7EC99E7D9491289F7572BC04E212D61 /* Pods-VK.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1521,8 +1535,10 @@
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
