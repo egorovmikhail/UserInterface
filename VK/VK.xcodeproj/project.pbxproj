@@ -240,12 +240,23 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		8183FCFC25FDDB7400E2E945 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		8143133F242A542600AC7EDE /* VK */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 81431354242A542700AC7EDE /* Build configuration list for PBXNativeTarget "VK" */;
 			buildPhases = (
 				73EEE26561E680FD3ADD194A /* [CP] Check Pods Manifest.lock */,
+				8183FCFC25FDDB7400E2E945 /* Headers */,
 				8143133C242A542600AC7EDE /* Sources */,
 				8143133D242A542600AC7EDE /* Frameworks */,
 				8143133E242A542600AC7EDE /* Resources */,
@@ -314,6 +325,8 @@
 			);
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-VK/Pods-VK-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (

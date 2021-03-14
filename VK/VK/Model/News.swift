@@ -123,9 +123,9 @@ struct ItemAttachment: Codable {
 struct Link: Codable {
     var url: String
     var title: String
-    var caption: String
+    var caption: String?
     var linkDescription: String
-    var photo: PhotoNews
+    var photo: PhotoNews?
     var isFavorite: Bool
 
     enum CodingKeys: String, CodingKey {
@@ -195,7 +195,7 @@ struct PurpleVideo: Codable {
     var height: Int
     var id: Int
     var ownerid: Int
-    var ovid: String
+    var ovid: String?
     var title: String
     var isFavorite: Bool
     var trackCode: String

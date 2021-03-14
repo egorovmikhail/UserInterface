@@ -12,8 +12,23 @@ class NewsVC: UIViewController {
   
   @IBOutlet weak var newsTableView: UITableView!
   
+  var items = [Item]()
+  var profiles = [Profile]()
+  var groups = [GroupNews]()
+  var nextFrom: String?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    APIReguests().newsGet(){ items, profiles, groups, nextFrom in
+      self.items = items
+      self.profiles = profiles
+      self.groups = groups
+      self.nextFrom = nextFrom
+      dump(self.items)
+      dump(self.profiles)
+      dump(self.groups)
+      dump(self.nextFrom)
+    }
     newsTableView.dataSource = self
   }
   

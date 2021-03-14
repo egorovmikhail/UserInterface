@@ -15,12 +15,12 @@ class MyGroupsController: UIViewController {
     
     var token: NotificationToken?
     
-    var groups = [GroupItem]()
+//    var groups = [GroupItem]()
     var group: Results<GroupItem>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        APIReguests().gruopGet()
         pairTableAndRealm()
         myGroupsView.dataSource = self
     }
