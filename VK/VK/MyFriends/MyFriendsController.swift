@@ -13,6 +13,11 @@ class MyFriendsController: UIViewController {
     
     @IBOutlet weak var myFriendsView: UITableView!
     @IBOutlet weak var friedSearchBar: UISearchBar!
+  
+    let photoService: PhotoService = {
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        return appDelegate?.photoService ?? PhotoService()
+    }()
     
 //    var user = userStatic
     var friendSection = [Section]()
@@ -66,15 +71,20 @@ extension MyFriendsController: UITableViewDataSource, UISearchBarDelegate {
         name += friendSection[indexPath.section].items[indexPath.row].lastName
         cell.myFriendsName.text = name
 //        аватар
-        if let url = URL(string: String(friendSection[indexPath.section].items[indexPath.row].avatar)) {
-            DispatchQueue.global().async {
-                let data = try? Data(contentsOf: url)
-                let avatar = UIImage(data: data!)
-                DispatchQueue.main.async {
-                    cell.avatarView.image = avatar
-                }
-            }
+//        if let url = URL(string: String(friendSection[indexPath.section].items[indexPath.row].avatar)) {
+//            DispatchQueue.global().async {
+//                let data = try? Data(contentsOf: url)
+//                let avatar = UIImage(data: data!)
+//                DispatchQueue.main.async {
+//                    cell.avatarView.image = avatar
+//                }
+//            }
+//        }
+      photoService.getPhoto(urlString: friendSection[indexPath.section].items[indexPath.row].avatar) { avatar in
+         DispatchQueue.main.async {
+            cell.avatarView.image = avatar
         }
+      }
       
 //      cell.configure()
       

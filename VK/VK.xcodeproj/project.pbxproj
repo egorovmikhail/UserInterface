@@ -29,6 +29,7 @@
 		81BECEB725ED082E00687F18 /* AuthorNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BECEB625ED082E00687F18 /* AuthorNewsCell.swift */; };
 		81BECEBB25ED086D00687F18 /* NewsFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BECEBA25ED086D00687F18 /* NewsFooterCell.swift */; };
 		81C588F025F91E5300E53864 /* DotLoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C588EF25F91E5300E53864 /* DotLoadView.swift */; };
+		81D45423260A29AF0073317B /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D45422260A29AF0073317B /* PhotoService.swift */; };
 		81DA86F02438EA57002E5BAB /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DA86EF2438EA57002E5BAB /* AvatarView.swift */; };
 		81DFBFB4243F45420094EAB2 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DFBFB3243F45420094EAB2 /* PhotoView.swift */; };
 		81E6FDB42434A4C900E2A6B6 /* MyFriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E6FDB32434A4C900E2A6B6 /* MyFriendsController.swift */; };
@@ -68,6 +69,7 @@
 		81BECEBA25ED086D00687F18 /* NewsFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFooterCell.swift; sourceTree = "<group>"; };
 		81C3B69A25F90A3500B9896B /* Pods_VK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_VK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81C588EF25F91E5300E53864 /* DotLoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotLoadView.swift; sourceTree = "<group>"; };
+		81D45422260A29AF0073317B /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		81DA86EF2438EA57002E5BAB /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		81DFBFB3243F45420094EAB2 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		81E6FDB32434A4C900E2A6B6 /* MyFriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsController.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			children = (
 				8190149D2469874100EEA322 /* Session.swift */,
 				81805EEB247108E4009E95E7 /* APIRequests.swift */,
+				81D45422260A29AF0073317B /* PhotoService.swift */,
 			);
 			path = Session;
 			sourceTree = "<group>";
@@ -326,8 +329,6 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-VK/Pods-VK-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-VK/Pods-VK-frameworks-${CONFIGURATION}-output-files.xcfilelist",
@@ -386,6 +387,7 @@
 				817E9E4725EBAFFC0029789B /* NewsTextCell.swift in Sources */,
 				81525F272474E640002122A5 /* Photo.swift in Sources */,
 				81B23AC625F2995900777E23 /* News.swift in Sources */,
+				81D45423260A29AF0073317B /* PhotoService.swift in Sources */,
 				81E6FDB82434A71F00E2A6B6 /* MyGroupsController.swift in Sources */,
 				81BECEBB25ED086D00687F18 /* NewsFooterCell.swift in Sources */,
 				8102647E2434C093005A662C /* FriendsPhotoCell.swift in Sources */,

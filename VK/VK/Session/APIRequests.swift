@@ -201,16 +201,16 @@ class APIReguests {
         
         do {
           
-         let items = try JSONDecoder().decode(News.self, from: data).response.items
-         let profile = try JSONDecoder().decode(News.self, from: data).response.profiles
-         let group = try JSONDecoder().decode(News.self, from: data).response.groups
-         let nextFrom = try JSONDecoder().decode(News.self, from: data).response.nextFrom
+          let items = try JSONDecoder().decode(News.self, from: data).response.items
+          let profile = try JSONDecoder().decode(News.self, from: data).response.profiles
+          let group = try JSONDecoder().decode(News.self, from: data).response.groups
+          let nextFrom = try JSONDecoder().decode(News.self, from: data).response.nextFrom
           
           
-//          dump(items)
-//          dump(profile)
-//          dump(group)
-//          dump(nextFrom)
+          //          dump(items)
+          //          dump(profile)
+          //          dump(group)
+          //          dump(nextFrom)
           self.myDispatchGroup.notify(queue: DispatchQueue.main){
             completion(items, profile, group, nextFrom)
           }

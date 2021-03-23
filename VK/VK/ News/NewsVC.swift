@@ -26,7 +26,7 @@ class NewsVC: UIViewController {
       self.nextFrom = nextFrom
       self.newsTableView.reloadData()
       dump(self.items)
-//      dump(self.profiles)
+      dump(self.profiles)
 //      dump(self.groups)
 //      dump(self.nextFrom)
     }
@@ -77,13 +77,15 @@ extension NewsVC: UITableViewDataSource{
     let newsImageCell = newsTableView.dequeueReusableCell(withIdentifier: "NewsImageCell", for: indexPath) as! NewsImageCell
 
     DispatchQueue.global().async {
-      guard (self.items[indexPath.section].attachments![0].photo?.sizes[6].url) != nil else {return}
-      if let url = URL(string: String((self.items[indexPath.section].attachments![0].photo?.sizes[0].url)!)) {
-        let data = try? Data(contentsOf: url)
-//        guard let data = data else {return}
-        let photo = UIImage(data: data!)
-        DispatchQueue.main.async {
-          newsImageCell.photoNews.image = photo
+      guard ((self.items[indexPath.section].attachments?.isEmpty) != nil) else {return}
+      if let url = self.items[indexPath.section].attachments![0].photo?.sizes[0].url {
+        if let url = URL(string: String(url)) {
+          let data = try? Data(contentsOf: url)
+//          guard let data = data else {return}
+          let photo = UIImage(data: data!)
+          DispatchQueue.main.async {
+            newsImageCell.photoNews.image = photo
+          }
         }
       }
     }

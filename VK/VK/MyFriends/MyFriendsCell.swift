@@ -9,13 +9,13 @@
 import UIKit
 
 class MyFriendsCell: UITableViewCell {
-
-    @IBOutlet weak var myFriendsName: UILabel!
-    @IBOutlet weak var avatarView: AvatarView!
-    
-    @IBAction func avatarAnimate(_ sender: Any?) {
-        avatarView.animateAuthButton​()
-    }
+  
+  @IBOutlet weak var myFriendsName: UILabel!
+  @IBOutlet weak var avatarView: AvatarView!
+  
+  @IBAction func avatarAnimate(_ sender: Any?) {
+    avatarView.animateAuthButton​()
+  }
   var friendSection = [Section]()
   
   func configure() {
@@ -24,12 +24,13 @@ class MyFriendsCell: UITableViewCell {
     var name = friendSection[indexPath.section].items[indexPath.row].firstName
     name += friendSection[indexPath.section].items [indexPath.row].lastName
     myFriendsName.text = name
-
+    
     if let url = URL(string: String(friendSection[indexPath.section].items[indexPath.row].avatar)) {
       DispatchQueue.global().async {
         let data = try? Data(contentsOf: url)
+        let avatar = UIImage(data: data!)
         DispatchQueue.main.async {
-          self.avatarView.image = UIImage(data: data!)
+          self.avatarView.image = avatar
         }
       }
     }
