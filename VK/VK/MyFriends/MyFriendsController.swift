@@ -13,6 +13,11 @@ class MyFriendsController: UIViewController {
     
     @IBOutlet weak var myFriendsView: UITableView!
     @IBOutlet weak var friedSearchBar: UISearchBar!
+  
+    let photoService: PhotoService = {
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        return appDelegate?.photoService ?? PhotoService()
+    }()
     
 //    var user = userStatic
     var friendSection = [Section]()
@@ -62,18 +67,24 @@ extension MyFriendsController: UITableViewDataSource, UISearchBarDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = myFriendsView.dequeueReusableCell(withIdentifier: "MyFriendsCell", for: indexPath) as! MyFriendsCell
 //        имя
-        var name = "\(friendSection[indexPath.section].items[indexPath.row].firstName) "
+      var name: String = friendSection[indexPath.section].items[indexPath.row].firstName
         name += friendSection[indexPath.section].items[indexPath.row].lastName
         cell.myFriendsName.text = name
 //        аватар
-        if let url = URL(string: String(friendSection[indexPath.section].items[indexPath.row].avatar)) {
-            DispatchQueue.global().async {
-                let data = try? Data(contentsOf: url)
-                DispatchQueue.main.async {
-                    cell.avatarView.image = UIImage(data: data!)
-                }
-            }
+//        if let url = URL(string: String(friendSection[indexPath.section].items[indexPath.row].avatar)) {
+//            DispatchQueue.global().async {
+//                let data = try? Data(contentsOf: url)
+//                let avatar = UIImage(data: data!)
+//                DispatchQueue.main.async {
+//                    cell.avatarView.image = avatar
+//                }
+//            }
+//        }
+      photoService.getPhoto(urlString: friendSection[indexPath.section].items[indexPath.row].avatar) { avatar in
+         DispatchQueue.main.async {
+            cell.avatarView.image = avatar
         }
+      }
       
 //      cell.configure()
       

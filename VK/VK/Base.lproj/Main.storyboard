@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18092"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -111,7 +111,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CFH-AP-Qsu">
                                 <rect key="frame" x="0.0" y="83" width="375" height="646"/>
                                 <searchBar key="tableHeaderView" clearsContextBeforeDrawing="NO" contentMode="redraw" showsCancelButton="YES" translucent="NO" id="9sV-um-AzB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits" spellCheckingType="yes"/>
                                     <scopeButtonTitles>
@@ -121,7 +121,7 @@
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyFriendsCell" id="xYP-og-UpH" customClass="MyFriendsCell" customModule="VK" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="84" width="375" height="68.333335876464844"/>
+                                        <rect key="frame" x="0.0" y="75.333333969116211" width="375" height="68.333335876464844"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xYP-og-UpH" id="ref-z9-M8i">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="68.333335876464844"/>
@@ -216,7 +216,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyGroupsCell" id="gb7-Qm-muL" customClass="MyGroupsCell" customModule="VK" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="68.333335876464844"/>
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="375" height="68.333335876464844"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gb7-Qm-muL" id="4fD-p2-6kY">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="68.333335876464844"/>
@@ -309,7 +309,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllGroupsCell" id="6CD-M3-D23" customClass="AllGroupsCell" customModule="VK" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="68.333335876464844"/>
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="375" height="68.333335876464844"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6CD-M3-D23" id="dM0-zd-vuS">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="68.333335876464844"/>
@@ -407,7 +407,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="128" placeholderIntrinsicHeight="128" reuseIdentifier="FriendsPhotoCell" translatesAutoresizingMaskIntoConstraints="NO" id="afm-35-eN8" customClass="FriendsPhotoCell" customModule="VK" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="128" placeholderIntrinsicHeight="128" reuseIdentifier="FriendsPhotoCell" translatesAutoresizingMaskIntoConstraints="NO" id="afm-35-eN8" customClass="FriendsPhotoCell" customModule="VK" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="182" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hnK-fV-kPK" customClass="PhotoView" customModule="VK" customModuleProvider="target">
@@ -525,7 +525,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AuthorNewsCell" id="L3x-rZ-HJX" customClass="AuthorNewsCell" customModule="VK" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.333332061767578" width="375" height="76"/>
+                                        <rect key="frame" x="0.0" y="49" width="375" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L3x-rZ-HJX" id="uhk-9Q-J2K">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
@@ -539,7 +539,7 @@
                                                         <constraint firstAttribute="width" constant="44" id="ghX-cq-h3F"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="geekBrains"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="defaultPhoto"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geek Brains" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCs-Pp-WmR">
@@ -574,7 +574,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsTextCell" rowHeight="128" id="Vaw-4x-eLJ" customClass="NewsTextCell" customModule="VK" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="131.33333206176758" width="375" height="128"/>
+                                        <rect key="frame" x="0.0" y="125" width="375" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vaw-4x-eLJ" id="QBo-My-nm0">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
@@ -605,14 +605,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsImageCell" id="F15-3N-y8M" customClass="NewsImageCell" customModule="VK" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="259.33333206176758" width="375" height="275"/>
+                                        <rect key="frame" x="0.0" y="253" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F15-3N-y8M" id="RO6-lL-VYs">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="275"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F15-3N-y8M" id="RO6-lL-VYs">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="myСity" translatesAutoresizingMaskIntoConstraints="NO" id="SVc-F2-G4m">
-                                                    <rect key="frame" x="12" y="0.0" width="351" height="275"/>
+                                                <imageView autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SVc-F2-G4m">
+                                                    <rect key="frame" x="12" y="0.0" width="351" height="44"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -628,7 +628,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsFooterCell" rowHeight="43.666667938232422" id="DQ6-Zn-Duw" customClass="NewsFooterCell" customModule="VK" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="534.33333206176758" width="375" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="297" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DQ6-Zn-Duw" id="U36-Qh-2RG">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
@@ -704,7 +704,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MMR-il-Q3t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16706" y="1719"/>
+            <point key="canvasLocation" x="-16706.400000000001" y="1718.7192118226601"/>
         </scene>
         <!--Новости-->
         <scene sceneID="bnV-Hs-OC1">
@@ -743,11 +743,9 @@
         <image name="andrey" width="225" height="225"/>
         <image name="dariya" width="200" height="200"/>
         <image name="defaultPhoto" width="1080" height="1080"/>
-        <image name="geekBrains" width="140" height="140"/>
         <image name="icons_news_25" width="25" height="25"/>
         <image name="meal3" width="1041" height="1080"/>
         <image name="message" catalog="system" width="128" height="113"/>
-        <image name="myСity" width="275" height="275"/>
         <image name="person.2" catalog="system" width="128" height="81"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
         <systemColor name="labelColor">

@@ -109,70 +109,70 @@ class Item: Codable {
 // MARK: - ItemAttachment
 struct ItemAttachment: Codable {
     var type: String
-    var video: PurpleVideo?
-    var link: Link?
+//    var video: PurpleVideo?
+    var photo: PhotoNews?
 
     enum CodingKeys: String, CodingKey {
         case type = "type"
-        case video = "video"
-        case link = "link"
+//        case video = "video"
+        case photo = "photo"
     }
 }
 
 // MARK: - Link
-struct Link: Codable {
-    var url: String
-    var title: String
-    var caption: String
-    var linkDescription: String
-    var photo: PhotoNews
-    var isFavorite: Bool
+//struct Link: Codable {
+//    var url: String
+//    var title: String
+//    var caption: String?
+//    var linkDescription: String
+//    var photo: PhotoNews?
+//    var isFavorite: Bool
 
-    enum CodingKeys: String, CodingKey {
-        case url = "url"
-        case title = "title"
-        case caption = "caption"
-        case linkDescription = "description"
-        case photo = "photo"
-        case isFavorite = "is_favorite"
-    }
-}
+//    enum CodingKeys: String, CodingKey {
+//        case url = "url"
+//        case title = "title"
+//        case caption = "caption"
+//        case linkDescription = "description"
+//        case photo = "photo"
+//        case isFavorite = "is_favorite"
+//    }
+//}
 
 // MARK: - Photo
 struct PhotoNews: Codable {
-    var albumid: Int
-    var date: Int
-    var id: Int
-    var ownerid: Int
-    var hasTags: Bool
+//    var albumid: Int
+//    var date: Int
+//    var id: Int
+//    var ownerid: Int
+//    var hasTags: Bool
     var sizes: [Size]
-    var text: String
-    var userid: Int
+//    var text: String
+//    var userid: Int
 
     enum CodingKeys: String, CodingKey {
-        case albumid = "album_id"
-        case date = "date"
-        case id = "id"
-        case ownerid = "owner_id"
-        case hasTags = "has_tags"
+//        case albumid = "album_id"
+//        case date = "date"
+//        case id = "id"
+//        case ownerid = "owner_id"
+//        case hasTags = "has_tags"
         case sizes = "sizes"
-        case text = "text"
-        case userid = "user_id"
+//        case text = "text"
+//        case userid = "user_id"
     }
 }
 
 // MARK: - Size
 struct Size: Codable {
-    var height: Int
+//    var height: Int
     var url: String
-    var type: String
-    var width: Int
+//    var type: String
+//    var width: Int
 
     enum CodingKeys: String, CodingKey {
-        case height = "height"
+//        case height = "height"
         case url = "url"
-        case type = "type"
-        case width = "width"
+//        case type = "type"
+//        case width = "width"
     }
 }
 
@@ -195,7 +195,7 @@ struct PurpleVideo: Codable {
     var height: Int
     var id: Int
     var ownerid: Int
-    var ovid: String
+    var ovid: String?
     var title: String
     var isFavorite: Bool
     var trackCode: String
