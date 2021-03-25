@@ -23,31 +23,22 @@ class MyFriendsCell: UITableViewCell {
     return label
   }()
   
-  var avatarView: AvatarView! = {
+  var avatarView: AvatarView = {
     let avatar = AvatarView()
     avatar.translatesAutoresizingMaskIntoConstraints = false
-    avatar.frame = CGRect(x: 0.0, y: 70.0, width: 44.0, height: 44.0)
     avatar.contentMode = .scaleAspectFit
     return avatar
   }()
   
-  override func prepareForReuse() {
-      super.prepareForReuse()
-      avatarView.image = nil
-      myFriendsName.text = nil
-      setNeedsLayout()
+  override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+          super.init(style: style, reuseIdentifier: reuseIdentifier)
+    contentView.addSubview(avatarView)
+    contentView.addSubview(myFriendsName)
   }
-  
-  override func layoutSubviews() {
-      super.layoutSubviews()
-    addSubview(myFriendsName)
-    addSubview(avatarView)
-  }
-  
-  override func awakeFromNib() {
-      super.awakeFromNib()
-      // Initialization code
-    
+ 
+  required init?(coder: NSCoder) {
+      super.init(coder: coder)
+      
   }
 
   func configure() {
