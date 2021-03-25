@@ -29,16 +29,17 @@ class MyFriendsCell: UITableViewCell {
     avatar.contentMode = .scaleAspectFit
     return avatar
   }()
+
   
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
           super.init(style: style, reuseIdentifier: reuseIdentifier)
     contentView.addSubview(avatarView)
     contentView.addSubview(myFriendsName)
   }
- 
+
   required init?(coder: NSCoder) {
       super.init(coder: coder)
-      
+
   }
 
   func configure() {

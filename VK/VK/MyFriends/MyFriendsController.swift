@@ -26,9 +26,10 @@ class MyFriendsController: UIViewController {
     super.viewDidLoad()
     loadData()
     sortedFriends(friends: user)
-    //      myFriendsView.register(MyFriendsCell.self, forCellReuseIdentifier: "MyFriendsCell")
+//    myFriendsView.register(MyFriendsCell.self, forCellReuseIdentifier: "MyFriendsCell")
+
     
-    myFriendsView.estimatedRowHeight = 68
+    myFriendsView.rowHeight = 72
     
     APIReguests().friendGet() { [weak self] in
       self?.loadData()
