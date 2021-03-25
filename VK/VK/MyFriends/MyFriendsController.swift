@@ -27,6 +27,8 @@ class MyFriendsController: UIViewController {
         super.viewDidLoad()
         loadData()
         sortedFriends(friends: user)
+//      myFriendsView.register(MyFriendsCell.self, forCellReuseIdentifier: "MyFriendsCell")
+      myFriendsView.estimatedRowHeight = 68
         
         APIReguests().friendGet() { [weak self] in
             self?.loadData()
@@ -69,7 +71,7 @@ extension MyFriendsController: UITableViewDataSource, UISearchBarDelegate {
 //        имя
       var name: String = friendSection[indexPath.section].items[indexPath.row].firstName
         name += friendSection[indexPath.section].items[indexPath.row].lastName
-        cell.myFriendsName.text = name
+      cell.myFriendsName.text = name
 //        аватар
 //        if let url = URL(string: String(friendSection[indexPath.section].items[indexPath.row].avatar)) {
 //            DispatchQueue.global().async {

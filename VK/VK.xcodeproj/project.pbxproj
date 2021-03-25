@@ -10,6 +10,7 @@
 		8102647C2434C042005A662C /* FriendsPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102647B2434C042005A662C /* FriendsPhotoController.swift */; };
 		8102647E2434C093005A662C /* FriendsPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102647D2434C093005A662C /* FriendsPhotoCell.swift */; };
 		811F0972244AF31D005419D0 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811F0971244AF31D005419D0 /* LikeButton.swift */; };
+		811F1A40260CE618009F59DC /* TestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811F1A3F260CE618009F59DC /* TestCell.swift */; };
 		812A580224600933004BACB9 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812A580124600933004BACB9 /* PhotoViewController.swift */; };
 		81431344242A542600AC7EDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81431343242A542600AC7EDE /* AppDelegate.swift */; };
 		81431348242A542600AC7EDE /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81431347242A542600AC7EDE /* LoginFormController.swift */; };
@@ -47,6 +48,7 @@
 		8102647B2434C042005A662C /* FriendsPhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsPhotoController.swift; sourceTree = "<group>"; };
 		8102647D2434C093005A662C /* FriendsPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsPhotoCell.swift; sourceTree = "<group>"; };
 		811F0971244AF31D005419D0 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
+		811F1A3F260CE618009F59DC /* TestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCell.swift; sourceTree = "<group>"; };
 		812A580124600933004BACB9 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		81431340242A542600AC7EDE /* VK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81431343242A542600AC7EDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			children = (
 				81E6FDB32434A4C900E2A6B6 /* MyFriendsController.swift */,
 				81E6FDB52434A5FF00E2A6B6 /* MyFriendsCell.swift */,
+				811F1A3F260CE618009F59DC /* TestCell.swift */,
 			);
 			path = MyFriends;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				81525F272474E640002122A5 /* Photo.swift in Sources */,
 				81B23AC625F2995900777E23 /* News.swift in Sources */,
 				81D45423260A29AF0073317B /* PhotoService.swift in Sources */,
+				811F1A40260CE618009F59DC /* TestCell.swift in Sources */,
 				81E6FDB82434A71F00E2A6B6 /* MyGroupsController.swift in Sources */,
 				81BECEBB25ED086D00687F18 /* NewsFooterCell.swift in Sources */,
 				8102647E2434C093005A662C /* FriendsPhotoCell.swift in Sources */,
