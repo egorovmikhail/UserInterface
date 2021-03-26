@@ -78,7 +78,6 @@ class MyFriendsCell: UITableViewCell {
   }
   
   //  MARK: - setupAvatarView
-  
   func setupAvatarView(){
     view.frame = CGRect(x: instets, y: instets,
                         width: avatarSize, height: avatarSize)
