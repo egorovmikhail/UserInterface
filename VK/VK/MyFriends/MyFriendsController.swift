@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class MyFriendsController: UIViewController {
+class MyFriendsController: UIViewController, UITableViewDelegate {
   
   @IBOutlet weak var myFriendsView: UITableView!
   @IBOutlet weak var friedSearchBar: UISearchBar!
@@ -24,27 +24,33 @@ class MyFriendsController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    myFriendsView.delegate = self
+    myFriendsView.dataSource = self
+    
     loadData()
     sortedFriends(friends: user)
-//    myFriendsView.register(MyFriendsCell.self, forCellReuseIdentifier: "MyFriendsCell")
-
     
-    myFriendsView.rowHeight = 72
+    myFriendsView.register(MyFriendsCell.self, forCellReuseIdentifier: "MyFriendsCell")
+    myFriendsView.rowHeight = 68
     
     APIReguests().friendGet() { [weak self] in
       self?.loadData()
       self?.sortedFriends(friends: self!.user)
       self?.myFriendsView.reloadData()
     }
+  
     friedSearchBar.delegate = self
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+ 
   }
   
   func loadData() {
     do {
       let realm = try Realm()
-      
       let users = realm.objects(UserItem.self)
-      
       self.user = Array(users)
       //            print(user)
     } catch {
@@ -69,38 +75,29 @@ extension MyFriendsController: UITableViewDataSource, UISearchBarDelegate {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = myFriendsView.dequeueReusableCell(withIdentifier: "MyFriendsCell", for: indexPath) as! MyFriendsCell
-    //        имя
+//            имя
     var name: String = friendSection[indexPath.section].items[indexPath.row].firstName
     name += friendSection[indexPath.section].items[indexPath.row].lastName
-    cell.myFriendsName.text = name
-    //        аватар
-    //        if let url = URL(string: String(friendSection[indexPath.section].items[indexPath.row].avatar)) {
-    //            DispatchQueue.global().async {
-    //                let data = try? Data(contentsOf: url)
-    //                let avatar = UIImage(data: data!)
-    //                DispatchQueue.main.async {
-    //                    cell.avatarView.image = avatar
-    //                }
-    //            }
-    //        }
+    cell.labelName.text = name
+    
+//    cell.fullName(friendSection: friendSection)
+    
     photoService.getPhoto(urlString: friendSection[indexPath.section].items[indexPath.row].avatar) { avatar in
       DispatchQueue.main.async {
         cell.avatarView.image = avatar
       }
     }
     
-    //      cell.configure()
-    
     return cell
   }
   
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "segueFriendsPhoto" {
-      if let vc = segue.destination as? FriendsPhotoController {
-        let friendIndex = myFriendsView.indexPathForSelectedRow!
-        vc.friend = friendSection[friendIndex.section].items[friendIndex.row]
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      let selectedTrail = friendSection[indexPath.section].items[indexPath.row]
+      
+      if let vс = storyboard?.instantiateViewController(identifier: "FriendsPhotoController") as? FriendsPhotoController {
+        vс.friend = selectedTrail
+          navigationController?.pushViewController(vс, animated: true)
       }
-    }
   }
   
   func sortedFriends(friends: [UserItem]) {
