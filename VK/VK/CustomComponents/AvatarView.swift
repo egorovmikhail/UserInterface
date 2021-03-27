@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable class AvatarView: UIView {
     
     let avatar = UIImageView()
-//    let button = UIButton()
+    let button = UIButton()
         
 @IBInspectable var image: UIImage? {
         didSet {
@@ -32,12 +32,13 @@ import UIKit
     
     func setup () {
 //        Создаём фрейм для картинки
-//        button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         avatar.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        button.frame = avatar.frame
         avatar.contentMode = .scaleAspectFit
-//        button.contentMode = .scaleAspectFill
+        button.contentMode = .scaleAspectFill
+        button.addTarget(self, action: #selector(animateAuthButton​), for: .touchDown)
         addSubview(avatar)
-//        addSubview(button)
+        addSubview(button)
         
 //        Создаём контур и обрезаем катинку
         avatar.layer.borderColor = UIColor.black.cgColor
@@ -50,14 +51,13 @@ import UIKit
         layer.shadowRadius = 8.0
         layer.shadowOpacity = 5.0
         layer.shadowOffset = .zero
-
     }
     
     func addImage() {
         avatar.image = image
     }
     
-    func animateAuthButton​() {
+  @objc func animateAuthButton​() {
         let animation = CASpringAnimation(keyPath: "transform.scale")
         animation.fromValue = 0.85
         animation.toValue = 1
@@ -66,7 +66,6 @@ import UIKit
         animation.duration = 2
         animation.beginTime = CACurrentMediaTime() + 0.2
         animation.fillMode = CAMediaTimingFillMode.backwards
-        
         layer.add(animation, forKey: nil)
     }
 }
