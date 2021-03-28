@@ -19,8 +19,8 @@ class PhotoViewController: UIViewController {
     @IBOutlet weak var rightPhotoView: PhotoView!
     
     
-    
-    var photo = [UIImage]()
+    var photoItem = [PhotoItem]()
+    var photo = [UIImage(named: "alya"),UIImage(named: "andrey"),UIImage(named: "dariya"),UIImage(named: "masha"),UIImage(named: "sofya")]
     var currentPhotoIndex = 0
     var direction: Direction = .none
     

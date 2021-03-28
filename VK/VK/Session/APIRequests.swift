@@ -176,7 +176,7 @@ class APIReguests {
   }
   
   //  MARK: - newsGet
-  func newsGet(completion: @escaping ([Item], [Profile], [GroupNews], String) -> Void) {
+  func newsGet(nextFrom: String, completion: @escaping ([Item], [Profile], [GroupNews], String) -> Void) {
     
     
     let configuration = URLSessionConfiguration.default
@@ -188,6 +188,7 @@ class APIReguests {
     urlConstructor.queryItems = [
       URLQueryItem(name: "access_token", value: "\(Session.session.token)"),
       URLQueryItem(name: "filters", value: "post,photo"),
+      URLQueryItem(name: "start_from", value: nextFrom),
       URLQueryItem(name: "count", value: "5"),
       URLQueryItem(name: "v", value: "5.130")
     ]

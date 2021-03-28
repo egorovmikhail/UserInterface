@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class MyFriendsController: UIViewController, UITableViewDelegate {
+class MyFriendsController: UIViewController {
   
   @IBOutlet weak var myFriendsView: UITableView!
   @IBOutlet weak var friedSearchBar: UISearchBar!
@@ -38,13 +38,13 @@ class MyFriendsController: UIViewController, UITableViewDelegate {
       self?.sortedFriends(friends: self!.user)
       self?.myFriendsView.reloadData()
     }
-  
+    
     friedSearchBar.delegate = self
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
- 
+    
   }
   
   func loadData() {
@@ -75,12 +75,12 @@ extension MyFriendsController: UITableViewDataSource, UISearchBarDelegate {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = myFriendsView.dequeueReusableCell(withIdentifier: "MyFriendsCell", for: indexPath) as! MyFriendsCell
-//            имя
+    //            имя
     var name: String = friendSection[indexPath.section].items[indexPath.row].firstName
     name += friendSection[indexPath.section].items[indexPath.row].lastName
     cell.labelName.text = name
     
-//    cell.fullName(friendSection: friendSection)
+    //    cell.fullName(friendSection: friendSection)
     
     photoService.getPhoto(urlString: friendSection[indexPath.section].items[indexPath.row].avatar) { avatar in
       DispatchQueue.main.async {
@@ -89,15 +89,6 @@ extension MyFriendsController: UITableViewDataSource, UISearchBarDelegate {
     }
     
     return cell
-  }
-  
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      let selectedTrail = friendSection[indexPath.section].items[indexPath.row]
-      
-      if let vс = storyboard?.instantiateViewController(identifier: "FriendsPhotoController") as? FriendsPhotoController {
-        vс.friend = selectedTrail
-          navigationController?.pushViewController(vс, animated: true)
-      }
   }
   
   func sortedFriends(friends: [UserItem]) {
@@ -123,5 +114,17 @@ extension MyFriendsController: UITableViewDataSource, UISearchBarDelegate {
     friedSearchBar.text = nil
     view.endEditing(true)
     myFriendsView.reloadData()
+  }
+}
+
+extension MyFriendsController: UITableViewDelegate{
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let selectedTrail = friendSection[indexPath.section].items[indexPath.row]
+    
+    if let vс = storyboard?.instantiateViewController(identifier: "FriendsPhotoController") as? FriendsPhotoController {
+      vс.friend = selectedTrail
+      navigationController?.pushViewController(vс, animated: true)
+    }
   }
 }

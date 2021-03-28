@@ -11,28 +11,47 @@ import UIKit
 class NewsVC: UIViewController {
   
   @IBOutlet weak var newsTableView: UITableView!
+  let dotLoadView = DotLoadView()
   
   var items = [Item]()
   var profiles = [Profile]()
   var groups = [GroupNews]()
-  var nextFrom: String?
+  var nextFrom: String = ""
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    APIReguests().newsGet(){ items, profiles, groups, nextFrom in
-      self.items = items
-      self.profiles = profiles
-      self.groups = groups
-      self.nextFrom = nextFrom
-      self.newsTableView.reloadData()
-      dump(self.items)
-      dump(self.profiles)
-//      dump(self.groups)
-//      dump(self.nextFrom)
+    APIReguests().newsGet(nextFrom: ""){[weak self] items, profiles, groups, nextFrom in
+      self?.items = items
+      self?.profiles = profiles
+      self?.groups = groups
+      self?.nextFrom = nextFrom
+      self?.newsTableView.reloadData()
     }
     newsTableView.dataSource = self
+    newsTableView.prefetchDataSource = self
+    dotLoadView.frame = CGRect(x: newsTableView.bounds.maxX / 2, y: newsTableView.bounds.maxY / 2, width: newsTableView.bounds.width, height: newsTableView.bounds.height)
+    configurateRefreshControl()
+  }
+  //  MARK: - configurateRefreshControl
+  private func configurateRefreshControl(){
+    newsTableView.refreshControl = UIRefreshControl()
+    newsTableView.refreshControl?.tintColor = .red
+    newsTableView.refreshControl?.attributedTitle = NSAttributedString(string: "Refreshing...")
+    newsTableView.refreshControl?.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
   }
   
+  //  MARK: - View action
+  @objc
+  private func refreshTableView(){
+    APIReguests().newsGet(nextFrom: ""){[weak self] items, profiles, groups, nextFrom in
+      self?.items = items
+      self?.profiles = profiles
+      self?.groups = groups
+      self?.newsTableView.reloadData()
+      self?.newsTableView.refreshControl?.endRefreshing()
+      self?.newsTableView.reloadData()
+    }
+  }
 }
 
 extension NewsVC: UITableViewDataSource{
@@ -71,17 +90,18 @@ extension NewsVC: UITableViewDataSource{
     //    MARK: - newsTextCell
     let newsTextCell = newsTableView.dequeueReusableCell(withIdentifier: "NewsTextCell", for: indexPath) as! NewsTextCell
     newsTextCell.newsText.text = items[indexPath.section].text
+//    print("\(items[indexPath.section].text)")
     
     
     //    MARK: - newsImageCell
     let newsImageCell = newsTableView.dequeueReusableCell(withIdentifier: "NewsImageCell", for: indexPath) as! NewsImageCell
-
+    
     DispatchQueue.global().async {
       guard ((self.items[indexPath.section].attachments?.isEmpty) != nil) else {return}
       if let url = self.items[indexPath.section].attachments![0].photo?.sizes[0].url {
         if let url = URL(string: String(url)) {
           let data = try? Data(contentsOf: url)
-//          guard let data = data else {return}
+          //          guard let data = data else {return}
           let photo = UIImage(data: data!)
           DispatchQueue.main.async {
             newsImageCell.photoNews.image = photo
@@ -96,16 +116,78 @@ extension NewsVC: UITableViewDataSource{
     
     switch indexPath.row {
       case 0:
+        newsTableView.rowHeight = 68
         return authorNewsCell
       case 1:
-        return newsTextCell
+        if items[indexPath.section].text.isEmpty{
+          newsTableView.rowHeight = 0
+          return UITableViewCell()
+        } else {
+          newsTableView.rowHeight = 100
+          return newsTextCell
+        }
       case 2:
-        return newsImageCell
+        if items[indexPath.section]
+            .attachments![0].photo?
+            .sizes[0].url == nil {
+          newsTableView.rowHeight = 0
+          return UITableViewCell()
+        } else {
+          newsTableView.rowHeight = 200
+          return newsImageCell
+        }
       case 3:
+        newsTableView.rowHeight = 44
         return newsFooterCell
       default:
+        newsTableView.rowHeight = 0
         return UITableViewCell()
     }
   }
+}
+
+extension NewsVC: UITableViewDataSourcePrefetching{
+  func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+    guard let maxSection = indexPaths.map({$0.section}).max() else {return}
+    
+    print("#######maxSection##\(maxSection)##########")
+    
+    if maxSection > items.count - 2 {
+      newsTableView.addSubview(dotLoadView)
+      APIReguests().newsGet(nextFrom: nextFrom){ [weak self] items, profiles, groups, nextFrom in
+        self?.items += items
+        self?.profiles += profiles
+        self?.groups += groups
+        self?.nextFrom = nextFrom
+        self?.dotLoadView.removeFromSuperview()
+        self?.newsTableView.reloadData()
+      }
+    } else {
+      dotLoadView.removeFromSuperview()
+    }
+    
+  }
+  
   
 }
+
+//    MARK: - UITableViewDelegate
+//extension NewsVC: UITableViewDelegate {
+//
+//  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//    switch indexPath.row {
+//      case 0:
+//        return 68
+//      case 1:
+//
+//        return 200
+//      case 2:
+//        return 100
+//      case 3:
+//        return 44
+//      default:
+//        return 0
+//    }
+//  }
+//
+//}

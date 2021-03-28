@@ -11,7 +11,6 @@ import UIKit
 @IBDesignable class PhotoView: UIView {
  
     let photoView = UIImageView()
-//    let likeButton = LikeButton()
     
 @IBInspectable var image: UIImage? {
         didSet {
@@ -35,8 +34,6 @@ import UIKit
         addSubview(photoView)
         photoView.layer.borderColor = UIColor.black.cgColor
         photoView.layer.borderWidth = 0.5
-//        likeButton.frame = CGRect(x: 10, y: 10, width: 40, height: 40)
-//        addSubview(likeButton)
         
     }
     
