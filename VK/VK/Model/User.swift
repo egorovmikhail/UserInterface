@@ -27,6 +27,10 @@ class UserItem: Object, Decodable {
   @objc dynamic var firstName = ""
   @objc dynamic var lastName = ""
   @objc dynamic var avatar = ""
+  var fullName: String {
+    let  name = firstName + lastName
+    return name
+  }
   
   enum CodingKeys: String, CodingKey {
     case id

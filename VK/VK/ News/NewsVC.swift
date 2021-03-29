@@ -17,10 +17,11 @@ class NewsVC: UIViewController {
   var profiles = [Profile]()
   var groups = [GroupNews]()
   var nextFrom: String = ""
+  var isPrefetch: Bool = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    APIReguests().newsGet(nextFrom: ""){[weak self] items, profiles, groups, nextFrom in
+    APIReguests().newsGet(startTime: nil, nextFrom: ""){[weak self] items, profiles, groups, nextFrom in
       self?.items = items
       self?.profiles = profiles
       self?.groups = groups
@@ -43,7 +44,7 @@ class NewsVC: UIViewController {
   //  MARK: - View action
   @objc
   private func refreshTableView(){
-    APIReguests().newsGet(nextFrom: ""){[weak self] items, profiles, groups, nextFrom in
+    APIReguests().newsGet(startTime: nil, nextFrom: ""){[weak self] items, profiles, groups, nextFrom in
       self?.items = items
       self?.profiles = profiles
       self?.groups = groups
@@ -128,13 +129,15 @@ extension NewsVC: UITableViewDataSource{
         }
       case 2:
         if items[indexPath.section]
-            .attachments![0].photo?
-            .sizes[0].url == nil {
-          newsTableView.rowHeight = 0
-          return UITableViewCell()
-        } else {
+          .attachments != nil,
+           items[indexPath.section]
+              .attachments![0].photo?
+              .sizes[0].url != nil{
           newsTableView.rowHeight = 200
           return newsImageCell
+        } else {
+          newsTableView.rowHeight = 0
+          return UITableViewCell()
         }
       case 3:
         newsTableView.rowHeight = 44
@@ -149,18 +152,19 @@ extension NewsVC: UITableViewDataSource{
 extension NewsVC: UITableViewDataSourcePrefetching{
   func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
     guard let maxSection = indexPaths.map({$0.section}).max() else {return}
-    
     print("#######maxSection##\(maxSection)##########")
     
-    if maxSection > items.count - 2 {
+    if maxSection > items.count - 2, !isPrefetch {
+      isPrefetch = true
       newsTableView.addSubview(dotLoadView)
-      APIReguests().newsGet(nextFrom: nextFrom){ [weak self] items, profiles, groups, nextFrom in
+      APIReguests().newsGet(startTime: nil, nextFrom: nextFrom){ [weak self] items, profiles, groups, nextFrom in
         self?.items += items
         self?.profiles += profiles
         self?.groups += groups
         self?.nextFrom = nextFrom
         self?.dotLoadView.removeFromSuperview()
         self?.newsTableView.reloadData()
+        self?.isPrefetch = false
       }
     } else {
       dotLoadView.removeFromSuperview()

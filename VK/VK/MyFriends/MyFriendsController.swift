@@ -76,8 +76,7 @@ extension MyFriendsController: UITableViewDataSource, UISearchBarDelegate {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = myFriendsView.dequeueReusableCell(withIdentifier: "MyFriendsCell", for: indexPath) as! MyFriendsCell
     //            имя
-    var name: String = friendSection[indexPath.section].items[indexPath.row].firstName
-    name += friendSection[indexPath.section].items[indexPath.row].lastName
+    let name: String = friendSection[indexPath.section].items[indexPath.row].fullName
     cell.labelName.text = name
     
     //    cell.fullName(friendSection: friendSection)
