@@ -48,7 +48,6 @@ class NewsVC: UIViewController {
       self?.items = items
       self?.profiles = profiles
       self?.groups = groups
-      self?.newsTableView.reloadData()
       self?.newsTableView.refreshControl?.endRefreshing()
       self?.newsTableView.reloadData()
     }
@@ -91,7 +90,7 @@ extension NewsVC: UITableViewDataSource{
     //    MARK: - newsTextCell
     let newsTextCell = newsTableView.dequeueReusableCell(withIdentifier: "NewsTextCell", for: indexPath) as! NewsTextCell
     newsTextCell.newsText.text = items[indexPath.section].text
-//    print("\(items[indexPath.section].text)")
+    //    print("\(items[indexPath.section].text)")
     
     
     //    MARK: - newsImageCell
@@ -129,10 +128,10 @@ extension NewsVC: UITableViewDataSource{
         }
       case 2:
         if items[indexPath.section]
-          .attachments != nil,
+            .attachments != nil,
            items[indexPath.section]
-              .attachments![0].photo?
-              .sizes[0].url != nil{
+            .attachments![0].photo?
+            .sizes[0].url != nil{
           newsTableView.rowHeight = 200
           return newsImageCell
         } else {
@@ -149,12 +148,14 @@ extension NewsVC: UITableViewDataSource{
   }
 }
 
-extension NewsVC: UITableViewDataSourcePrefetching{
+extension NewsVC: UITableViewDataSourcePrefetching {
   func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
     guard let maxSection = indexPaths.map({$0.section}).max() else {return}
     print("#######maxSection##\(maxSection)##########")
     
-    if maxSection > items.count - 2, !isPrefetch {
+    if
+      maxSection > items.count - 2,
+      !isPrefetch {
       isPrefetch = true
       newsTableView.addSubview(dotLoadView)
       APIReguests().newsGet(startTime: nil, nextFrom: nextFrom){ [weak self] items, profiles, groups, nextFrom in
@@ -168,11 +169,9 @@ extension NewsVC: UITableViewDataSourcePrefetching{
       }
     } else {
       dotLoadView.removeFromSuperview()
-    }
-    
+    }    
   }
-  
-  
+
 }
 
 //    MARK: - UITableViewDelegate
