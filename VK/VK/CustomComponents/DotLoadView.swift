@@ -45,7 +45,7 @@ class DotLoadView: UIView {
     setupView()
   }
   
-  func setupView() {
+  private func setupView() {
     let dotView0 = dotView
     let dotView1 = dotView
     let dotView2 = dotView
@@ -63,7 +63,7 @@ class DotLoadView: UIView {
     dotAnimate(view: dotView2, beginTime: 0.4)
   }
   
-  func dotAnimate(view: UIView, beginTime: Double) {
+  private func dotAnimate(view: UIView, beginTime: Double) {
     let animation = CABasicAnimation(keyPath: "opacity")
     animation.beginTime = CACurrentMediaTime() + beginTime
     animation.fromValue = 1

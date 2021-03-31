@@ -10,29 +10,32 @@ import Foundation
 import RealmSwift
 
 struct Section {
-    let title: String
-    let items: [UserItem]
+  let title: String
+  let items: [UserItem]
 }
 
 struct User: Decodable {
-    let response: UserResponse
-
+  let response: UserResponse
 }
 
 struct UserResponse: Decodable {
-    let items: [UserItem]
-    }
+  let items: [UserItem]
+}
 
 class UserItem: Object, Decodable {
-    @objc dynamic var id = 0
-    @objc dynamic var firstName = ""
-    @objc dynamic var lastName = ""
-    @objc dynamic var avatar = ""
-
-    enum CodingKeys: String, CodingKey {
-        case id
-        case firstName = "first_name"
-        case lastName = "last_name"
-        case avatar = "photo_50"
-    }
+  @objc dynamic var id = 0
+  @objc dynamic var firstName = ""
+  @objc dynamic var lastName = ""
+  @objc dynamic var avatar = ""
+  var fullName: String {
+    let  name = firstName + lastName
+    return name
+  }
+  
+  enum CodingKeys: String, CodingKey {
+    case id
+    case firstName = "first_name"
+    case lastName = "last_name"
+    case avatar = "photo_50"
+  }
 }

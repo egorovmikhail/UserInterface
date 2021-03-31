@@ -54,7 +54,6 @@ class MyFriendsCell: UITableViewCell {
   
   required init?(coder: NSCoder) {
     super.init(coder: coder)
-    setupSubviews()
   }
   //  MARK: - prepareForReuse
   override func prepareForReuse() {
@@ -71,10 +70,10 @@ class MyFriendsCell: UITableViewCell {
   }
   //  MARK: - setupSubviews
   private func setupSubviews() {
-    addSubview(view)
+    contentView.addSubview(view)
     view.addSubview(avatarView)
-    addSubview(button)
-    addSubview(labelName)
+    contentView.addSubview(button)
+    contentView.addSubview(labelName)
   }
   
   //  MARK: - setupAvatarView

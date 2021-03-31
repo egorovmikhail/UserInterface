@@ -46,11 +46,18 @@ import UIKit
         avatar.layer.cornerRadius = avatar.bounds.height / 2
         avatar.layer.masksToBounds = true
 //        Добавляем тень вокруг картинки
+        layer.shadowPath = UIBezierPath(rect: bounds).cgPath
         layer.shadowColor = UIColor.black.cgColor
         layer.cornerRadius = avatar.bounds.height / 2
         layer.shadowRadius = 8.0
-        layer.shadowOpacity = 5.0
+        layer.shadowOpacity = 0.5
         layer.shadowOffset = .zero
+      
+//      layer.shadowPath = UIBezierPath(rect: bounds).cgPath
+//      layer.shadowColor = UIColor.black.cgColor
+//      layer.shadowOpacity = 0.5
+//      layer.shadowOffset = .zero
+//      layer.shadowRadius = 11
     }
     
     func addImage() {
